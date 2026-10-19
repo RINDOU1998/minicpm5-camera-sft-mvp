@@ -8,6 +8,7 @@ models/
 outputs/
 .env
 .env.*
+data/reviews/human-*.jsonl
 *.safetensors
 *.bin
 *.pt

@@ -4,9 +4,12 @@
 
 **已交付本地可验证部分：**现有 10 工具契约、冻结 50 条回归题、300 条候选、生成/验证/清单工具、真实 tokenizer 的逐轮 mask 检查。**尚未执行：**云端 BF16 推理、GPU 训练、独立语义审核、真实摄像头闭环。不能把本地校验称为这些阶段已通过。
 
+**当前待你人工审核的版本：`data/mvp-reviewed-v1`。** Assistant 已复核 75 个场景主体及全部 300 条受控扩展，修正 8 条“查询设置却只回答状态正常”的样本；240/60 切分和所有用户请求保持一致。记录在 `data/reviews/author-v1/results/`，不算独立审核。请先在 HTML 中人工审核并导出 JSONL；下面主流程要求你的 300 条全部通过。原版 `data/mvp` 留作追溯。
+
 - [MVP 方案与数据配比](docs/MVP.md) · [HTML 阅读版](docs/MVP.html)
 - [让 agent 生成和审核数据](docs/AGENT_GENERATION.md)
 - [本地验证记录](docs/VALIDATION.md)
+- [生成器、验证器与本次审核说明](docs/DATA_REVIEW.md) · [逐条 HTML 审核记录](docs/数据生成与验证：300条审核记录.html)
 - [前期完整调研](docs/research/MiniCPM5-1B%20Camera%20Agent微调：数据、训练与验收方案.html)（历史规划，当前执行范围以本 README 为准）
 
 ## 这次固定什么
@@ -33,7 +36,9 @@ cd minicpm5-sft
 git log -1 --oneline
 ```
 
-若服务器无法访问 GitHub，也可传输交付的 Git bundle，把第一条改成 `git clone /你上传的位置/minicpm5-sft-mvp.bundle minicpm5-sft`。不要把模型或 API 密钥提交进 Git。后续所有命令均在仓库根目录执行；任何命令报错，先处理错误，不继续后面的训练步骤。
+若服务器无法访问 GitHub，也可上传交付的 `minicpm5-sft-reviewed-v1.zip` 后解压，或用 Git bundle：`git clone /你上传的位置/minicpm5-sft-reviewed-v1.bundle minicpm5-sft`。不要只传 train.jsonl，验证还依赖种子、契约、回归集与清单。不要把模型或 API 密钥提交进 Git。后续所有命令均在仓库根目录执行；任何命令报错，先处理错误，不继续后面的训练步骤。
+
+将审核页面导出的 `human-reviewed-v1.jsonl` 单独上传到 `data/reviews/human-reviewed-v1.jsonl`。这份个人审核文件默认被 Git 忽略，不随公开仓库发布；它必须来自你实际完成的审核，不修改 assistant 记录来冒充人工签核。
 
 ## 2. 建立独立 Python 环境
 
@@ -59,7 +64,10 @@ python -m pip freeze > runs/environment/pip-freeze.txt
 
 ```bash
 python -m unittest discover -s tests -v
-python -m camera_sft.data verify --data data/mvp
+python -m camera_sft.data verify --data data/mvp-reviewed-v1
+python -m camera_sft.data review --data data/mvp-reviewed-v1 \
+  --reviews data/reviews/human-reviewed-v1.jsonl \
+  --out runs/human-review-check.json
 python -m camera_sft.cloud fetch --model-dir models/base
 ```
 
@@ -69,15 +77,18 @@ python -m camera_sft.cloud fetch --model-dir models/base
 
 ```bash
 python -m camera_sft.cloud prepare \
-  --model-dir models/base --data data/mvp \
-  --out runs/prepared-mvp --smoke
+  --model-dir models/base --data data/mvp-reviewed-v1 \
+  --reviews data/reviews/human-reviewed-v1.jsonl \
+  --out runs/prepared-mvp
 ```
 
 预期得到 **396 个训练 assistant 步、104 个开发 assistant 步**；它们仍来自 240/60 个任务，不能把 500 个生成步骤说成 500 个独立样本。当前实际 tokenizer 检查的最长序列为 **1936 tokens**，全部低于 4096，未做截断。
 
 检查 `runs/prepared-mvp/template-audit.jsonl`：每一步的推理前缀一致，XML、工具回填和 EOS 保留；prompt 和工具返回不参与 loss。直接使用官方模板，而非改写成简化 ChatML。本 MVP 使用 Transformers + PEFT 的小型训练器，目的是把这条协议检查直接接入训练；后续再迁移到 LLaMA-Factory 也必须保持同样的 token/mask 检查。
 
-`--smoke` 明确表示：本轮允许尚未独立语义审核的候选用于**链路试训**。去掉该开关时，必须提供全部通过、与样本 hash 匹配的独立审核记录（见生成指南）。它不把候选提升为正式训练集。
+主流程不带 `--smoke`，要求你的人工记录全部通过且 hash 对应；审核文件 hash 写入准备清单。有 pending/reject、缺项或过期记录时停止。
+
+如果仅先测未经过人工审核的链路：prepare 改用 `--reviews data/reviews/author-v1/results/reviews.jsonl` 并加 `--smoke`，train 也必须加 `--smoke`；作者审核的完整性可用 `data review --allow-author-review` 检查。该模式不算人工/独立验收，不修改 `independent` 冒充通过。
 
 ## 5. 保存 BF16 原版基线
 
@@ -85,9 +96,9 @@ python -m camera_sft.cloud prepare \
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
-  --model-dir models/base --suite dev --out runs/base-dev
+  --model-dir models/base --data data/mvp-reviewed-v1 --suite dev --out runs/base-dev
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
-  --model-dir models/base --suite frozen50 --out runs/base-50
+  --model-dir models/base --data data/mvp-reviewed-v1 --suite frozen50 --out runs/base-50
 ```
 
 每次保存逐条 `predictions.jsonl`、模型/数据身份、原始输出 tokens 和 `summary.json`。这里重新测的是 BF16；历史 FP32 的 32/50 仅是背景，不能拿来代替这次基线。
@@ -97,13 +108,13 @@ CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
 ```bash
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud train \
   --model-dir models/base --prepared runs/prepared-mvp \
-  --out runs/lora-mvp --smoke
+  --out runs/lora-mvp
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
   --model-dir models/base --adapter runs/lora-mvp/adapter \
-  --suite dev --out runs/lora-dev
+  --data data/mvp-reviewed-v1 --suite dev --out runs/lora-dev
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
   --model-dir models/base --adapter runs/lora-mvp/adapter \
-  --suite frozen50 --out runs/lora-50
+  --data data/mvp-reviewed-v1 --suite frozen50 --out runs/lora-50
 python -m camera_sft.compare --before runs/base-dev --after runs/lora-dev --out runs/compare-dev.json
 python -m camera_sft.compare --before runs/base-50 --after runs/lora-50 --out runs/compare-50.json
 ```
@@ -116,9 +127,9 @@ python -m camera_sft.compare --before runs/base-50 --after runs/lora-50 --out ru
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud merge \
   --model-dir models/base --adapter runs/lora-mvp/adapter --out models/merged-mvp
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
-  --model-dir models/merged-mvp --suite dev --out runs/merged-dev
+  --model-dir models/merged-mvp --data data/mvp-reviewed-v1 --suite dev --out runs/merged-dev
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
-  --model-dir models/merged-mvp --suite frozen50 --out runs/merged-50
+  --model-dir models/merged-mvp --data data/mvp-reviewed-v1 --suite frozen50 --out runs/merged-50
 python -m camera_sft.compare --before runs/lora-dev --after runs/merged-dev --out runs/compare-merge-dev.json
 python -m camera_sft.compare --before runs/lora-50 --after runs/merged-50 --out runs/compare-merge-50.json
 ```

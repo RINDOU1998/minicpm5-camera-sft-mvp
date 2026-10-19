@@ -2,6 +2,8 @@
 
 数据工具不调用任何付费教师 API，也不需要密钥。现有 300 条可直接复现；更丰富的候选可以由当前 agent、另一个人工启动的 agent 或外部教师生成，再用同一验证器入库。
 
+当前服务器测试用 `data/mvp-reviewed-v1`；同作者复核记录与 8 条修正见 [审核说明](DATA_REVIEW.md)。下文 A/B 保留原版复现命令。要基于修订种子运行 `plan`、`build` 或 `validate`，均添加 `--seeds data/seeds/seed_bank-reviewed-v1.json`；`verify` 自动读取发布清单绑定的种子版本，不混用两版标签。
+
 ## A. 复现当前版本
 
 ```bash

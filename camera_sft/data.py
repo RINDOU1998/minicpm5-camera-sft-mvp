@@ -7,6 +7,15 @@ import re
 from pathlib import Path
 from .common import ROOT, contract, digest, read_json, read_jsonl, sha, write_json, write_jsonl, new_dir
 
+DEFAULT_SEEDS = 'data/seeds/seed_bank.json'
+
+
+def seed_path(value=None):
+    p=Path(value or DEFAULT_SEEDS)
+    p=(p if p.is_absolute() else ROOT/p).resolve()
+    if not p.is_relative_to(ROOT.resolve()):raise ValueError('seed bank must be inside repository')
+    return p
+
 
 def normalize(text):
     return re.sub(r"[\W_]+", "", text, flags=re.UNICODE).lower()
@@ -26,8 +35,8 @@ def call_message(seed, call_id):
         'function':{'name':seed['tool'], 'arguments':seed['args']}}]}
 
 
-def generate():
-    bank=read_json(ROOT/'data/seeds/seed_bank.json'); c=contract(); rows=[]
+def generate(seed_bank=None):
+    bank=read_json(seed_path(seed_bank)); c=contract(); rows=[]
     for seed in bank['seeds']:
         # Identical semantic tool/argument families cannot cross train/dev, even for failures.
         family = {'tool':seed['tool'],'args':seed['args']} if seed['tool'] else {'seed_id':seed['seed_id']}
@@ -63,8 +72,8 @@ def validate_args(name, args, c=None):
         if not isinstance(value,str) or value not in prop['enum']:raise ValueError('invalid enum/type: '+key)
 
 
-def validate(rows, expected_count=300):
-    c=contract(); bank=read_json(ROOT/'data/seeds/seed_bank.json'); seeds={s['seed_id']:s for s in bank['seeds']}
+def validate(rows, expected_count=300, seed_bank=None):
+    c=contract(); bank=read_json(seed_path(seed_bank)); seeds={s['seed_id']:s for s in bank['seeds']}
     frozen=read_json(ROOT/'data/frozen/cases50.json')
     errors=[]; warnings=[]; ids=set(); groups={}; full_seen={}; query_seen={}; cats=collections.Counter()
     def err(sid,msg):errors.append({'id':sid,'error':msg})
@@ -77,6 +86,8 @@ def validate(rows, expected_count=300):
             if sid in ids:raise ValueError('duplicate sample id')
             ids.add(sid)
             seed=seeds[row['seed_id']]; m=row['messages']; tool=seed['tool']; args=seed['args']
+            planned_ids={f"mvp-{seed['seed_id']}-{v+1}" for v in range(len(bank['surface_forms']))}
+            if sid not in planned_ids:raise ValueError('sample id not in seed plan')
             if row['split']!=seed['split'] or row['category']!=seed['category']:raise ValueError('split/category changed from plan')
             if row['split'] not in ('train','dev'):raise ValueError('unknown split')
             if row['contract_id']!=c['id'] or m[0]!={'role':'system','content':c['system']}:raise ValueError('contract/system mismatch')
@@ -139,16 +150,18 @@ def validate(rows, expected_count=300):
         'scope':'rules and simulated fixtures only; no actual camera execution'}
 
 
-def artifacts(out, rows):
-    report=validate(rows)
+def artifacts(out, rows, seed_bank=None):
+    bank_name=seed_path(seed_bank).relative_to(ROOT).as_posix()
+    report=validate(rows,seed_bank=bank_name)
     if not report['ok']:raise ValueError(json.dumps(report['errors'],ensure_ascii=False))
     write_jsonl(out/'candidates.jsonl',rows)
     for split in ['train','dev']:write_jsonl(out/f'{split}.jsonl',[r for r in rows if r['split']==split])
     write_json(out/'validation.json',report)
     write_jsonl(out/'review.jsonl',[{'id':r['id'],'sample_sha256':digest(r),'verdict':'pending','reviewer':'','independent':False,'notes':''} for r in rows])
     tracked=['candidates.jsonl','train.jsonl','dev.jsonl','validation.json','review.jsonl']
-    sources=['contracts/camera_v1.json','data/frozen/cases50.json','data/seeds/seed_bank.json','configs/base.json']
-    write_json(out/'manifest.json',{'version':1,'status':'rules_passed_semantic_review_pending','count':len(rows),'splits':report['splits'],
+    sources=['contracts/camera_v1.json','data/frozen/cases50.json',bank_name,'configs/base.json']
+    version={'version':1} if bank_name==DEFAULT_SEEDS else {'version':2,'seed_bank':bank_name}
+    write_json(out/'manifest.json',{**version,'status':'rules_passed_semantic_review_pending','count':len(rows),'splits':report['splits'],
         'files':{f:sha(out/f) for f in tracked},'sources':{f:sha(ROOT/f) for f in sources},
         'provenance':'75 agent-authored seed records expanded into 300 controlled trajectories; no external teacher requests',
         'limitations':['not 300 independent semantic tasks','no blind test or real hardware','not a 95-percent acceptance dataset']})
@@ -163,45 +176,56 @@ def verify_release(path):
     for name,value in manifest['sources'].items():
         target=(ROOT/name).resolve()
         if not target.is_relative_to(ROOT.resolve()) or sha(target)!=value:raise ValueError('source hash mismatch: '+name)
-    rows=read_jsonl(path/'candidates.jsonl');report=validate(rows)
+    bank_name=manifest.get('seed_bank',DEFAULT_SEEDS)
+    if bank_name not in manifest['sources']:raise ValueError('seed bank missing from source hashes')
+    rows=read_jsonl(path/'candidates.jsonl');report=validate(rows,seed_bank=bank_name)
     if not report['ok']:raise ValueError(str(report['errors']))
     for split in ['train','dev']:
         if read_jsonl(path/f'{split}.jsonl')!=[r for r in rows if r['split']==split]:raise ValueError('split content mismatch')
     return report
 
 
-def review_report(data_dir, reviews_path):
+def review_report(data_dir, reviews_path, require_independent=True):
+    verify_release(data_dir)
     rows=read_jsonl(Path(data_dir)/'candidates.jsonl');reviews=read_jsonl(reviews_path)
     byid={x['id']:x for x in reviews}
     if len(byid)!=len(reviews) or set(byid)!={x['id'] for x in rows}:raise ValueError('review IDs missing/duplicated/extra')
-    pending=[]
+    pending=[];non_independent=[]
     for row in rows:
         v=byid[row['id']]
         if v['sample_sha256']!=digest(row):raise ValueError('stale review: '+row['id'])
-        if v['verdict']!='accept' or not v.get('reviewer','').strip() or v.get('independent') is not True:pending.append(row['id'])
+        if v.get('independent') is not True:non_independent.append(row['id'])
+        if (v['verdict']!='accept' or not v.get('reviewer','').strip() or not v.get('notes','').strip()
+                or (require_independent and v.get('independent') is not True)):pending.append(row['id'])
     return {'ok':not pending,'pending_or_rejected':pending,'count':len(rows),
+            'require_independent':require_independent,'non_independent_count':len(non_independent),
+            'independent_acceptance':not pending and not non_independent,
             'note':'Reviewer identity and independence are recorded attestations, not automatically proven.'}
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='action',required=True)
     g=sub.add_parser('build');g.add_argument('--out',required=True);g.add_argument('--candidates',help='Optional agent-produced JSONL; same fixed seed labels and schema required')
+    g.add_argument('--seeds',default=DEFAULT_SEEDS)
     v=sub.add_parser('verify');v.add_argument('--data',default='data/mvp')
     v=sub.add_parser('validate');v.add_argument('--candidates',required=True);v.add_argument('--out',required=True);v.add_argument('--expected-count',type=int,default=300)
+    v.add_argument('--seeds',default=DEFAULT_SEEDS)
     r=sub.add_parser('review');r.add_argument('--data',default='data/mvp');r.add_argument('--reviews',required=True);r.add_argument('--out',required=True)
+    r.add_argument('--allow-author-review',action='store_true',help='Check author review completeness only; does not satisfy independent review')
     g=sub.add_parser('plan');g.add_argument('--out',required=True)
+    g.add_argument('--seeds',default=DEFAULT_SEEDS)
     a=p.parse_args()
     if a.action=='build':
-        rows=read_jsonl(a.candidates) if a.candidates else generate()
-        report=validate(rows)
+        rows=read_jsonl(a.candidates) if a.candidates else generate(a.seeds)
+        report=validate(rows,seed_bank=a.seeds)
         if not report['ok']:raise ValueError(json.dumps(report['errors'],ensure_ascii=False))
-        out=new_dir(a.out);report=artifacts(out,rows)
+        out=new_dir(a.out);report=artifacts(out,rows,a.seeds)
     elif a.action=='verify':report=verify_release(a.data)
-    elif a.action=='validate':report=validate(read_jsonl(a.candidates),expected_count=a.expected_count);write_json(a.out,report)
-    elif a.action=='review':report=review_report(a.data,a.reviews);write_json(a.out,report)
+    elif a.action=='validate':report=validate(read_jsonl(a.candidates),expected_count=a.expected_count,seed_bank=a.seeds);write_json(a.out,report)
+    elif a.action=='review':report=review_report(a.data,a.reviews,require_independent=not a.allow_author_review);write_json(a.out,report)
     else:
         out=new_dir(a.out)
-        rows=generate();write_jsonl(out/'plans.jsonl',rows)
+        rows=generate(a.seeds);write_jsonl(out/'plans.jsonl',rows)
         for i in range(0,len(rows),20):write_jsonl(out/f'batch-{i//20+1:02d}.jsonl',rows[i:i+20])
         write_json(out/'contract.json',contract())
         print(f'{len(rows)} editable candidates in {out}; see docs/AGENT_GENERATION.md');return

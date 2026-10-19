@@ -21,4 +21,8 @@
 
 复核数据：`python -m camera_sft.data verify --data data/mvp`。故障用例：`python -m unittest discover -s tests -v`。
 
+2026-10-19 审核后更新：`data/mvp-reviewed-v1` 保留 240/60，8 条设置查询已修正，75 个场景主体与 300 条实际前缀扩展完成同作者 assistant 复核；独立审核仍未通过。新增种子版本隔离、同作者审核不能通过独立门槛、拒绝/过期审核记录测试，当前共 **20 项**通过。修订数据的 tokenizer 准备摘要见 `docs/tokenizer-preflight-reviewed-v1.json`。旧数据和旧验证摘要保留，不混用。
+
+人工审核 HTML 已用本机 Chrome + Playwright 检查：默认 300 条待审核、同组操作、退回理由必填、300 行 JSONL 导出/导入、过期 hash 拒绝且不破坏当前草稿、本地草稿恢复、390px 手机无横向溢出、无网络请求。1440px/390px 截图已目视检查。测试使用隔离浏览器与 `UI_TEST_ONLY` 身份，不写入真实人工审核文件；测试脚本在 `tests/review_ui.cjs`，依赖 Playwright，仅供可选本地 UI 检查，不是云端训练依赖。
+
 原始本地运行输出保存在忽略的runs目录；可提交的tokenizer准备摘要在`docs/tokenizer-preflight.json`，微型模型探针结果在`docs/cpu-api-probe.json`。传递依赖/驱动/真实GPU内存尚需云端记录。输出目录不覆盖，失败不重标成功。

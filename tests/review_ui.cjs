@@ -1,0 +1,67 @@
+// Optional local UI check: requires Playwright. Synthetic decisions stay in runs/.
+const assert = require('node:assert/strict');
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const {pathToFileURL} = require('node:url');
+const {chromium} = require('playwright');
+
+(async () => {
+  const root = path.resolve(__dirname, '..');
+  const out = path.join(root, 'runs', 'review-ui-check');
+  await fs.mkdir(out, {recursive:true});
+  const url = pathToFileURL(path.join(root, 'docs', '数据生成与验证：300条审核记录.html')).href;
+  const browser = await chromium.launch({headless:true,channel:process.env.SFT_REVIEW_BROWSER_CHANNEL||undefined});
+  const context = await browser.newContext({viewport:{width:1440,height:1100},acceptDownloads:true});
+  const page = await context.newPage();
+  const errors = [], external = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('request', r => {if(/^https?:/.test(r.url()))external.push(r.url());});
+  try {
+    await page.goto(url);
+    assert.match(await page.locator('#progress').textContent(), /待审核 300.*通过 0.*退回 0/);
+    assert.equal(await page.locator('.variant').count(), 300);
+    assert.equal(await page.locator('.card').count(), 75);
+    await page.screenshot({path:path.join(out,'desktop.png')});
+    await page.selectOption('#filter','changed');
+    assert.equal(await page.locator('.card:visible').count(),2);
+    assert.equal(await page.locator('.card:visible .variant').count(),8);
+    await page.selectOption('#filter','all');
+    await page.locator('.group-accept').first().click();
+    assert.match(await page.locator('#progress').textContent(), /待审核 296.*通过 4.*退回 0/);
+    const first=page.locator('.variant').first();
+    await first.locator('[data-action=reject]').click();
+    await page.fill('#reviewer','UI_TEST_ONLY');
+    await page.check('#attest');
+    await page.click('#export');
+    assert.match(await page.locator('#message').textContent(), /需要填写理由/);
+    await first.locator('textarea').fill('UI_TEST_ONLY: synthetic rejection, not a real human audit.');
+    const downloaded=page.waitForEvent('download');
+    await page.click('#export');
+    const file=path.join(out,'synthetic-human-draft.jsonl');
+    await (await downloaded).saveAs(file);
+    const rows=(await fs.readFile(file,'utf8')).trim().split('\n').map(JSON.parse);
+    assert.equal(rows.length,300);
+    assert.equal(rows.filter(r=>r.verdict==='accept').length,3);
+    assert.equal(rows.filter(r=>r.verdict==='reject').length,1);
+    assert.equal(rows.filter(r=>r.verdict==='pending').length,296);
+    assert.equal(rows[0].reviewer,'UI_TEST_ONLY');
+    await page.reload();
+    assert.match(await page.locator('#progress').textContent(), /待审核 296.*通过 3.*退回 1/);
+    const altered=structuredClone(rows);altered[0].sample_sha256='wrong';
+    const stale=path.join(out,'synthetic-stale.jsonl');
+    await fs.writeFile(stale,altered.map(JSON.stringify).join('\n')+'\n');
+    await page.setInputFiles('#import',stale);
+    await page.waitForFunction(()=>document.querySelector('#message').textContent.includes('导入失败'));
+    assert.match(await page.locator('#progress').textContent(), /待审核 296.*通过 3.*退回 1/);
+    const mobile=await browser.newContext({viewport:{width:390,height:844}});
+    const p=await mobile.newPage();await p.goto(url);
+    assert.match(await p.locator('#progress').textContent(), /待审核 300.*通过 0.*退回 0/);
+    assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    await p.screenshot({path:path.join(out,'mobile.png')});
+    await p.setInputFiles('#import',file);
+    await p.waitForFunction(()=>document.querySelector('#message').textContent.includes('已导入'));
+    assert.match(await p.locator('#progress').textContent(), /待审核 296.*通过 3.*退回 1/);
+    assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
+    console.log('PASS: pending defaults, group actions, reject reasons, JSONL export/import, stale hash rejection, local draft, mobile width, no network. All test decisions are synthetic.');
+  } finally {await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

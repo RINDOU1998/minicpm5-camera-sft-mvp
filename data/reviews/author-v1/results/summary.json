@@ -1,0 +1,32 @@
+{
+  "source_manifest_sha256": "21f9fe6ff7c3e379237a7abb7d885b42f55fda180402c9404d240ecbda93b295",
+  "reviewed_manifest_sha256": "c824acb265ca7fc4870fcf49f3f9f4dc1d76832201fb46b030c7fed8e4327fb4",
+  "decision_source_sha256": "d7990e5cbe569ceb197ca69f97a5de6d8c362c32ef27b82f91f1a3071a32e1c7",
+  "reviewed_seed_meanings": 75,
+  "checked_surface_rows": 300,
+  "original_accepted": 292,
+  "original_rejected": 8,
+  "corrected": 8,
+  "after_accepted_for_smoke": 300,
+  "independent_review_pass": false,
+  "review_check": {
+    "ok": true,
+    "pending_or_rejected": [],
+    "count": 300,
+    "require_independent": false,
+    "non_independent_count": 300,
+    "independent_acceptance": false,
+    "note": "Reviewer identity and independence are recorded attestations, not automatically proven."
+  },
+  "files": {
+    "original-reviews.jsonl": "0b28e9cd0c9c9fed1e6f8baa3e0b9661f5a0ba965505a5483bb9751b292400b1",
+    "reviews.jsonl": "7f4d96028bb588489ce92b01e3cc07306fb772cd51b10122231867ef71c741e1",
+    "changes.jsonl": "a174334cebb4c1badffbcd81188d9505f529d830f808752f740519fd82ee5f43"
+  },
+  "limitations": [
+    "same author assistant, not human or independent review",
+    "75 meanings and four prefixes, not 300 independent judgments",
+    "simulated fixtures, sparse result diversity, no actual camera execution",
+    "no blind generalization or 95-percent acceptance claim"
+  ]
+}

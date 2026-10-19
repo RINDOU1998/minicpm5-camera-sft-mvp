@@ -49,6 +49,34 @@ class DatasetTests(unittest.TestCase):
     def test_group_and_split_locked(self):
         self.assertIn('split',self.mutate(lambda r:r[0].update(split='dev')))
         self.assertIn('group',self.mutate(lambda r:r[0].update(group_id='fake')))
+        self.assertIn('sample id',self.mutate(lambda r:r[0].update(id='invented-id')))
+
+    def test_versioned_seed_release(self):
+        self.assertTrue(verify_release(ROOT/'data/mvp')['ok'])
+        self.assertTrue(verify_release(ROOT/'data/mvp-reviewed-v1')['ok'])
+        original=read_jsonl(ROOT/'data/mvp/candidates.jsonl')
+        reviewed=read_jsonl(ROOT/'data/mvp-reviewed-v1/candidates.jsonl')
+        self.assertEqual(sum(a!=b for a,b in zip(original,reviewed)),8)
+        self.assertFalse(validate(reviewed)['ok'])  # Wrong seed version must fail.
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)
+            artifacts(p,reviewed,'data/seeds/seed_bank-reviewed-v1.json')
+            m=read_json(p/'manifest.json');m['seed_bank']='data/seeds/seed_bank.json'
+            write_json(p/'manifest.json',m)
+            with self.assertRaisesRegex(ValueError,'seed bank missing'):verify_release(p)
+
+    def test_author_review_is_not_independent_acceptance(self):
+        data=ROOT/'data/mvp-reviewed-v1';reviews=ROOT/'data/reviews/author-v1/results/reviews.jsonl'
+        strict=review_report(data,reviews)
+        self.assertFalse(strict['ok']);self.assertEqual(strict['non_independent_count'],300)
+        smoke=review_report(data,reviews,require_independent=False)
+        self.assertTrue(smoke['ok']);self.assertFalse(smoke['independent_acceptance'])
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/'reviews.jsonl';rs=read_jsonl(reviews)
+            rs[0]['verdict']='reject';write_jsonl(p,rs)
+            self.assertFalse(review_report(data,p,require_independent=False)['ok'])
+            rs[0]['verdict']='accept';rs[0]['sample_sha256']='wrong';write_jsonl(p,rs)
+            with self.assertRaisesRegex(ValueError,'stale review'):review_report(data,p,require_independent=False)
 
     def test_no_tool_cannot_call(self):
         def alter(rows):

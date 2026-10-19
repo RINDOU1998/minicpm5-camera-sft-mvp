@@ -20,8 +20,14 @@ def runtime_info():
     for name in ['torch','transformers','peft','accelerate','tokenizers','safetensors']:
         try:packages[name]=importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:packages[name]=None
-    return {'python':platform.python_version(),'packages':packages,'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
-        'git_dirty':bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()),
+    commit=None;dirty=None;source_kind='unversioned_copy'
+    if (ROOT/'.git').exists():
+        commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+        dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip());source_kind='git'
+    elif (ROOT/'SOURCE_COMMIT').is_file():
+        commit=(ROOT/'SOURCE_COMMIT').read_text(encoding='utf-8').strip();source_kind='git_archive'
+    return {'python':platform.python_version(),'packages':packages,'git_commit':commit,
+        'git_dirty':dirty,'source_kind':source_kind,
         'code_hashes':{str(p.relative_to(ROOT)):sha(p) for p in sorted((ROOT/'camera_sft').glob('*.py'))}}
 
 
@@ -58,8 +64,9 @@ def tokenizer(path):
 
 def prepare(a):
     verify_release(a.data);check_model(a.model_dir)
-    if not a.smoke:
-        if not a.reviews or not review_report(a.data,a.reviews)['ok']:raise ValueError('Independent semantic review required; use --smoke only for pipeline validation')
+    review=review_report(a.data,a.reviews,require_independent=not a.smoke) if a.reviews else None
+    if review is not None and not review['ok']:raise ValueError('Review incomplete/rejected or independence requirement not met')
+    if not a.smoke and review is None:raise ValueError('Independent semantic review required; use --smoke only for pipeline validation')
     out=new_dir(a.out);tok=tokenizer(a.model_dir);counts={};lengths=[];examples=[]
     for split in ['train','dev']:
         features=[]
@@ -81,6 +88,7 @@ def prepare(a):
         'snapshot_manifest_sha256':sha(Path(a.model_dir)/'snapshot_manifest.json'),
         'counts':counts,'max_observed_length':max(lengths),'files':{f:sha(out/f) for f in ['train.jsonl','dev.jsonl','template-audit.jsonl']},
         'reviews_sha256':sha(a.reviews) if a.reviews else None,
+        'review_summary':review,
         'loss':'assistant target + EOS only; each assistant turn is one example; all prompt/tool result tokens masked',
         'fixed_50_prompt_fit':'pass'})
     print(json.dumps({'counts':counts,'max_length':max(lengths),'smoke_only':a.smoke},indent=2))
