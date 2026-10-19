@@ -25,4 +25,6 @@
 
 人工审核 HTML 已用本机 Chrome + Playwright 检查：默认 300 条待审核、同组操作、退回理由必填、300 行 JSONL 导出/导入、过期 hash 拒绝且不破坏当前草稿、本地草稿恢复、390px 手机无横向溢出、无网络请求。1440px/390px 截图已目视检查。测试使用隔离浏览器与 `UI_TEST_ONLY` 身份，不写入真实人工审核文件；测试脚本在 `tests/review_ui.cjs`，依赖 Playwright，仅供可选本地 UI 检查，不是云端训练依赖。
 
+修订版已再次从 Git 全新克隆到 Ubuntu-22.04：20 项测试通过；原版、修订版及作者复核记录均可逐字节重建。非 smoke 的 prepare 已确认会在创建输出前拒绝同作者复核记录。
+
 原始本地运行输出保存在忽略的runs目录；可提交的tokenizer准备摘要在`docs/tokenizer-preflight.json`，微型模型探针结果在`docs/cpu-api-probe.json`。传递依赖/驱动/真实GPU内存尚需云端记录。输出目录不覆盖，失败不重标成功。

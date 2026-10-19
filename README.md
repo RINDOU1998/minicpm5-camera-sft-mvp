@@ -40,6 +40,8 @@ git log -1 --oneline
 
 将审核页面导出的 `human-reviewed-v1.jsonl` 单独上传到 `data/reviews/human-reviewed-v1.jsonl`。这份个人审核文件默认被 Git 忽略，不随公开仓库发布；它必须来自你实际完成的审核，不修改 assistant 记录来冒充人工签核。
 
+zip 是完整源码快照，不含 Git 历史；解压后进入 `minicpm5-sft`，用 `cat SOURCE_COMMIT` 查看版本。实验代码支持该形式，并记录源码 hash。
+
 ## 2. 建立独立 Python 环境
 
 下面按 Linux、Python 3.11、NVIDIA 驱动兼容 CUDA 12.6 的服务器写。先用 `nvidia-smi` 确认实际 GPU、空闲显存和驱动。若驱动不兼容，先由服务器管理员确定可用 PyTorch CUDA 组合，不改宿主驱动来迁就此命令。
