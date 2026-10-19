@@ -14,6 +14,8 @@
 | 原50条上下文预算 | 全部prompt+128输出预算可放入4K |
 | 训练依赖API探针 | 随机微型Llama在CPU完成一步masked-loss训练、LoRA参数更新、adapter保存、合并和重载；不等于MiniCPM训练 |
 | 依赖一致性 | `pip check`通过；本地torch为2.7.1+cpu，云端CUDA构建另验 |
+| Linux 全新 Git 克隆 | Ubuntu-22.04 中 18 项测试、数据清单验证、数据重建逐字节比对通过；冻结证据按原字节保存，避免换行转换破坏 hash |
+| 配对评测输入一致性 | 比较器检查消息、工具 hash、渲染 prompt hash 和 token IDs；仅数据文件相同不足以视为同条件 |
 | 云端BF16/GPU训练 | 待用户手动执行，不以本地测试替代 |
 | 真实工具闭环/OM | 本轮不执行 |
 
