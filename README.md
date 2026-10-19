@@ -36,31 +36,38 @@ cd minicpm5-sft
 git log -1 --oneline
 ```
 
-若服务器无法访问 GitHub，也可上传交付的 `minicpm5-sft-reviewed-v1.zip` 后解压，或用 Git bundle：`git clone /你上传的位置/minicpm5-sft-reviewed-v1.bundle minicpm5-sft`。不要只传 train.jsonl，验证还依赖种子、契约、回归集与清单。不要把模型或 API 密钥提交进 Git。后续所有命令均在仓库根目录执行；任何命令报错，先处理错误，不继续后面的训练步骤。
+若服务器无法访问 GitHub，也可上传交付的 `minicpm5-sft-reviewed-v1-conda.zip` 后解压，或用 Git bundle：`git clone /你上传的位置/minicpm5-sft-reviewed-v1-conda.bundle minicpm5-sft`。不要只传 train.jsonl，验证还依赖种子、契约、回归集与清单。不要把模型或 API 密钥提交进 Git。后续所有命令均在仓库根目录执行；任何命令报错，先处理错误，不继续后面的训练步骤。
 
 将审核页面导出的 `human-reviewed-v1.jsonl` 单独上传到 `data/reviews/human-reviewed-v1.jsonl`。这份个人审核文件默认被 Git 忽略，不随公开仓库发布；它必须来自你实际完成的审核，不修改 assistant 记录来冒充人工签核。
 
 zip 是完整源码快照，不含 Git 历史；解压后进入 `minicpm5-sft`，用 `cat SOURCE_COMMIT` 查看版本。实验代码支持该形式，并记录源码 hash。
 
-## 2. 建立独立 Python 环境
+## 2. 用现有 Miniconda3 建立独立环境
 
-下面按 Linux、Python 3.11、NVIDIA 驱动兼容 CUDA 12.6 的服务器写。先用 `nvidia-smi` 确认实际 GPU、空闲显存和驱动。若驱动不兼容，先由服务器管理员确定可用 PyTorch CUDA 组合，不改宿主驱动来迁就此命令。
+下面按 Linux Bash、现有 Miniconda3、Python 3.11、NVIDIA 驱动兼容 CUDA 12.6 的服务器写。Conda 创建独立的 `minicpm5-sft` 环境，训练依赖统一由该环境的 `python -m pip` 安装。先用 `nvidia-smi` 确认实际 GPU、空闲显存和驱动。若驱动不兼容，先由服务器管理员确定可用 PyTorch CUDA 组合。
 
 ```bash
 nvidia-smi
-python3.11 -m venv .venv
-source .venv/bin/activate
+conda --version
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda create -n minicpm5-sft python=3.11 pip -y
+conda activate minicpm5-sft
+python -c "import sys; print(sys.executable)"
 python -m pip install --upgrade pip
 python -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
 python -m pip install -r requirements-train.txt
 python -m pip install -e .
 python -m pip check
-python -c "import torch; print(torch.__version__, torch.cuda.get_device_name(0)); assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()"
+python -c "import torch; assert torch.cuda.is_available(), 'CUDA unavailable'; assert torch.cuda.is_bf16_supported(), 'BF16 unavailable'; print(torch.__version__, torch.version.cuda, torch.cuda.get_device_name(0))"
 mkdir -p runs/environment
+conda list --explicit > runs/environment/conda-explicit.txt
 python -m pip freeze > runs/environment/pip-freeze.txt
+nvidia-smi > runs/environment/nvidia-smi.txt
 ```
 
-直接依赖已固定；`requirements-train.txt` 不是完整的传递依赖锁。保存 `pip-freeze.txt`、驱动信息和每次实验 `run.json`，才能复现实际云端环境。这里的 GPU 环境尚未在你的服务器验证。
+如果 `conda` 未进入 PATH，先执行 `source /实际安装路径/miniconda3/etc/profile.d/conda.sh`，其中路径替换为服务器实际位置。若已建好同名环境，跳过 create，直接 activate；每次新开终端同样先加载 conda.sh 并激活环境。`sys.executable` 应指向该环境。无需再嵌套创建 venv，也无需为本 MVP 另装 Conda 的 cudatoolkit：这里使用的 PyTorch CUDA wheel 会安装所需用户态运行库，NVIDIA 驱动由服务器提供。
+
+直接依赖已固定；`requirements-train.txt` 不是完整的传递依赖锁。`conda-explicit.txt` 只记录 Conda 包，需同时保留 `pip-freeze.txt`、驱动信息和每次实验 `run.json`。服务器上的 Conda 安装与 GPU 运行尚未实际验证。
 
 ## 3. 验证数据并下载固定基线
 
