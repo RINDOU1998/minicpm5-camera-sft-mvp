@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "status": "rules_passed_semantic_review_pending",
+  "count": 300,
+  "splits": {
+    "train": 240,
+    "dev": 60
+  },
+  "files": {
+    "candidates.jsonl": "4ac0fddfd577d0868a2da2cce7e2d238208e0403487090fc8c707151294f4153",
+    "train.jsonl": "0b93a9d608c4be160fadaba8f273f733172d2c5c1cda9998201cb5f99e9aa584",
+    "dev.jsonl": "1b1046ba9f9a843ebc38ea92cc6b10f2e0cff281c98083d1e119d51d335992e2",
+    "validation.json": "0001abbf8d2414ad97aba0cba85698de76c87d66e849506e32f7096f1184f3dd",
+    "review.jsonl": "35a1f94477e7c6fe5712b05726b2f8b2817dba90e015f85dc11e2f7b9c6913b1"
+  },
+  "sources": {
+    "contracts/camera_v1.json": "b8540014da8763b0b69ea60347bb3f2517cf95754e01fbddab0022aa000e183a",
+    "data/frozen/cases50.json": "6ec7ca58fd67155c8b5d961d374f97179ae6ece44d450acec746e6735c4247e9",
+    "data/seeds/seed_bank.json": "183eca08a8acb24ea7e318e2f5fc08027c63570fd630e88f9da176474b05a3f6",
+    "configs/base.json": "e0e71b50c5d64518863771ace44909591085e98f971ee25550546d31a15da52a"
+  },
+  "provenance": "75 agent-authored seed records expanded into 300 controlled trajectories; no external teacher requests",
+  "limitations": [
+    "not 300 independent semantic tasks",
+    "no blind test or real hardware",
+    "not a 95-percent acceptance dataset"
+  ]
+}

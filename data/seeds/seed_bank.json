@@ -1,0 +1,1637 @@
+{
+  "provenance": "Authored by Codex in this project; deterministic controlled expansion; no external teacher API calls.",
+  "semantic_review": "Author-reviewed seed intentions only; independent sample-level semantic review pending.",
+  "surface_forms": [
+    "{query}",
+    "本次请求如下：{query}",
+    "请严格按以下要求处理：{query}",
+    "我这次的具体需求是：{query}"
+  ],
+  "lexicon": {
+    "camera": {
+      "front": "前置镜头",
+      "rear": "后置镜头"
+    },
+    "format": {
+      "jpeg": "JPEG格式",
+      "png": "PNG格式"
+    },
+    "quality": {
+      "standard": "标准画质",
+      "high": "高画质"
+    },
+    "detail": {
+      "connectivity": "连接状态",
+      "settings": "当前设置",
+      "health": "健康状态"
+    },
+    "target": {
+      "person": "人员",
+      "vehicle": "车辆",
+      "pet": "宠物",
+      "package": "包裹",
+      "bicycle": "自行车"
+    },
+    "region": {
+      "full": "整个画面",
+      "left": "画面左侧",
+      "right": "画面右侧"
+    },
+    "output": {
+      "presence": "是否存在",
+      "boxes": "边界框位置"
+    },
+    "window": {
+      "10m": "过去10分钟",
+      "1h": "过去1小时",
+      "24h": "过去24小时"
+    },
+    "limit": {
+      "5": "至多5条",
+      "10": "至多10条",
+      "20": "至多20条"
+    },
+    "duration": {
+      "10s": "10秒",
+      "30s": "30秒",
+      "60s": "60秒"
+    },
+    "resolution": {
+      "720p": "720p分辨率",
+      "1080p": "1080p分辨率"
+    },
+    "audio": {
+      "on": "开启声音",
+      "off": "关闭声音"
+    },
+    "profile": {
+      "auto": "自动成像预设",
+      "daylight": "日光成像预设",
+      "night": "夜间成像预设",
+      "backlight": "逆光成像预设",
+      "low_motion": "低运动成像预设"
+    },
+    "exposure": {
+      "low": "降低曝光补偿",
+      "neutral": "中性曝光补偿",
+      "high": "提高曝光补偿"
+    },
+    "mode_privacy": {
+      "enabled": "启用隐私遮蔽",
+      "disabled": "禁用隐私遮蔽"
+    },
+    "mode_monitor": {
+      "once": "单次监控",
+      "continuous": "持续监控"
+    },
+    "notification": {
+      "on_first": "仅首次出现时通知",
+      "on_each_window": "每个窗口出现时通知"
+    },
+    "scope": {
+      "current": "当前唯一监控任务",
+      "all": "所有监控任务"
+    }
+  },
+  "seeds": [
+    {
+      "seed_id": "camera_capture-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请让后置镜头保存一幅高画质的静态照片，文件采用PNG格式。",
+      "tool": "camera_capture",
+      "args": {
+        "camera": "rear",
+        "quality": "high",
+        "format": "png"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "quality": "高画质",
+        "format": "PNG格式"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "photo_id": "photo-1"
+      },
+      "answer": "照片已保存，编号 photo-1。"
+    },
+    {
+      "seed_id": "camera_capture-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请让前置镜头保存一幅标准画质的静态照片，文件采用PNG格式。",
+      "tool": "camera_capture",
+      "args": {
+        "camera": "front",
+        "quality": "standard",
+        "format": "png"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "quality": "标准画质",
+        "format": "PNG格式"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "photo_id": "photo-2"
+      },
+      "answer": "照片已保存，编号 photo-2。"
+    },
+    {
+      "seed_id": "camera_capture-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请让后置镜头保存一幅标准画质的静态照片，文件采用JPEG格式。",
+      "tool": "camera_capture",
+      "args": {
+        "camera": "rear",
+        "quality": "standard",
+        "format": "jpeg"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "quality": "标准画质",
+        "format": "JPEG格式"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "photo_id": "photo-3"
+      },
+      "answer": "照片已保存，编号 photo-3。"
+    },
+    {
+      "seed_id": "camera_capture-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请让前置镜头保存一幅高画质的静态照片，文件采用JPEG格式。",
+      "tool": "camera_capture",
+      "args": {
+        "camera": "front",
+        "quality": "high",
+        "format": "jpeg"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "quality": "高画质",
+        "format": "JPEG格式"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "photo_id": "photo-4"
+      },
+      "answer": "照片已保存，编号 photo-4。"
+    },
+    {
+      "seed_id": "camera_capture-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "请让后置镜头保存一幅高画质的静态照片，文件采用JPEG格式。",
+      "tool": "camera_capture",
+      "args": {
+        "camera": "rear",
+        "quality": "high",
+        "format": "jpeg"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "quality": "高画质",
+        "format": "JPEG格式"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "camera_status-01",
+      "category": "supported",
+      "split": "train",
+      "query": "我想核对后置镜头的当前设置，请读取这一项信息。",
+      "tool": "camera_status",
+      "args": {
+        "camera": "rear",
+        "detail": "settings"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "detail": "当前设置"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "detail": "settings",
+        "value": "normal"
+      },
+      "answer": "所查询的状态正常。"
+    },
+    {
+      "seed_id": "camera_status-02",
+      "category": "supported",
+      "split": "train",
+      "query": "我想核对前置镜头的健康状态，请读取这一项信息。",
+      "tool": "camera_status",
+      "args": {
+        "camera": "front",
+        "detail": "health"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "detail": "健康状态"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "detail": "health",
+        "value": "normal"
+      },
+      "answer": "所查询的状态正常。"
+    },
+    {
+      "seed_id": "camera_status-03",
+      "category": "supported",
+      "split": "train",
+      "query": "我想核对后置镜头的连接状态，请读取这一项信息。",
+      "tool": "camera_status",
+      "args": {
+        "camera": "rear",
+        "detail": "connectivity"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "detail": "连接状态"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "detail": "connectivity",
+        "value": "normal"
+      },
+      "answer": "所查询的状态正常。"
+    },
+    {
+      "seed_id": "camera_status-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "我想核对前置镜头的当前设置，请读取这一项信息。",
+      "tool": "camera_status",
+      "args": {
+        "camera": "front",
+        "detail": "settings"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "detail": "当前设置"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "detail": "settings",
+        "value": "normal"
+      },
+      "answer": "所查询的状态正常。"
+    },
+    {
+      "seed_id": "camera_status-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "我想核对后置镜头的健康状态，请读取这一项信息。",
+      "tool": "camera_status",
+      "args": {
+        "camera": "rear",
+        "detail": "health"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "detail": "健康状态"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "count_objects-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请给出后置镜头当前画面右侧中车辆的数目。",
+      "tool": "count_objects",
+      "args": {
+        "camera": "rear",
+        "target": "vehicle",
+        "region": "right"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "车辆",
+        "region": "画面右侧"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "count": 2
+      },
+      "answer": "当前指定区域内共有2个目标。"
+    },
+    {
+      "seed_id": "count_objects-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请给出前置镜头当前画面左侧中宠物的数目。",
+      "tool": "count_objects",
+      "args": {
+        "camera": "front",
+        "target": "pet",
+        "region": "left"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "宠物",
+        "region": "画面左侧"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "count": 3
+      },
+      "answer": "当前指定区域内共有3个目标。"
+    },
+    {
+      "seed_id": "count_objects-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请给出后置镜头当前画面左侧中人员的数目。",
+      "tool": "count_objects",
+      "args": {
+        "camera": "rear",
+        "target": "person",
+        "region": "left"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "人员",
+        "region": "画面左侧"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "count": 4
+      },
+      "answer": "当前指定区域内共有4个目标。"
+    },
+    {
+      "seed_id": "count_objects-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请给出前置镜头当前整个画面中车辆的数目。",
+      "tool": "count_objects",
+      "args": {
+        "camera": "front",
+        "target": "vehicle",
+        "region": "full"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "车辆",
+        "region": "整个画面"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "count": 5
+      },
+      "answer": "当前指定区域内共有5个目标。"
+    },
+    {
+      "seed_id": "count_objects-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "请给出后置镜头当前整个画面中宠物的数目。",
+      "tool": "count_objects",
+      "args": {
+        "camera": "rear",
+        "target": "pet",
+        "region": "full"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "宠物",
+        "region": "整个画面"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "detect_objects-01",
+      "category": "supported",
+      "split": "train",
+      "query": "对于后置镜头现在这一帧的包裹，请返回边界框位置。",
+      "tool": "detect_objects",
+      "args": {
+        "camera": "rear",
+        "target": "package",
+        "output": "boxes"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "包裹",
+        "output": "边界框位置"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "boxes": [
+          [
+            10,
+            20,
+            50,
+            80
+          ]
+        ]
+      },
+      "answer": "检测到目标，边界框为[10,20,50,80]。"
+    },
+    {
+      "seed_id": "detect_objects-02",
+      "category": "supported",
+      "split": "train",
+      "query": "对于前置镜头现在这一帧的自行车，请返回是否存在。",
+      "tool": "detect_objects",
+      "args": {
+        "camera": "front",
+        "target": "bicycle",
+        "output": "presence"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "自行车",
+        "output": "是否存在"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "present": false
+      },
+      "answer": "当前画面中未检测到指定目标。"
+    },
+    {
+      "seed_id": "detect_objects-03",
+      "category": "supported",
+      "split": "train",
+      "query": "对于后置镜头现在这一帧的宠物，请返回是否存在。",
+      "tool": "detect_objects",
+      "args": {
+        "camera": "rear",
+        "target": "pet",
+        "output": "presence"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "宠物",
+        "output": "是否存在"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "present": false
+      },
+      "answer": "当前画面中未检测到指定目标。"
+    },
+    {
+      "seed_id": "detect_objects-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "对于前置镜头现在这一帧的车辆，请返回边界框位置。",
+      "tool": "detect_objects",
+      "args": {
+        "camera": "front",
+        "target": "vehicle",
+        "output": "boxes"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "车辆",
+        "output": "边界框位置"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "boxes": [
+          [
+            10,
+            20,
+            50,
+            80
+          ]
+        ]
+      },
+      "answer": "检测到目标，边界框为[10,20,50,80]。"
+    },
+    {
+      "seed_id": "detect_objects-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "对于后置镜头现在这一帧的人员，请返回边界框位置。",
+      "tool": "detect_objects",
+      "args": {
+        "camera": "rear",
+        "target": "person",
+        "output": "boxes"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "人员",
+        "output": "边界框位置"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "list_events-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请检索后置镜头在过去24小时留下的宠物事件记录，返回至多20条。",
+      "tool": "list_events",
+      "args": {
+        "camera": "rear",
+        "target": "pet",
+        "window": "24h",
+        "limit": "20"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "宠物",
+        "window": "过去24小时",
+        "limit": "至多20条"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "events": []
+      },
+      "answer": "指定时间范围内没有符合条件的历史事件。"
+    },
+    {
+      "seed_id": "list_events-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请检索前置镜头在过去10分钟留下的车辆事件记录，返回至多5条。",
+      "tool": "list_events",
+      "args": {
+        "camera": "front",
+        "target": "vehicle",
+        "window": "10m",
+        "limit": "5"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "车辆",
+        "window": "过去10分钟",
+        "limit": "至多5条"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "events": []
+      },
+      "answer": "指定时间范围内没有符合条件的历史事件。"
+    },
+    {
+      "seed_id": "list_events-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请检索后置镜头在过去1小时留下的人员事件记录，返回至多10条。",
+      "tool": "list_events",
+      "args": {
+        "camera": "rear",
+        "target": "person",
+        "window": "1h",
+        "limit": "10"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "人员",
+        "window": "过去1小时",
+        "limit": "至多10条"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "events": []
+      },
+      "answer": "指定时间范围内没有符合条件的历史事件。"
+    },
+    {
+      "seed_id": "list_events-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请检索前置镜头在过去1小时留下的宠物事件记录，返回至多20条。",
+      "tool": "list_events",
+      "args": {
+        "camera": "front",
+        "target": "pet",
+        "window": "1h",
+        "limit": "20"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "宠物",
+        "window": "过去1小时",
+        "limit": "至多20条"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "events": []
+      },
+      "answer": "指定时间范围内没有符合条件的历史事件。"
+    },
+    {
+      "seed_id": "list_events-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "请检索后置镜头在过去24小时留下的车辆事件记录，返回至多5条。",
+      "tool": "list_events",
+      "args": {
+        "camera": "rear",
+        "target": "vehicle",
+        "window": "24h",
+        "limit": "5"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "车辆",
+        "window": "过去24小时",
+        "limit": "至多5条"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "record_clip-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请用后置镜头录一段视频：总长度60秒，1080p分辨率，关闭声音。",
+      "tool": "record_clip",
+      "args": {
+        "camera": "rear",
+        "duration": "60s",
+        "resolution": "1080p",
+        "audio": "off"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "duration": "60秒",
+        "resolution": "1080p分辨率",
+        "audio": "关闭声音"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "clip_id": "clip-1"
+      },
+      "answer": "录像已保存，编号 clip-1。"
+    },
+    {
+      "seed_id": "record_clip-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请用前置镜头录一段视频：总长度10秒，720p分辨率，开启声音。",
+      "tool": "record_clip",
+      "args": {
+        "camera": "front",
+        "duration": "10s",
+        "resolution": "720p",
+        "audio": "on"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "duration": "10秒",
+        "resolution": "720p分辨率",
+        "audio": "开启声音"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "clip_id": "clip-2"
+      },
+      "answer": "录像已保存，编号 clip-2。"
+    },
+    {
+      "seed_id": "record_clip-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请用后置镜头录一段视频：总长度30秒，720p分辨率，关闭声音。",
+      "tool": "record_clip",
+      "args": {
+        "camera": "rear",
+        "duration": "30s",
+        "resolution": "720p",
+        "audio": "off"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "duration": "30秒",
+        "resolution": "720p分辨率",
+        "audio": "关闭声音"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "clip_id": "clip-3"
+      },
+      "answer": "录像已保存，编号 clip-3。"
+    },
+    {
+      "seed_id": "record_clip-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请用前置镜头录一段视频：总长度60秒，1080p分辨率，开启声音。",
+      "tool": "record_clip",
+      "args": {
+        "camera": "front",
+        "duration": "60s",
+        "resolution": "1080p",
+        "audio": "on"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "duration": "60秒",
+        "resolution": "1080p分辨率",
+        "audio": "开启声音"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "clip_id": "clip-4"
+      },
+      "answer": "录像已保存，编号 clip-4。"
+    },
+    {
+      "seed_id": "record_clip-05",
+      "category": "tool_failure",
+      "split": "dev",
+      "query": "请用后置镜头录一段视频：总长度10秒，1080p分辨率，开启声音。",
+      "tool": "record_clip",
+      "args": {
+        "camera": "rear",
+        "duration": "10s",
+        "resolution": "1080p",
+        "audio": "on"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "duration": "10秒",
+        "resolution": "1080p分辨率",
+        "audio": "开启声音"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "set_image_profile-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请将后置镜头调整为逆光成像预设，同时设为提高曝光补偿，这是一次成像设置操作。",
+      "tool": "set_image_profile",
+      "args": {
+        "camera": "rear",
+        "profile": "backlight",
+        "exposure": "high"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "profile": "逆光成像预设",
+        "exposure": "提高曝光补偿"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "profile": "backlight",
+        "exposure": "high"
+      },
+      "answer": "成像预设与曝光补偿已按要求更新。"
+    },
+    {
+      "seed_id": "set_image_profile-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请将前置镜头调整为低运动成像预设，同时设为中性曝光补偿，这是一次成像设置操作。",
+      "tool": "set_image_profile",
+      "args": {
+        "camera": "front",
+        "profile": "low_motion",
+        "exposure": "neutral"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "profile": "低运动成像预设",
+        "exposure": "中性曝光补偿"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "profile": "low_motion",
+        "exposure": "neutral"
+      },
+      "answer": "成像预设与曝光补偿已按要求更新。"
+    },
+    {
+      "seed_id": "set_image_profile-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请将后置镜头调整为日光成像预设，同时设为降低曝光补偿，这是一次成像设置操作。",
+      "tool": "set_image_profile",
+      "args": {
+        "camera": "rear",
+        "profile": "daylight",
+        "exposure": "low"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "profile": "日光成像预设",
+        "exposure": "降低曝光补偿"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "profile": "daylight",
+        "exposure": "low"
+      },
+      "answer": "成像预设与曝光补偿已按要求更新。"
+    },
+    {
+      "seed_id": "set_image_profile-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请将前置镜头调整为自动成像预设，同时设为提高曝光补偿，这是一次成像设置操作。",
+      "tool": "set_image_profile",
+      "args": {
+        "camera": "front",
+        "profile": "auto",
+        "exposure": "high"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "profile": "自动成像预设",
+        "exposure": "提高曝光补偿"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "profile": "auto",
+        "exposure": "high"
+      },
+      "answer": "成像预设与曝光补偿已按要求更新。"
+    },
+    {
+      "seed_id": "set_image_profile-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "请将后置镜头调整为夜间成像预设，同时设为中性曝光补偿，这是一次成像设置操作。",
+      "tool": "set_image_profile",
+      "args": {
+        "camera": "rear",
+        "profile": "night",
+        "exposure": "neutral"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "profile": "夜间成像预设",
+        "exposure": "中性曝光补偿"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "set_privacy-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请对后置镜头启用隐私遮蔽；本次只调整这一项隐私设置。",
+      "tool": "set_privacy",
+      "args": {
+        "camera": "rear",
+        "mode": "enabled"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "mode": "启用隐私遮蔽"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "mode": "enabled"
+      },
+      "answer": "隐私遮蔽已开启。"
+    },
+    {
+      "seed_id": "set_privacy-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请对前置镜头禁用隐私遮蔽；本次只调整这一项隐私设置。",
+      "tool": "set_privacy",
+      "args": {
+        "camera": "front",
+        "mode": "disabled"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "mode": "禁用隐私遮蔽"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "mode": "disabled"
+      },
+      "answer": "隐私遮蔽已关闭。"
+    },
+    {
+      "seed_id": "set_privacy-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请对后置镜头启用隐私遮蔽；本次只调整这一项隐私设置。不涉及停止监控。",
+      "tool": "set_privacy",
+      "args": {
+        "camera": "rear",
+        "mode": "enabled"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "mode": "启用隐私遮蔽"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "mode": "enabled"
+      },
+      "answer": "隐私遮蔽已开启。"
+    },
+    {
+      "seed_id": "set_privacy-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请对后置镜头禁用隐私遮蔽；本次只调整这一项隐私设置。",
+      "tool": "set_privacy",
+      "args": {
+        "camera": "rear",
+        "mode": "disabled"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "mode": "禁用隐私遮蔽"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "mode": "disabled"
+      },
+      "answer": "隐私遮蔽已关闭。"
+    },
+    {
+      "seed_id": "set_privacy-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "请对前置镜头启用隐私遮蔽；本次只调整这一项隐私设置。",
+      "tool": "set_privacy",
+      "args": {
+        "camera": "front",
+        "mode": "enabled"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "mode": "启用隐私遮蔽"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "start_monitor-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请在后置镜头对车辆启动持续监控，每个检测窗口60秒，每个窗口出现时通知。",
+      "tool": "start_monitor",
+      "args": {
+        "camera": "rear",
+        "target": "vehicle",
+        "duration": "60s",
+        "mode": "continuous",
+        "notification": "on_each_window"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "车辆",
+        "duration": "60秒",
+        "mode": "持续监控",
+        "notification": "每个窗口出现时通知"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "task_id": "task-1",
+        "state": "running"
+      },
+      "answer": "监控任务 task-1 已启动。"
+    },
+    {
+      "seed_id": "start_monitor-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请在前置镜头对宠物启动单次监控，总运行时长30秒，仅首次出现时通知。",
+      "tool": "start_monitor",
+      "args": {
+        "camera": "front",
+        "target": "pet",
+        "duration": "30s",
+        "mode": "once",
+        "notification": "on_first"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "宠物",
+        "duration": "30秒",
+        "mode": "单次监控",
+        "notification": "仅首次出现时通知"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "task_id": "task-2",
+        "state": "running"
+      },
+      "answer": "监控任务 task-2 已启动。"
+    },
+    {
+      "seed_id": "start_monitor-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请在后置镜头对人员启动持续监控，每个检测窗口10秒，仅首次出现时通知。",
+      "tool": "start_monitor",
+      "args": {
+        "camera": "rear",
+        "target": "person",
+        "duration": "10s",
+        "mode": "continuous",
+        "notification": "on_first"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "人员",
+        "duration": "10秒",
+        "mode": "持续监控",
+        "notification": "仅首次出现时通知"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "task_id": "task-3",
+        "state": "running"
+      },
+      "answer": "监控任务 task-3 已启动。"
+    },
+    {
+      "seed_id": "start_monitor-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请在前置镜头对车辆启动持续监控，每个检测窗口30秒，每个窗口出现时通知。",
+      "tool": "start_monitor",
+      "args": {
+        "camera": "front",
+        "target": "vehicle",
+        "duration": "30s",
+        "mode": "continuous",
+        "notification": "on_each_window"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "target": "车辆",
+        "duration": "30秒",
+        "mode": "持续监控",
+        "notification": "每个窗口出现时通知"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": true,
+        "task_id": "task-4",
+        "state": "running"
+      },
+      "answer": "监控任务 task-4 已启动。"
+    },
+    {
+      "seed_id": "start_monitor-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "请在后置镜头对宠物启动单次监控，总运行时长60秒，仅首次出现时通知。",
+      "tool": "start_monitor",
+      "args": {
+        "camera": "rear",
+        "target": "pet",
+        "duration": "60s",
+        "mode": "once",
+        "notification": "on_first"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "target": "宠物",
+        "duration": "60秒",
+        "mode": "单次监控",
+        "notification": "仅首次出现时通知"
+      },
+      "previous_tool_result": null,
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "stop_monitor-01",
+      "category": "supported",
+      "split": "train",
+      "query": "请结束后置镜头的所有监控任务，这次不操作录像。",
+      "tool": "stop_monitor",
+      "args": {
+        "camera": "rear",
+        "scope": "all"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "scope": "所有监控任务"
+      },
+      "previous_tool_result": {
+        "tool_id": "start_monitor",
+        "status": "ok",
+        "active_monitors": [
+          {
+            "id": "fixture-task",
+            "camera": "rear"
+          }
+        ]
+      },
+      "result": {
+        "ok": true,
+        "stopped_ids": [
+          "fixture-task"
+        ]
+      },
+      "answer": "给定的监控任务已停止。"
+    },
+    {
+      "seed_id": "stop_monitor-02",
+      "category": "supported",
+      "split": "train",
+      "query": "请结束前置镜头的当前唯一监控任务，这次不操作录像。",
+      "tool": "stop_monitor",
+      "args": {
+        "camera": "front",
+        "scope": "current"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "scope": "当前唯一监控任务"
+      },
+      "previous_tool_result": {
+        "tool_id": "start_monitor",
+        "status": "ok",
+        "active_monitors": [
+          {
+            "id": "fixture-task",
+            "camera": "front"
+          }
+        ]
+      },
+      "result": {
+        "ok": true,
+        "stopped_ids": [
+          "fixture-task"
+        ]
+      },
+      "answer": "给定的监控任务已停止。"
+    },
+    {
+      "seed_id": "stop_monitor-03",
+      "category": "supported",
+      "split": "train",
+      "query": "请结束后置镜头的所有监控任务，这次不操作录像。只处理给定任务。",
+      "tool": "stop_monitor",
+      "args": {
+        "camera": "rear",
+        "scope": "all"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "scope": "所有监控任务"
+      },
+      "previous_tool_result": {
+        "tool_id": "start_monitor",
+        "status": "ok",
+        "active_monitors": [
+          {
+            "id": "fixture-task",
+            "camera": "rear"
+          }
+        ]
+      },
+      "result": {
+        "ok": true,
+        "stopped_ids": [
+          "fixture-task"
+        ]
+      },
+      "answer": "给定的监控任务已停止。"
+    },
+    {
+      "seed_id": "stop_monitor-04",
+      "category": "supported",
+      "split": "dev",
+      "query": "请结束后置镜头的当前唯一监控任务，这次不操作录像。",
+      "tool": "stop_monitor",
+      "args": {
+        "camera": "rear",
+        "scope": "current"
+      },
+      "evidence": {
+        "camera": "后置镜头",
+        "scope": "当前唯一监控任务"
+      },
+      "previous_tool_result": {
+        "tool_id": "start_monitor",
+        "status": "ok",
+        "active_monitors": [
+          {
+            "id": "fixture-task",
+            "camera": "rear"
+          }
+        ]
+      },
+      "result": {
+        "ok": true,
+        "stopped_ids": [
+          "fixture-task"
+        ]
+      },
+      "answer": "给定的监控任务已停止。"
+    },
+    {
+      "seed_id": "stop_monitor-05",
+      "category": "tool_failure",
+      "split": "train",
+      "query": "请结束前置镜头的所有监控任务，这次不操作录像。",
+      "tool": "stop_monitor",
+      "args": {
+        "camera": "front",
+        "scope": "all"
+      },
+      "evidence": {
+        "camera": "前置镜头",
+        "scope": "所有监控任务"
+      },
+      "previous_tool_result": {
+        "tool_id": "start_monitor",
+        "status": "ok",
+        "active_monitors": [
+          {
+            "id": "fixture-task",
+            "camera": "front"
+          }
+        ]
+      },
+      "result": {
+        "ok": false,
+        "error": "device_unavailable"
+      },
+      "answer": "设备暂不可用，本次操作未完成。"
+    },
+    {
+      "seed_id": "no_tool-01",
+      "category": "no_tool",
+      "split": "train",
+      "query": "仅作知识问答：请解释镜头焦距与视角的大致关系。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "一般来说，焦距越短视角越宽，焦距越长视角越窄。"
+    },
+    {
+      "seed_id": "no_tool-02",
+      "category": "no_tool",
+      "split": "train",
+      "query": "这是翻译练习，请把“隐私保护”译成英语，不执行设备操作。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "“隐私保护”可以译为 privacy protection。"
+    },
+    {
+      "seed_id": "no_tool-03",
+      "category": "no_tool",
+      "split": "train",
+      "query": "只做算术题：7乘以8等于多少？",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "7乘以8等于56。"
+    },
+    {
+      "seed_id": "no_tool-04",
+      "category": "no_tool",
+      "split": "train",
+      "query": "我正在写说明书，请用一句话解释视频帧率。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "视频帧率表示每秒显示或记录的画面帧数。"
+    },
+    {
+      "seed_id": "no_tool-05",
+      "category": "no_tool",
+      "split": "train",
+      "query": "请把“请等待”改写得更礼貌，这不是摄像头操作请求。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "请您稍候片刻。"
+    },
+    {
+      "seed_id": "no_tool-06",
+      "category": "no_tool",
+      "split": "train",
+      "query": "请按从小到大列出数字9、2、6。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "2、6、9。"
+    },
+    {
+      "seed_id": "no_tool-07",
+      "category": "no_tool",
+      "split": "train",
+      "query": "请说明PNG是否支持透明通道，我只需要知识解答。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "PNG支持透明通道。"
+    },
+    {
+      "seed_id": "no_tool-08",
+      "category": "no_tool",
+      "split": "dev",
+      "query": "只做文本判断：“镜头”这个词一共有几个汉字？",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "“镜头”共有两个汉字。"
+    },
+    {
+      "seed_id": "unsupported-01",
+      "category": "unsupported",
+      "split": "train",
+      "query": "请把后置镜头的照片以TIFF格式保存，画质选择标准。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前拍照工具不支持TIFF格式，可选择JPEG或PNG。"
+    },
+    {
+      "seed_id": "unsupported-02",
+      "category": "unsupported",
+      "split": "train",
+      "query": "请将前置镜头的视频流直接推送到一个RTSP地址。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前工具没有RTSP推流能力，无法执行该操作。"
+    },
+    {
+      "seed_id": "unsupported-03",
+      "category": "unsupported",
+      "split": "train",
+      "query": "请让后置镜头录制45秒视频，1080p，声音关闭。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前录像时长仅支持10秒、30秒或60秒，无法直接录制45秒。"
+    },
+    {
+      "seed_id": "unsupported-04",
+      "category": "unsupported",
+      "split": "train",
+      "query": "请在前置镜头的画面中识别每个人的姓名。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前工具无法识别人的姓名。"
+    },
+    {
+      "seed_id": "unsupported-05",
+      "category": "unsupported",
+      "split": "train",
+      "query": "请删除后置镜头昨天的全部录像文件。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前工具没有删除录像文件的能力。"
+    },
+    {
+      "seed_id": "unsupported-06",
+      "category": "unsupported",
+      "split": "train",
+      "query": "请将前置镜头的焦距设置为35毫米。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前工具没有焦距调节能力。"
+    },
+    {
+      "seed_id": "unsupported-07",
+      "category": "unsupported",
+      "split": "train",
+      "query": "请查询后置镜头过去7天的宠物事件，最多返回5条。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前事件查询不支持过去7天，可选择10分钟、1小时或24小时。"
+    },
+    {
+      "seed_id": "unsupported-08",
+      "category": "unsupported",
+      "split": "dev",
+      "query": "请用后置镜头统计当前整个画面里的椅子数量。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前计数工具不支持椅子类别。"
+    },
+    {
+      "seed_id": "clarification_required-01",
+      "category": "clarification_required",
+      "split": "train",
+      "query": "请用后置镜头保存PNG照片。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "请说明照片需要标准画质还是高画质。"
+    },
+    {
+      "seed_id": "clarification_required-02",
+      "category": "clarification_required",
+      "split": "train",
+      "query": "请读取前置镜头的状态。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "请说明要查询连接状态、当前设置还是健康状态。"
+    },
+    {
+      "seed_id": "clarification_required-03",
+      "category": "clarification_required",
+      "split": "train",
+      "query": "请统计后置镜头这一帧的车辆数量。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "请说明统计整个画面、左侧还是右侧。"
+    },
+    {
+      "seed_id": "clarification_required-04",
+      "category": "clarification_required",
+      "split": "train",
+      "query": "请用前置镜头录制30秒视频，采用1080p分辨率。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "请说明录像是否开启声音。"
+    },
+    {
+      "seed_id": "clarification_required-05",
+      "category": "clarification_required",
+      "split": "train",
+      "query": "请把后置镜头设置成逆光成像预设。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "请说明曝光补偿要降低、保持中性还是提高。"
+    },
+    {
+      "seed_id": "clarification_required-06",
+      "category": "clarification_required",
+      "split": "dev",
+      "query": "请停止前置镜头当前的监控任务，暂时没有任务状态信息。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "请先提供当前监控任务信息，以确认需要停止的唯一任务。"
+    },
+    {
+      "seed_id": "multi_action-01",
+      "category": "multi_action",
+      "split": "train",
+      "query": "请用后置镜头拍高画质PNG照片，然后读取前置镜头的健康状态。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前一次请求只处理一个独立操作，请拆分拍照和状态查询。"
+    },
+    {
+      "seed_id": "multi_action-02",
+      "category": "multi_action",
+      "split": "train",
+      "query": "请在后置镜头关闭隐私遮蔽，并用前置镜头录10秒720p有声视频。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前一次请求只处理一个独立操作，请分别提出隐私设置和录像请求。"
+    },
+    {
+      "seed_id": "multi_action-03",
+      "category": "multi_action",
+      "split": "dev",
+      "query": "请读取前置镜头的连接状态，再读取后置镜头的当前设置。",
+      "tool": null,
+      "args": {},
+      "evidence": {},
+      "previous_tool_result": null,
+      "result": null,
+      "answer": "当前一次请求只处理一个独立操作，请分别提出两个状态查询。"
+    }
+  ]
+}

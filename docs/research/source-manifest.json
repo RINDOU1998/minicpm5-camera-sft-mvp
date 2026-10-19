@@ -1,0 +1,257 @@
+{
+  "retrieved_date": "2026-10-19",
+  "references": [
+    {
+      "id": "s1",
+      "title": "MiniCPM5 官方微调入口与 LLaMA-Factory 指南",
+      "url": "https://github.com/OpenBMB/MiniCPM/blob/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune/llamafactory.md"
+    },
+    {
+      "id": "s2",
+      "title": "MiniCPM5：ms-swift",
+      "url": "https://github.com/OpenBMB/MiniCPM/blob/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune/ms_swift.md"
+    },
+    {
+      "id": "s3",
+      "title": "MiniCPM5：TRL",
+      "url": "https://github.com/OpenBMB/MiniCPM/blob/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune/trl.md"
+    },
+    {
+      "id": "s4",
+      "title": "MiniCPM5：Unsloth / XTuner",
+      "url": "https://github.com/OpenBMB/MiniCPM/tree/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune"
+    },
+    {
+      "id": "s5",
+      "title": "MiniCPM5-1B 模型卡与固定 revision",
+      "url": "https://huggingface.co/openbmb/MiniCPM5-1B/tree/87179e5c1f455ef22e6223592d2d61351b525bfc"
+    },
+    {
+      "id": "s6",
+      "title": "LLaMA-Factory 模板实现",
+      "url": "https://github.com/hiyouga/LLaMA-Factory/blob/1fded918ac4723ac9966363f51ed4500866c5d1d/src/llamafactory/data/template.py"
+    },
+    {
+      "id": "s7",
+      "title": "LLaMA-Factory 数据规范",
+      "url": "https://github.com/hiyouga/LLaMA-Factory/blob/1fded918ac4723ac9966363f51ed4500866c5d1d/data/README.md"
+    },
+    {
+      "id": "s8",
+      "title": "ToolACE 数据与方法",
+      "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+    },
+    {
+      "id": "s9",
+      "title": "BFCL 官方评测",
+      "url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard"
+    },
+    {
+      "id": "s10",
+      "title": "IFEval 官方实现",
+      "url": "https://github.com/google-research/google-research/tree/master/instruction_following_eval"
+    },
+    {
+      "id": "s11",
+      "title": "C-Eval 官方评测",
+      "url": "https://github.com/hkust-nlp/ceval"
+    },
+    {
+      "id": "s12",
+      "title": "PEFT LoRA 文档",
+      "url": "https://huggingface.co/docs/peft/developer_guides/lora"
+    },
+    {
+      "id": "s13",
+      "title": "pico-minicpm5 转模链路",
+      "url": "https://github.com/GitBubble/pico-minicpm5/blob/df3c4b1de8672f28170deedc653a4e882c2a79e2/README.md"
+    },
+    {
+      "id": "s14",
+      "title": "旧 Camera 发布的契约限制",
+      "url": "https://github.com/GitBubble/pico-minicpm5/blob/df3c4b1de8672f28170deedc653a4e882c2a79e2/release/camera_agent/README.md"
+    }
+  ],
+  "files": [
+    {
+      "file": "sources/additional-sources.json",
+      "sha256": "2ffb90b69ea3f02b176d06cca9a82ae1b4153b64deae081e55a7ddc5c8661e97",
+      "bytes": 1516
+    },
+    {
+      "file": "sources/bfcl-readme.md",
+      "sha256": "c6c95683cce9653788c8b3f3f5002d2f5c27b95a1288544fe82c2a2faf5e12d0",
+      "bytes": 17311
+    },
+    {
+      "file": "sources/ceval-readme.md",
+      "sha256": "f281be45f60cec274a6a6a8f765bdba0b99db99b909358ddff852d7d5daacdc1",
+      "bytes": 13090
+    },
+    {
+      "file": "sources/chat_template.jinja",
+      "sha256": "7451a05cf1e28a79d97d7c0bc951028c0b1915119bf9046acd06a0e3d931f47c",
+      "bytes": 9062
+    },
+    {
+      "file": "sources/docs__deployment__llama_cpp.md",
+      "sha256": "0413d9c3fe8b6ca7a4d736967b6756681426486a0fbb518c844d4d986217527e",
+      "bytes": 3476
+    },
+    {
+      "file": "sources/docs__finetune__llamafactory.md",
+      "sha256": "232644259b7d0d44df237956de79c60e71ffb110aed2aa2aeba92577a34ba856",
+      "bytes": 6065
+    },
+    {
+      "file": "sources/docs__finetune__ms_swift.md",
+      "sha256": "f582e727aedcdbf94ba6703664b7e7f2e6600d79d9ddfc0487bf17eadad7db33",
+      "bytes": 5813
+    },
+    {
+      "file": "sources/docs__finetune__trl.md",
+      "sha256": "a500b452ebcf4d35280d10a84f07f68ee71ec09464ffa0502c6ace10a146e4c1",
+      "bytes": 6925
+    },
+    {
+      "file": "sources/docs__finetune__unsloth.md",
+      "sha256": "7560d456ca0f4eb7123f72a5205154ca683502ba23b9d96f699d9604a8b2ea0e",
+      "bytes": 6259
+    },
+    {
+      "file": "sources/docs__finetune__xtuner.md",
+      "sha256": "6e5d3f0c0357414554dfa2c8186431c3dac2c97a0cc3aeccab1bff360054a293",
+      "bytes": 8717
+    },
+    {
+      "file": "sources/finetune__README.md",
+      "sha256": "02eb2a3ea8bf41765eac24167de13e37a1c5be2ff5a9e93a3cc34836bfdf5adc",
+      "bytes": 2930
+    },
+    {
+      "file": "sources/hf-chat_template_jinja",
+      "sha256": "7451a05cf1e28a79d97d7c0bc951028c0b1915119bf9046acd06a0e3d931f47c",
+      "bytes": 9062
+    },
+    {
+      "file": "sources/hf-config_json",
+      "sha256": "6a6509b646cb3169616c5ffc3196e7ccaf9d4d6bc17b266581d241a31c217714",
+      "bytes": 726
+    },
+    {
+      "file": "sources/hf-model-info.json",
+      "sha256": "d499c1ec6f51b734a06fdafbee5d2926b17a141f26ae488f60984bfdfeda809e",
+      "bytes": 15146
+    },
+    {
+      "file": "sources/hf-README_md",
+      "sha256": "b032e36400dc26ba8d78aa5ad63e4cf8bd17f70bf8551e500335185d8e7d061a",
+      "bytes": 23472
+    },
+    {
+      "file": "sources/hf-tokenizer_config_json",
+      "sha256": "094efb3cf1ff412284cc5945fc99dff58673a912760d04483a04aa1c716f66fd",
+      "bytes": 94416
+    },
+    {
+      "file": "sources/ifeval-readme.md",
+      "sha256": "fef3c44408e4b39837af345095ccce7da798853fd60ea94a1de63afa9d3d67b3",
+      "bytes": 1457
+    },
+    {
+      "file": "sources/lf-commit.json",
+      "sha256": "c614ecef7d44be92e300e84f8e5a143d77e253b6fc0dd99ee93f3076d6567625",
+      "bytes": 9144
+    },
+    {
+      "file": "sources/lf-data-readme.md",
+      "sha256": "ab8669383cc3c6a1b64ed9a48ba5819c74c5d38bac6b7a41615337da543de508",
+      "bytes": 13741
+    },
+    {
+      "file": "sources/lf-data_args.py",
+      "sha256": "b47368334b418b2e30720ae05d90108c2b0d99d7e66d89e72b26dd15dfaf1e7b",
+      "bytes": 8341
+    },
+    {
+      "file": "sources/lf-template.py",
+      "sha256": "25681bdceb0d11e36a55455e293f16cb5c8f3d15b48df63eb1f3bdd863567932",
+      "bytes": 114366
+    },
+    {
+      "file": "sources/lf-tool_utils.py",
+      "sha256": "649714bb40cd46b214178384bf48d1b1d94eedd6cb7aaa09fbe3be1f78f04f48",
+      "bytes": 41237
+    },
+    {
+      "file": "sources/minicpm-commit.txt",
+      "sha256": "e325e94826e5fdacdc2f51842587c47b0071746de912a17c89f3e20322565651",
+      "bytes": 42
+    },
+    {
+      "file": "sources/minicpm-tree.json",
+      "sha256": "de970954bfac2166a7ea91a62e0e1e55dde171c4f8bd0dd35f39f418f10e3141",
+      "bytes": 98853
+    },
+    {
+      "file": "sources/model-card.md",
+      "sha256": "b032e36400dc26ba8d78aa5ad63e4cf8bd17f70bf8551e500335185d8e7d061a",
+      "bytes": 23472
+    },
+    {
+      "file": "sources/model-config.json",
+      "sha256": "6a6509b646cb3169616c5ffc3196e7ccaf9d4d6bc17b266581d241a31c217714",
+      "bytes": 726
+    },
+    {
+      "file": "sources/peft-lora.html",
+      "sha256": "7870baa3434f3bf3cbbffbbf7d40f09410b33531a01f97e787f24417c96ada6a",
+      "bytes": 570406
+    },
+    {
+      "file": "sources/pico-app__camera__camera_contract.json",
+      "sha256": "81fef00fef1506e989bcb51c851bb73a9ea73ba84ff54b578eccc1d14b8b6d29",
+      "bytes": 14408
+    },
+    {
+      "file": "sources/pico-camera-commit.txt",
+      "sha256": "594ef6adfaaf6aac9c70d704b6a46d94273ccaa05590bf55c5afd9ed60a0658e",
+      "bytes": 42
+    },
+    {
+      "file": "sources/pico-camera-tree.json",
+      "sha256": "b971b2d07b8408a55a44ace114ca9a7a874a1c2428c72ff3354460a3c660281c",
+      "bytes": 92110
+    },
+    {
+      "file": "sources/pico-MODEL_PROVENANCE.md",
+      "sha256": "e26554365b676199d357e6561fac24ea498d852c79ccc0bea4214252da60c21d",
+      "bytes": 1079
+    },
+    {
+      "file": "sources/pico-README.md",
+      "sha256": "615b28d7b17c578c7c7db897779af0fe50b7f4c3de06907afafa7917ef8bb8a1",
+      "bytes": 33978
+    },
+    {
+      "file": "sources/pico-release__camera_agent__manifest.json",
+      "sha256": "0252264600053f091d9932e77200133c9e701354b0c882a82e7a4c101553936b",
+      "bytes": 3862
+    },
+    {
+      "file": "sources/pico-release__camera_agent__README.md",
+      "sha256": "b7a7b3ea66087c2215b8fb23fb3e0716909a4afd9c5f806ea621a520d0da00a2",
+      "bytes": 19677
+    },
+    {
+      "file": "sources/README-cn.md",
+      "sha256": "4db7e34179563dc029b5fe8662434e159380506ee5c33401f5b4af9b7225ebdc",
+      "bytes": 77973
+    },
+    {
+      "file": "sources/toolace-card.md",
+      "sha256": "4e82e47712cfdc0bc86b3b0c6b03f5f2f00a1ca54ccfa696276833743c85e460",
+      "bytes": 1873
+    }
+  ]
+}

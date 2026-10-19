@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MiniCPM5-1B Camera Agent微调：数据、训练与验收方案</title><style>
+:root{--bg:#f3f5f8;--ink:#14263b;--muted:#52647a;--line:#dbe3eb;--blue:#205fd1;--teal:#008276;--orange:#aa590c}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 "Segoe UI","Microsoft YaHei",sans-serif}main{max-width:1120px;margin:auto;padding:40px 24px 70px}header{background:#142b49;color:#fff;padding:36px;border-radius:18px}h1{font-size:32px;line-height:1.45;margin:8px 0 18px}h2{font-size:24px;margin:0 0 18px;line-height:1.4}h3{font-size:18px;margin:22px 0 8px}p{margin:10px 0}.eyebrow{color:#b4cff2;font-size:13px;letter-spacing:1px}.lead{font-size:19px;color:#e4eefb}.meta{font-size:13px;color:#b8c9dd}nav{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}nav a{background:white;padding:7px 13px;border:1px solid var(--line);border-radius:30px;color:var(--ink);text-decoration:none;font-size:14px}section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;margin:20px 0}a{color:#205fc0;text-underline-offset:3px;overflow-wrap:anywhere}.tag{display:inline-block;font-size:12px;border-radius:5px;padding:2px 7px;background:#e6f3f1;color:#066c63;margin-right:6px}.proposal{background:#fff0dc;color:#92510c}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:18px;background:#f3f6fb;border-radius:10px}.number{font-size:32px;font-weight:750;line-height:1.2}.small,small{font-size:13px;color:var(--muted)}.callout{border-left:4px solid var(--blue);padding:12px 18px;background:#eef4ff;margin:16px 0}.warning{border-color:#c07a24;background:#fff7ea}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f3f6fa;font-weight:650}td:first-child{font-weight:600}ul,ol{padding-left:24px;margin:10px 0}li{margin:7px 0}pre{background:#13273f;color:#e5effb;padding:18px;border-radius:8px;overflow:auto;font:13px/1.65 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}code{font:0.9em Consolas,monospace;overflow-wrap:anywhere}details{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}summary{cursor:pointer;font-weight:650;color:#255789}.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:18px}.flow div{padding:14px 10px;border-radius:8px;background:#eaf1fd;text-align:center;font-size:14px}.flow b{display:block;color:#205fc0}.barline{display:grid;grid-template-columns:190px 1fr 72px;gap:12px;align-items:center;margin:10px 0;font-size:14px}.track{height:20px;background:#e9eef5;border-radius:5px;overflow:hidden}.bar{height:100%;background:#5f82bc}.bar.good{background:var(--teal)}.bar.bad{background:#bd7953}.source li{font-size:13px;margin-bottom:12px}footer{font-size:13px;color:var(--muted)}@media(max-width:700px){main{padding:16px 12px 40px}header,section{padding:20px}h1{font-size:25px}h2{font-size:21px}.grid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.barline{grid-template-columns:1fr 2fr 60px;font-size:12px}th,td{min-width:115px;padding:9px}.lead{font-size:17px}}@media print{body{background:white}main{max-width:none;padding:0}section{break-inside:avoid}nav{display:none}header{background:white;color:#14263b;border:1px solid #bbb}.lead,.meta,.eyebrow{color:#52647a}details{display:block}a{color:inherit}}
+</style></head><body><main>
+<header><div class="eyebrow">技术调研 · 2026-10-19 · MiniCPM5-1B / Pegasus Camera Agent</div><h1>MiniCPM5-1B Camera Agent微调：数据、训练与验收方案</h1><p class="lead">从官方原版出发，先做非思考模式的 LoRA SFT。用经过验证的完整轨迹学习“何时调用、参数是什么、如何处理结果”，再以独立泛化测试和端侧闭环决定能否发布。</p><p class="meta">本报告给出可执行的实验路线；尚未生产训练集、启动训练或操作开发板。数据规模、超参数和验收阈值为项目建议，不是官方效果承诺。</p></header>
+<nav aria-label="报告目录"><a href="#baseline">1 现状与目标</a><a href="#data">2 数据生产</a><a href="#scale">3 数据规模</a><a href="#training">4 微调选择</a><a href="#evaluation">5 评判标准</a><a href="#delivery">6 完整链路</a><a href="#decisions">7 已确认与待补充</a><a href="#sources">来源</a></nav>
+
+<section id="baseline"><h2>1 · 先把 95% 的目标定义准确</h2>
+<div class="grid"><div class="card"><span class="tag">现有实测</span><p class="number">32 / 50</p><p>FP32、不思考，严格单调用匹配率 64%。若进一步要求不截断，为 31/50。</p></div><div class="card"><span class="tag proposal">目标</span><p class="number">≥48 / 50</p><p>50 条每条占 2 个百分点；超过 95% 至少需 48 条通过，即 96%。</p></div><div class="card"><span class="tag proposal">优先补齐</span><p class="number">12 / 18</p><p>当前 18 条首轮错误中，12 条是本不应调用工具却调用。其余 6 条为漏调、选错、参数错或多调。</p></div></div>
+<p><b>现有 HTML 测的是首轮工具路由与参数，不是真实全链路。</b>它没有执行相机、没有把工具结果回填给模型，也没有评分最终自然语言。不能把 32/50 当作端到端基线，也不能训练后只用同一指标宣称全链路 95%。<a href="#local">[本地证据]</a></p>
+<div class="barline"><span>原版端侧 8K（历史）</span><div class="track"><div class="bar" style="width:60%"></div></div><b>30/50</b></div>
+<div class="barline"><span>原版 FP32 · 不思考</span><div class="track"><div class="bar good" style="width:64%"></div></div><b>32/50</b></div>
+<div class="barline"><span>原版 FP32 · 思考</span><div class="track"><div class="bar" style="width:54%"></div></div><b>27/50</b></div>
+<div class="barline"><span>旧 Camera 微调 · 端侧</span><div class="track"><div class="bar bad" style="width:12%"></div></div><b>6/50</b></div>
+<p class="small">同为完整 50 条首轮评分；云侧历史 Q8_0 只有 47 条，未混入本图。不同部署、权重来源与模板存在差异，本图不构成纯精度或纯微调方法的因果实验。</p>
+<div class="callout"><b>用户已确认双层验收：</b>保留原 50 条作为兼容性回归，要求 ≥48/50，并增加独立测试与真实工具闭环。闭环按“决策 → 工具及参数 → 执行/状态变化 → 结果回填 → 正确最终答复”验收。不需工具的任务必须无副作用且答复正确，不能靠全部拒绝拿分。新增测试规模、切片阈值和时延 SLA 仍是下文建议。</div>
+<p>这 50 条使用 10 个合成工具，含 <code>camera_capture / count_objects / record_clip / set_privacy</code> 等；它们与本机 Host / Pegasus 注册工具不是同一集合。<b>要让全部 50 条做真实执行，先确认硬件和工具实现是否覆盖；未实现的功能不能由微调补出来。</b>模拟器上的完整轨迹可以先评测，但必须另标“模拟闭环”，不能等同实板验收。</p>
+<details><summary>旧 Camera 模型说明了什么，不能说明什么</summary><p>本地记录：原版 30/50，旧 Camera 6/50；后者 42 条额外生成 <code>action</code>、29 条缺必填参数、9 条未知工具名，计数重叠，并有 10 条 HTTP 失败。真实工具冒烟在参数契约检查处失败。</p><p>这证明该发布不适配当前契约，<b>尚不能单独证明“全量 SFT 必然遗忘”</b>。上游当前 Camera 分支也记录训练契约未知，以及另一组工具契约上的额外参数问题。需要旧训练数据、schema、system、原始 HF 权重及转模记录，才能区分契约错配、过拟合、模板错误和转模漂移。本次建议从可追溯的官方原版开始，而不是继续叠加旧 Camera 权重。<a href="#s14">[14]</a></p></details>
+</section>
+
+<section id="data"><h2>2 · 数据生产：强模型负责生成，规则与人负责判真</h2>
+<p>强模型合成数据是可行的，问题在于<strong>是否受真实工具契约约束、是否覆盖拒调与失败、是否被独立验证</strong>。不能把“教师回答得像对的”直接当作 gold，也不应把 50 条改写几千遍再随机切分。ToolACE 的规则验证与模型验证结合可作为方法参考，不照搬其工具或规模。<a href="#s8">[8]</a></p>
+<div class="scroll"><table><thead><tr><th>生产步骤</th><th>具体做法</th><th>通过条件 / 产物</th></tr></thead><tbody>
+<tr><td>① 冻结任务契约</td><td>版本化 system、工具名/描述/schema、缺参策略、历史继承规则、一次请求可执行几步、结果格式和停止条件。生产工具与 50 条合成工具分别有 contract_id。</td><td>一份可执行规范；人工确认边界。50 条原样冻结，不为提高分数更改 gold。</td></tr>
+<tr><td>② 先分组，再生成</td><td>按意图、场景、参数组合、状态轨迹和来源分组，先分配 train/dev/test。每个种子及其所有改写、反事实与多轮派生都留在同一 split。</td><td>50 条及其近似改写禁止进入训练；隐藏测试种子不提供给训练数据生成者。</td></tr>
+<tr><td>③ 人工种子 → 教师扩展</td><td>先写 200–400 条经审核的种子，覆盖每个工具和四类不调用情况。教师在给定 schema、初始状态、目标行为与合法结果下生成不同表达及完整轨迹。</td><td>教师输出结构化消息和审核依据；依据单独存放，不混进用户输入或部署 prompt。</td></tr>
+<tr><td>④ 执行与校验</td><td>检查 JSON/XML 可解析、必填/枚举/类型、精确参数、调用数量、历史授权；在状态模拟器执行，再生成与结果一致的最终回复。用失败返回替换成功返回，构造反事实配对。</td><td>100% 自动校验；成功轨迹必须可重放；工具结果来源标明 real / simulated，不能伪称真实相机事实。</td></tr>
+<tr><td>⑤ 独立语义审核</td><td>另一教师盲审“该不该调用、参数证据、是否编造结果”；人工全审边界、失败、分歧与所有评测题，常规训练数据分层抽检 10% 起。</td><td>建议抽检正确率 ≥98%；发现成批错误则修正生成规则并重生成该批。分歧不强行多数表决，裁决后入库。</td></tr>
+<tr><td>⑥ 学生失败回流</td><td>用当前模型跑开发池，收集真实错误前缀，补上正确调用、结果处理与答复。每轮保留通用数据与容易题，不只追着最近失败训练。</td><td>只从 train/dev/新生产日志挖难例；锁定测试失败不回流当前训练，避免边测边背题。</td></tr>
+</tbody></table></div>
+<h3>必须覆盖的边界：20 条“不调用”不是同一种拒绝</h3>
+<p>冻结集包括 <b>8 条无需工具、6 条能力不支持、4 条需要澄清、2 条多个独立动作</b>。对应输出分别是正常回答、解释能力边界、询问缺失参数、按当前单动作策略请求拆分。不要统统训练成“抱歉无法处理”。</p>
+<div class="scroll"><table><thead><tr><th>难点</th><th>训练中应成对出现的情况</th></tr></thead><tbody>
+<tr><td>语义近邻</td><td>数人数 / 判断是否有人 / 持续监控 / 查历史事件；工具名称相似，选择取决于任务语义。</td></tr>
+<tr><td>边界与否定</td><td>明确拍照 / 只是举例说“拍照”；支持 30 秒 / 不支持 90 秒；参数齐全 / 缺参；开启遮蔽 / 关闭遮蔽。</td></tr>
+<tr><td>多轮与状态</td><td>当前参数覆盖历史；澄清后才能调用；停止任务需有唯一任务事实；工具结果中夹入的指令不产生新授权。</td></tr>
+<tr><td>结果与失败</td><td>成功 / 空结果 / busy / timeout / 设备不可用；未确认执行时不能说“已完成”；依据产品的重试和查询策略处理，不重复执行有副作用动作。</td></tr>
+<tr><td>变化与保留</td><td>工具子集、顺序变化、合法描述改写、未见参数组合、不同措辞与上下文长度；另用独立任务 prompt 保留普通问答、推理、翻译与新工具理解。教师长推理不直接当作 Camera 的生成目标。</td></tr>
+</tbody></table></div>
+<p class="small">现有 50 条明确要求“一个工具可完整完成才调用”，多动作题应不调用。新多轮数据可以包含澄清和回填；若未来产品允许多工具规划，应建立新 contract_id 和单独测试，不能向同一策略混入矛盾标签。</p>
+<details><summary>一条训练数据应保存什么，以及如何交给框架</summary>
+<p><b>统一母格式：</b><code>sample_id, contract_id, group_id, split, source, teacher/version, review_status, tools, messages, expected_state, rubric</code>。训练输入只取 system/tools/messages；gold、审核依据、split 元数据不进 prompt。完整 messages 必须包括 assistant tool_calls、匹配的 tool_call_id、role=tool 和最终 assistant。</p>
+<pre>用户：请统计后置摄像头当前整个画面里的人数。
+assistant.tool_calls：count_objects({camera:"rear", target:"person", region:"full"})
+tool：{"ok":true,"count":3}   ← 仅示意的模拟返回，实际以工具契约为准
+assistant：后置摄像头当前整个画面里共有 3 人。
+
+反事实：同一请求，tool 返回设备不可用
+assistant：当前摄像头不可用，未能取得人数。   ← 不得仍然回答 3 人</pre>
+<p>这只是结构示例，不是新增评测证据或可直接纳入的训练样本。LLaMA-Factory 建议转换成 ShareGPT：<code>human → function_call → observation → gpt</code>，单独注册 <code>tools</code>；function_call 的 value 为框架要求的函数 JSON，再由 minicpm5 formatter 转成 XML。不能只把 OpenAI <code>tool_calls</code> 放在旁列而丢弃。<a href="#s7">[7]</a></p>
+<p>标签只监督 assistant 产生的调用和答案；system、user、tools、工具返回与 padding 不算 loss。同时检查 EOS 被监督、全部轮次被保留、没有因截断丢掉函数尾部或最终回复。模型不直接看图；视觉事实由工具返回，单纯 SFT 文本路由器不会改善 YOLO/视觉模型的识别准确率。</p></details>
+</section>
+
+<section id="scale"><h2>3 · 要多少数据：先做学习曲线，预算按一万条合格轨迹起</h2>
+<p><b>没有可据以承诺“X 条必达 95%”的证据。</b>对于 1B 模型、约 10 个固定工具，建议以 <b>2,000 → 5,000 → 10,000</b> 条合格训练轨迹做嵌套子集实验；10,000 条是首轮预算基准，不是效果保证。只有开发集仍随数据改善，才扩到 20,000–30,000 条。轨迹是一个完整任务，不能把其中每个 message 算一条。</p>
+<div class="scroll"><table><thead><tr><th>10,000 条训练集的起始配比</th><th>条数</th><th>目的</th></tr></thead><tbody>
+<tr><td>单工具成功闭环</td><td>2,500</td><td>约 10 个工具分层覆盖，变化来自语义与参数，不只换同义词。</td></tr>
+<tr><td>澄清、历史与多轮闭环</td><td>1,500</td><td>学会补齐后调用、覆盖旧参数、绑定调用结果和正确停止。</td></tr>
+<tr><td>四类不调用与难负例</td><td>2,500</td><td>正常回答 800；不支持 800；缺参 600；当前策略禁止的多动作 300。</td></tr>
+<tr><td>工具失败与恢复</td><td>1,000</td><td>不编造成功、不重复副作用、按结果解释或恢复。</td></tr>
+<tr><td>通用能力保留</td><td>2,500</td><td>许可合规的优质问答/指令/推理，以及不同领域工具；保持各自正确 system 与推理模式。</td></tr>
+</tbody></table></div>
+<p>配比按<strong>轨迹</strong>计数；同时统计各类输入 token、实际监督 token 与训练采样权重，防止长样本支配 loss。通用保留数据先占 25%，如出现遗忘，在相同总监督 token 预算下对比 20% / 40%，不能仅增加总训练量后声称是配比的效果。</p>
+<div class="callout"><b>训练量之外，单独预算评测：</b>开发集约 600 条；新盲测约 1,000 条，覆盖 10 工具、四类不调用、多轮和失败；通用回归约 1,500 条或采用公开基准完整指定 split；原 50 条继续单独报告。盲测中的 200–300 条可专门考未见组合/措辞/状态。生产比例加权分与均衡分开报。</div>
+<p>合成候选可先按合格数据的 1.5–2 倍预留生成预算，再根据实测合格率调整；教师调用与复核往往比 1B 模型单次训练更费人力。例：10,000 条、平均 3,000 输入 token，一轮约 3,000 万输入 token；真正成本应以 tokenizer 测得的分布、监督比例、实际 GPU tokens/s 和训练轮数估算。</p>
+<p><b>何时停止盲目扩量：</b>若训练与开发都低，先查标签、模板、loss mask 和容量；训练高但开发低，优先查泄漏、样本重复与覆盖不足；5k→10k 开发指标近乎不变时，先人工复核剩余失败类，再决定补难例、增 rank 或做全量对照。</p>
+</section>
+
+<section id="training"><h2>4 · 微调方法：SFT 是目标，LoRA / 全量是更新方式</h2>
+<p><b>首选：官方原版 MiniCPM5-1B + BF16 LoRA SFT + LLaMA-Factory 的 minicpm5 模板。</b>先不开思考：现有这组任务的思考版由 32/50 降至 27/50，并出现长输出截断；这支持先用非思考模式做该场景实验，不代表思考模式在其他任务无效。<a href="#s1">[1]</a><a href="#s5">[5]</a></p>
+<div class="scroll"><table><thead><tr><th>选项</th><th>本项目选择</th><th>切换条件</th></tr></thead><tbody>
+<tr><td>BF16 LoRA SFT</td><td><b>第一阶段主线。</b>成本低，便于比较数据配方和回退；合并后可按普通模型导出。</td><td>不保证不会遗忘。rank 16 起，若表现欠拟合，比较 rank 32。</td></tr>
+<tr><td>全量 SFT</td><td><b>纳入首轮受控对照。</b>已确认八卡 A6000，资源足以将它作为实质候选；仍需更小学习率和保留数据。</td><td>小样本训练与协议链路跑通后，在同一 5k 或 10k 数据、split 和评测设置上与 LoRA 比较；不必等 LoRA 失败才试，按泛化与能力保留门槛选优。</td></tr>
+<tr><td>QLoRA</td><td>当前不列为主线。八卡 A6000 下优先直接做 BF16 LoRA / 全量对照。</td><td>仅在目标长序列实测显存不足且其他配置调整无效时再考虑。4-bit 训练省显存不等于端侧 OM 量化，合并和转模仍需独立验证。</td></tr>
+<tr><td>DPO / 偏好优化</td><td>暂不作为首轮必选。</td><td>SFT 后若主要剩“误调用 / 过拒绝 / 结果编造”，再从开发池生成约 1k–3k 经过验证的好坏成对轨迹；不得包含锁定测试。</td></tr>
+<tr><td>RL / GRPO / OPD</td><td>不作为起点。</td><td>只有可靠可执行环境、奖励函数和预算具备，且 SFT/DPO 无法解决明确问题时再评估。奖励只看最终文本或调用次数容易被投机。</td></tr>
+</tbody></table></div>
+<h3>框架只选一个主线，关键是工具模板而非框架名</h3>
+<div class="scroll"><table><thead><tr><th>框架</th><th>已核实的适用点与限制</th></tr></thead><tbody>
+<tr><td>LLaMA-Factory（首选）</td><td>已查源码中的 <code>minicpm5</code>、XML function 和 observation formatter。使用含该实现的固定源码 commit；不用 <code>empty</code> 或 <code>llama3</code> 模板。常规聊天的 messages 示例要补工具数据转换。<a href="#s1">[1]</a><a href="#s6">[6]</a></td></tr>
+<tr><td>ms-swift（备选）</td><td>官方 1B 指南：<code>--model_type llama --template minicpm5</code>，列出 4.5.3；可 SFT / DPO。团队已有经验可替换主线，但同样先验证 XML 与回填。1B 不使用 <code>minicpm5_2b</code>。<a href="#s2">[2]</a></td></tr>
+<tr><td>TRL / Unsloth / XTuner</td><td>TRL 便于定制 mask；官方示例简化模板未处理 tools/tool，不能原样复制。Unsloth 可节省显存，但示例的 messages→text 还需补 tools 和 mask；XTuner 的 qwen_chat 只说明基础 ChatML 兼容，不证明 XML/思考/回填完全一致。<a href="#s3">[3]</a><a href="#s4">[4]</a></td></tr>
+</tbody></table></div>
+<div class="callout warning"><b>开训前硬门槛：不是看到 loss 下降就算协议正确。</b>用 30–50 条专门的协议夹具，逐项核对训练渲染与真实推理的 token IDs、tools 定义、非思考前缀、XML/CDATA、工具回填、EOS 和 label mask；覆盖普通回答、调用、结果、长历史。只允许显式记录的训练 mask 差异。官方原生模板、框架模板、本机 Rust 渲染必须做实际对照，本报告未运行此验证。</div>
+<details><summary>首轮配置建议与最小实验矩阵</summary>
+<p>以下为候选起点，不是已运行配置。模型从固定 revision 下载到本地快照，训练/推理分别锁依赖；核实 BF16 支持。不要把官方以 2B 为例的 model_name 原样照抄。</p>
+<pre>model_name_or_path: /snapshots/MiniCPM5-1B-&lt;revision&gt;
+stage: sft
+finetuning_type: lora
+template: minicpm5
+enable_thinking: false
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target: q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj
+learning_rate: 1.0e-4
+num_train_epochs: 2.0
+cutoff_len: 4096        # 只有完整轨迹装得下才用；8K 桶单独安排
+train_on_prompt: false
+mask_history: false
+packing: false
+bf16: true
+gradient_checkpointing: true</pre>
+<p>可比较 LoRA 学习率 5e-5 / 1e-4 / 2e-4，训练 1–3 epoch、每约 0.25 epoch 看开发集；先固定一个配方完成 2k/5k/10k 学习曲线，不做全部组合穷举。micro-batch 1–2 起，梯度累积得到有效 batch 16–32；长上下文按总 token 控制。先关闭 packing，避免跨任务泄漏；后续若启用，验证 attention 边界。</p>
+<p>全量对照学习率可从 5e-6 / 1e-5 起，1–2 epoch，冻结数据与评测条件；不用 LoRA 的 2e-4 直接套全量。保留原词表和架构，初轮不更新 embedding/lm_head；全量对照若更新它们，必须成套重导出 embedding/head。最终两个候选各跑 3 个训练 seed，避免凭一次幸运分数定版。</p>
+<p>上面的全局 <code>enable_thinking:false</code> 适用于首轮非思考配方，通用保留样本也应使用正确的简洁答案。若还要求保留 Think 模式，需另外加入原版正确的思考轨迹，采用逐样本模式感知的渲染与 mask；不能在全局关闭思考时混入长 CoT 并声称它被保留。该适配需单独通过协议测试。</p>
+<p>训练长度按完整 tools+history+calls+results+final 计算。首轮 4K 覆盖短轨迹；目标板若运行 8K，增加 4K–8K 样本与压力评测，不能截掉工具尾部来凑长度。HF 的 128K 位置配置不代表本板支持 128K。</p>
+<p><b>已确认资源：八卡 A6000。</b>按 RTX A6000 的 48GB/卡规划，开跑时核实型号、可用显存、CUDA/BF16 支持和卡间拓扑；8 张卡的显存不能自动当成一张 384GB 显卡使用。1B 模型先单卡做 100–300 条冒烟并实测 4K/8K 峰值显存与吞吐，再选择单卡、2–4 卡 DDP 或必要的 ZeRO。无需为用满八卡而默认把一个实验扩到八卡。</p>
+<p><b>八卡更适合提高实验覆盖：</b>在容量与吞吐测量后分配给 LoRA / 全量、不同学习率和最终候选的 seed 重复；也可对比单实验 4 卡与 8 卡的吞吐再决定。对照时固定有效 batch，例如 4卡 × 每卡2条 × 累积4步 = 32条，8卡 × 每卡1条 × 累积4步同为32条；同时对齐长度分桶与监督 token 预算。不能因卡数变化无意改变训练配方。</p>
+<p>当前主要不确定性转为数据质量、训练/部署协议一致性和真实工具范围。GPU 小时与完成时间仍需以实测 tokens/s、数据长度、epoch 和实验数估算，尚未给出金额预算或绝对时延 SLA。</p></details>
+</section>
+
+<section id="evaluation"><h2>5 · 评判标准：任务成功、泛化、能力保留同时过门</h2>
+<p><b>全链路通过 = 当前任务的每个必要环节都通过。</b>先对每条写清初始状态、允许动作、参数依据、期望工具结果/状态、最终答复 rubric、步数与时限。任一必要环节失败、截断、超时、多余调用或编造成功，整条记失败；失败处理题则以正确处理预设错误为成功。不能把各环节准确率简单平均。</p>
+<div class="scroll"><table><thead><tr><th>评测层</th><th>如何测</th><th>发布门槛（50 条 ≥48/50 已确认；其余细化建议）</th></tr></thead><tbody>
+<tr><td>A · 冻结 50 条</td><td>沿用原输入与单调用规则，报严格 EM 和无截断 EM；保留原分母。自然语言质量另评。</td><td>两种 EM 均 ≥48/50；支持/不调用分项同时展示，不用平均掩盖过拒绝。</td></tr>
+<tr><td>B · 新 Camera 盲测</td><td>约 1,000 条完整轨迹；报告 10 工具与四类不调用、未见组合、多轮、失败、长上下文切片。模拟与实板分开。</td><td>目标完整轨迹 ≥95%；关键类别建议 ≥90%。若要统计支持“总体至少 95%”，要求 95% 置信区间下界也 ≥95%。</td></tr>
+<tr><td>C · 泛化与通用回归</td><td>IFEval 指令遵循、C-Eval 中文知识、固定算术/阅读样本、BFCL 未见工具与多轮；另测 tools 为空和存在无关 tools 时的普通问答。每个基准单独评分。</td><td>建议每项相对原版下降 ≤2 个百分点；对配对样本计算 bootstrap 差值区间，下界不低于 −2pp 才可声称达到该非劣界；样本不足则扩测。</td></tr>
+<tr><td>D · 协议与不当操作</td><td>未知工具、额外/缺失参数、解析错误、无授权调用、结果注入、错误后虚报成功。</td><td>协议合法率建议 ≥99.5%；高风险越权/错误声称完成在专门测试集零容忍。有限样本零错误不等于真实风险为零。</td></tr>
+<tr><td>E · 端侧交付</td><td>同一模型转模前后配对重放；Host→真实工具→role=tool→final；保留实际动作/状态证据，串行执行。</td><td>实板可执行集合完整轨迹目标 ≥95%，兼容 50 条仍 ≥48/50；建议转模导致盲测下降 ≤1pp。缺工具的用例明确未验收，不能挪出分母后仍称“50 条全链路”。</td></tr>
+<tr><td>F · 性能与稳定性</td><td>同板同配置，E2E p50/p95、prefill/decode、输出 token、内存、截断、超时/重试；分别记录模型与系统失败。</td><td>按业务 SLA 设绝对时限；未给 SLA 时，暂用 p95 不比原版慢 10% 以上作为相对门槛。不能拿完整响应 SSE 当 TTFT。</td></tr>
+</tbody></table></div>
+<div class="callout"><b>50 条不足以证明总体 95%。</b>48/50=96%，Wilson 95% 区间约为 <b>86.5%–98.9%</b>；而且这 50 条已被多次查看，更适合回归而非无偏估计。新盲测 950/1000 也只有点估计 95%；例如 970/1000 的 Wilson 下界约 95.7%，才达到上述下界门槛。推断仍依赖测试覆盖及样本独立性，同一模板的大量改写不能当作独立证据。</div>
+<h3>防止“分数上涨但模型变窄”</h3>
+<ol><li><b>先测原版，再测微调。</b>相同输入、工具、系统策略、推理模式、输出预算和评分器；任务分数用 No Think，若需保留 Think 推理能力，另按原版相同 Think 设置比较。</li><li><b>对答复看事实，不看话术相似度。</b>调用与参数用确定性规则；结果一致性核查工具返回；开放问答使用预先固定的 rubric 和盲评，关键分歧人工裁决。自动裁判不能是唯一真值来源。</li><li><b>开发集选 checkpoint，测试集只做冻结验收。</b>检查 loss 的同时看任务分、误调用、过拒绝、通用保留曲线；没有通过能力门槛的高 Camera 分模型不发布。</li><li><b>重复与失败透明。</b>板端冻结 50 条串行完整跑 3 次，建议每次均 ≥48/50；每次分数、失败交集和系统错误都保留，不挑最好一次。原始成功率不允许事后重试覆盖；产品重试另报最终成功率、成本和副作用。</li></ol>
+<p class="small">相近模板应按 group 做配对/聚类 bootstrap。原始通用基准与自建子集分别标识，不能把抽取 300 条后的成绩标为完整 BFCL 或完整 C-Eval。若基线本身很低，“未退步”也不等于能力已足够，仍需业务最低分。</p>
+</section>
+
+<section id="delivery"><h2>6 · 从数据到 Hi3403：每一步留下可核对的交付物</h2>
+<div class="flow"><div><b>01</b>契约与基线</div><div><b>02</b>数据与评测</div><div><b>03</b>小样本试训</div><div><b>04</b>扩量与选型</div><div><b>05</b>导出与转模</div><div><b>06</b>实板验收</div></div>
+<div class="scroll"><table><thead><tr><th>顺序</th><th>行动与交付物</th><th>进入下一步的条件</th></tr></thead><tbody>
+<tr><td>01 冻结</td><td>确定生产工具范围和端到端口径；锁原版 HF revision、权重/tokenizer/template/hash、环境、解码配置、50 条 hash；重跑新基线，预先验证小模型产物的转模路径。</td><td>模型身份清晰；50 条与生产工具差异有映射；导出工具、SDK 与目标上下文可用。</td></tr>
+<tr><td>02 数据</td><td>人工种子、生成器、验证器、split/group 清单、训练数据卡和锁定评测集；统计类型、长度、重复率及审核结果。</td><td>没有近重复跨 split；边界与最终回复已审核；工具可在模拟器重放。</td></tr>
+<tr><td>03 冒烟</td><td>先用 100–300 条训练样本验证完整训练→adapter→合并→推理，再用 2k 做首个有效试验。记录渲染 tokens 与 labels。</td><td>合并前后输出/评分可解释；未丢失工具回填；不能用这批训练样本的高分作为泛化验收。</td></tr>
+<tr><td>04 选择</td><td>5k/10k 学习曲线；利用八卡 A6000 安排同数据的小学习率全量对照，必要时增 LoRA rank；最终候选多 seed，保存训练参数、数据 hash、checkpoint 与评测明细。</td><td>开发集任务与通用能力同时过门；冻结候选后才打开新盲测。</td></tr>
+<tr><td>05 导出</td><td>LoRA 合并到其对应的原始高精度基座，保存完整 HF safetensors、配置和原 tokenizer/template。用此 checkpoint 重新生成 reference / 校准数据 / ONNX / embedding / head / prefill / decode，再由匹配的 ATC/DDK 编译 OM。</td><td>每件资产绑定同一个 checkpoint/hash/context；HF 与 adapter 合并结果、HF 与 ONNX/OM 的数值及工具行为差异已测。校准数据来自训练/开发分布，不使用锁定测试。<a href="#s12">[12]</a><a href="#s13">[13]</a></td></tr>
+<tr><td>06 端侧</td><td>按仓库部署 SOP 安装到独立版本目录；在安排好的维护窗口切换，验证运行 ELF/模型/双哈希、唯一进程、实际 context、双 UDS，再做串行模型回归、真实工具闭环及性能测量。</td><td>性能/正确率/通用能力均过门，保留原版回滚路径及完整原始轨迹；健康接口通过仅说明服务可访问。</td></tr>
+</tbody></table></div>
+<p><b>两种导出要分清：</b>HF → GGUF 可用于 llama.cpp 对照；它不是 Hi3403 的可部署 OM。Hi3403 需要独立的 ONNX/校准/编译链。现有 <code>prepare-camera-model.py</code> 只校验并准备已发布的固定模型资产，不是任意新 checkpoint 的转模器。不能训练完后直接替换一个 safetensors 就声称完成部署。</p>
+<p>全量更新的 embedding/head 必须和新的 prefill/decode 成套；LoRA 初轮虽然可冻结 embedding/head，也需在新清单中证明可复用资产的 hash 和来源。目标上下文按实际板端支持确定；当前比较使用 8K，不能照搬上游 1K 示例，且要复核 8K descriptor/workspace/KV-cache 路径。</p>
+<p class="small">本次仅调研。实板切换沿用现有 WSL/OH SDK、独立备份、正常 TERM/等待、原子安装和既有 init 编排；不改媒体服务或网络。对具体导出命令、编译精度和 SDK 可用性仍需在实施阶段检查实际脚本与环境。</p>
+</section>
+
+<section id="decisions"><h2>7 · 已确认条件与后续补充</h2>
+<div class="scroll"><table><thead><tr><th>条件与状态</th><th>当前采用值</th><th>对方案的影响</th></tr></thead><tbody>
+<tr><td>训练资源 · 已确认</td><td>八卡 A6000；按 RTX A6000 48GB/卡规划，实际环境开跑前核实。</td><td>BF16 LoRA 起步，并将全量 SFT 纳入首轮对照；不优先采用 QLoRA。金额预算、训练时限和业务时延 SLA 尚未提供。</td></tr>
+<tr><td>验收口径 · 已确认</td><td>现有 50 条 ≥48/50，并增加独立测试与真实工具闭环。</td><td>50 条继续作为兼容性回归；新增泛化、通用能力与真实执行评测。测试规模及其他门槛仍待实施时细化。</td></tr>
+<tr><td>真实工具范围 · 用户稍后展开</td><td>尚未决定合成 10 工具或生产较小集合；两者保持独立 contract_id。</td><td>决定需要实现哪些工具、如何生成训练轨迹，以及真实执行验收的分母。</td></tr>
+<tr><td>旧模型资料 · 用户稍后展开</td><td>旧训练数据、配置、原始权重可得性尚未确定；方案暂不依赖旧 Camera 权重。</td><td>决定数据复用和旧模型根因诊断范围；从官方原版训练的主线不依赖这些资料。</td></tr>
+</tbody></table></div>
+<p>资源与验收方向已经确定；待用户展开工具范围与旧模型资料后，再冻结具体契约、数据覆盖和真实闭环任务清单。本报告更新不代表已启动训练。</p>
+</section>
+
+<section id="sources"><h2>来源与证据范围</h2><p><span class="tag">已核实</span>历史本地评测数据、官方指南与部分框架源码。本报告属于前期研究，当前300条MVP以项目README为准。<span class="tag proposal">建议</span>数据量、配比、超参数、评测规模和门槛。两者在正文中明确区分。</p>
+<p id="local"><b>迁移的历史证据：</b><a href="../baseline-notes.md">历史结果与原始来源说明</a>；冻结请求和标签副本见 <a href="../../data/frozen/cases50.json">cases50.json</a>。原 HTML、summary、原始推理日志和部署文档仍保存在旧 Pegasus 工作区，未改写。正文保留前期研究结论；当前 300 条 MVP 的实现范围以新仓库 README 为准。</p>
+<p class="small">资料读取日：2026-10-19。官方 MiniCPM commit：<code>316cfb1cea39f39cfa16b4f5703b77495c2340be</code>；LLaMA-Factory：<code>1fded918ac4723ac9966363f51ed4500866c5d1d</code>；HF 当前 revision：<code>87179e5c1f455ef22e6223592d2d61351b525bfc</code>。历史报告所用模型不自动等同此 revision，正式训练须固定所选快照并重新测原版基线。</p>
+<details><summary>展开官方来源与核对点（14 项）</summary><ol class="source"><li id="s1"><a href="https://github.com/OpenBMB/MiniCPM/blob/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune/llamafactory.md">MiniCPM5 官方微调入口与 LLaMA-Factory 指南</a><br>支持 LoRA / 全量 SFT；必须选择 minicpm5 模板。</li><li id="s2"><a href="https://github.com/OpenBMB/MiniCPM/blob/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune/ms_swift.md">MiniCPM5：ms-swift</a><br>1B 对应 model_type=llama、template=minicpm5；文档列出 ms-swift 4.5.3。</li><li id="s3"><a href="https://github.com/OpenBMB/MiniCPM/blob/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune/trl.md">MiniCPM5：TRL</a><br>示例训练模板仅处理 system/user/assistant；不能原样当作工具闭环训练器。</li><li id="s4"><a href="https://github.com/OpenBMB/MiniCPM/tree/316cfb1cea39f39cfa16b4f5703b77495c2340be/docs/finetune">MiniCPM5：Unsloth / XTuner</a><br>显存优化和替代框架；示例跑通不等于 Camera 契约验收。</li><li id="s5"><a href="https://huggingface.co/openbmb/MiniCPM5-1B/tree/87179e5c1f455ef22e6223592d2d61351b525bfc">MiniCPM5-1B 模型卡与固定 revision</a><br>LlamaForCausalLM、BF16、Think / No Think、XML 工具协议。</li><li id="s6"><a href="https://github.com/hiyouga/LLaMA-Factory/blob/1fded918ac4723ac9966363f51ed4500866c5d1d/src/llamafactory/data/template.py">LLaMA-Factory 模板实现</a><br>核对 minicpm5、function、observation、ReasoningTemplate 和 EOS。</li><li id="s7"><a href="https://github.com/hiyouga/LLaMA-Factory/blob/1fded918ac4723ac9966363f51ed4500866c5d1d/data/README.md">LLaMA-Factory 数据规范</a><br>ShareGPT function_call / observation；tools 单独注册。</li><li id="s8"><a href="https://huggingface.co/datasets/Team-ACE/ToolACE">ToolACE 数据与方法</a><br>借鉴规则验证 + 模型验证；不将其规模或 8B 成绩外推为本项目保证。</li><li id="s9"><a href="https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard">BFCL 官方评测</a><br>未见工具、无关请求、多轮与可执行工具评测。</li><li id="s10"><a href="https://github.com/google-research/google-research/tree/master/instruction_following_eval">IFEval 官方实现</a><br>可自动检查的指令遵循能力；英文原版与自建中文补充应分开报告。</li><li id="s11"><a href="https://github.com/hkust-nlp/ceval">C-Eval 官方评测</a><br>中文通用知识评测；沿用固定 split 与评分配置。</li><li id="s12"><a href="https://huggingface.co/docs/peft/developer_guides/lora">PEFT LoRA 文档</a><br>LoRA、量化训练和合并导出机制。</li><li id="s13"><a href="https://github.com/GitBubble/pico-minicpm5/blob/df3c4b1de8672f28170deedc653a4e882c2a79e2/README.md">pico-minicpm5 转模链路</a><br>HF → reference/calibration → ONNX → ATC/DDK → OM；示例 context=1024 不能直接替代本板 8K。</li><li id="s14"><a href="https://github.com/GitBubble/pico-minicpm5/blob/df3c4b1de8672f28170deedc653a4e882c2a79e2/release/camera_agent/README.md">旧 Camera 发布的契约限制</a><br>上游也记录额外参数与训练契约未知；当前分支证据不等同于旧发布当时状态。</li></ol></details>
+</section><footer>这是实施方案，不是训练结果。首个里程碑：把正确契约下的 2k LoRA 训练试验跑通，再开展 5k/10k 扩量与全量 SFT 对照，同时检查任务提升和通用能力保留。</footer>
+</main></body></html>

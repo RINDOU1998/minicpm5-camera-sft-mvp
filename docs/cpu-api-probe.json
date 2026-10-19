@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "scope": "tiny random CPU API probe only",
+  "train_loss": 3.489823818206787,
+  "max_logit_difference": 1.862645149230957e-08,
+  "cuda_validated": false,
+  "minicpm_weights_used": false
+}

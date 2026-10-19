@@ -1,0 +1,2440 @@
+{
+  "sha": "316cfb1cea39f39cfa16b4f5703b77495c2340be",
+  "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/316cfb1cea39f39cfa16b4f5703b77495c2340be",
+  "tree": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cbfa588dbae1d3e00d8109942088b99708a2d3c",
+      "size": 58,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0cbfa588dbae1d3e00d8109942088b99708a2d3c"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bf34c1ba85b501af67fde87c3479b7487816a42a",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/bf34c1ba85b501af67fde87c3479b7487816a42a"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "81cc6f00e125761fee82fcf6261232069841dc98",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/81cc6f00e125761fee82fcf6261232069841dc98"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bad_case.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d88cadfd688d47a6d4016b3a18090c8349957fd",
+      "size": 1288,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/2d88cadfd688d47a6d4016b3a18090c8349957fd"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1114974199a54f4fdded382dfbedf8ac950d2a09",
+      "size": 3162,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/1114974199a54f4fdded382dfbedf8ac950d2a09"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a49eab2f6b9955f566d85af449bbc6049c2eb71a",
+      "size": 26,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a49eab2f6b9955f566d85af449bbc6049c2eb71a"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eee08ddac306fae28710d13e3d76a30503921651",
+      "size": 1264,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/eee08ddac306fae28710d13e3d76a30503921651"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a82b0bc2ea6fa3cecc617ff7df60eafeb330157d",
+      "size": 173,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a82b0bc2ea6fa3cecc617ff7df60eafeb330157d"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5ff00dcf3d8024db285692aecd4340017875c06",
+      "size": 11335,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b5ff00dcf3d8024db285692aecd4340017875c06"
+    },
+    {
+      "path": "README-cn.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49243260c69b2d6b96df7d79801e77cd61c40dfc",
+      "size": 77973,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/49243260c69b2d6b96df7d79801e77cd61c40dfc"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b12a07bb5266fe00c91ae1529306e88d7dbb0fb",
+      "size": 78468,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3b12a07bb5266fe00c91ae1529306e88d7dbb0fb"
+    },
+    {
+      "path": "assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e72e07cf2e014ea1af757624044bf4c32c26cea",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/0e72e07cf2e014ea1af757624044bf4c32c26cea"
+    },
+    {
+      "path": "assets/RUC.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5daeda1ae82a5211fb6ebd2936c9890d70b1c904",
+      "size": 66574,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5daeda1ae82a5211fb6ebd2936c9890d70b1c904"
+    },
+    {
+      "path": "assets/minicpm3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b5001457398ab5880e87a73f262a4cc7c39315a9",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/b5001457398ab5880e87a73f262a4cc7c39315a9"
+    },
+    {
+      "path": "assets/minicpm3/code_interpreter.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2e13af3317a3510282deed8ba300afbce47cc38",
+      "size": 5930392,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d2e13af3317a3510282deed8ba300afbce47cc38"
+    },
+    {
+      "path": "assets/minicpm3/eval_needle.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfb7e5f33c1be82e874ed3c9083639998dd2d028",
+      "size": 407625,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/cfb7e5f33c1be82e874ed3c9083639998dd2d028"
+    },
+    {
+      "path": "assets/minicpm3/function_call.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f676bdbdc505926b38b9196db68be7d708653fb",
+      "size": 1583539,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/6f676bdbdc505926b38b9196db68be7d708653fb"
+    },
+    {
+      "path": "assets/minicpm4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4b26ae783f40329cb14e136ad898f018fed15bf",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/d4b26ae783f40329cb14e136ad898f018fed15bf"
+    },
+    {
+      "path": "assets/minicpm4/128k-niah.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18ffdf67615435b8d38005364e83706e48e62214",
+      "size": 68837,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/18ffdf67615435b8d38005364e83706e48e62214"
+    },
+    {
+      "path": "assets/minicpm4/benchmark.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31e1993354e03acf88c4c56d91d86feabc87b347",
+      "size": 274102,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/31e1993354e03acf88c4c56d91d86feabc87b347"
+    },
+    {
+      "path": "assets/minicpm4/benchmark4.1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f646d2f0fe2d1de17916442086519b75bb21ffbb",
+      "size": 221769,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/f646d2f0fe2d1de17916442086519b75bb21ffbb"
+    },
+    {
+      "path": "assets/minicpm4/bitcpm4-benchmark.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0a9c4657a65099243dc7b7e5cbc29ae1d0f0fcd",
+      "size": 147582,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e0a9c4657a65099243dc7b7e5cbc29ae1d0f0fcd"
+    },
+    {
+      "path": "assets/minicpm4/efficiency.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f3ac6f01925725221dbc0f74678cf5d616a3b41",
+      "size": 52009,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5f3ac6f01925725221dbc0f74678cf5d616a3b41"
+    },
+    {
+      "path": "assets/minicpm4/minicpm4.1_speed.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f4036175c58fcf6a18fe7f919503095e7abd939",
+      "size": 130855,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/6f4036175c58fcf6a18fe7f919503095e7abd939"
+    },
+    {
+      "path": "assets/minicpm5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e1de1dd7f6570245875174047633d4356c781cb6",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/e1de1dd7f6570245875174047633d4356c781cb6"
+    },
+    {
+      "path": "assets/minicpm5/minicpm5_2b_public_leaderboard_cn.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06ba604f8aab7cf5a7fa0990dbd99c38090825f8",
+      "size": 542804,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/06ba604f8aab7cf5a7fa0990dbd99c38090825f8"
+    },
+    {
+      "path": "assets/minicpm5/minicpm5_2b_public_leaderboard_en.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8eda65115b1c6327856adeebf660321baf1fe6cd",
+      "size": 551313,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8eda65115b1c6327856adeebf660321baf1fe6cd"
+    },
+    {
+      "path": "assets/minicpm5/minicpm5_2b_public_leaderboard_radar_cn.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "828c6d6190ac57268d6f554bf9dc5b9b81d15b4f",
+      "size": 326907,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/828c6d6190ac57268d6f554bf9dc5b9b81d15b4f"
+    },
+    {
+      "path": "assets/minicpm5/minicpm5_2b_public_leaderboard_radar_en.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93e411dcd6b16cb09c3cbbae01cdd54b8bbf6d8a",
+      "size": 300096,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/93e411dcd6b16cb09c3cbbae01cdd54b8bbf6d8a"
+    },
+    {
+      "path": "assets/minicpm5/minicpm5_2b_rl_opd_score_gains.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3821cb0a9a7efdd484bca3a42d1f642fe8db6de2",
+      "size": 324012,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3821cb0a9a7efdd484bca3a42d1f642fe8db6de2"
+    },
+    {
+      "path": "assets/minicpm5/minicpm5_2b_training_recipe.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5aea65431fca52d2d75d87e640e23f89f00c37d9",
+      "size": 86900,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5aea65431fca52d2d75d87e640e23f89f00c37d9"
+    },
+    {
+      "path": "assets/minicpm5/public_leaderboard.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af169d087092ba69ce08c3e3149ccce1fd05c1ec",
+      "size": 708483,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/af169d087092ba69ce08c3e3149ccce1fd05c1ec"
+    },
+    {
+      "path": "assets/minicpm5/public_leaderboard_cn.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7095534432d7a4b2b44cccc6189b27fdad71cf8",
+      "size": 669710,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c7095534432d7a4b2b44cccc6189b27fdad71cf8"
+    },
+    {
+      "path": "assets/minicpm5/public_leaderboard_en.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af169d087092ba69ce08c3e3149ccce1fd05c1ec",
+      "size": 708483,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/af169d087092ba69ce08c3e3149ccce1fd05c1ec"
+    },
+    {
+      "path": "assets/minicpm5/public_leaderboard_radar_cn.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc2e0341d44825982b49847ce4ea4b0144a9eb21",
+      "size": 489608,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/dc2e0341d44825982b49847ce4ea4b0144a9eb21"
+    },
+    {
+      "path": "assets/minicpm5/public_leaderboard_radar_en.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b692175742d141965d0f892878ba9c19a4ad4a14",
+      "size": 494576,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b692175742d141965d0f892878ba9c19a4ad4a14"
+    },
+    {
+      "path": "assets/minicpm5/rl_gains.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c483c8af71ef81ffa3f748c029d590f803c382a",
+      "size": 103970,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8c483c8af71ef81ffa3f748c029d590f803c382a"
+    },
+    {
+      "path": "assets/minicpm5/rl_overlong.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9c657f4ca26466845570591fa08f7e118d67b41",
+      "size": 95121,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d9c657f4ca26466845570591fa08f7e118d67b41"
+    },
+    {
+      "path": "assets/minicpm5/rl_two_stage_overview.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20e83daa9f6b374b165abf4b506c22f99da360f4",
+      "size": 241544,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/20e83daa9f6b374b165abf4b506c22f99da360f4"
+    },
+    {
+      "path": "assets/minicpm5/training_recipe.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c9a30e241a076efd013c3cc5d4db3b5eba2378f",
+      "size": 1889992,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5c9a30e241a076efd013c3cc5d4db3b5eba2378f"
+    },
+    {
+      "path": "assets/minicpm_logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3da1191a0c767bd0f1011df39d7f8127a2105114",
+      "size": 633386,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3da1191a0c767bd0f1011df39d7f8127a2105114"
+    },
+    {
+      "path": "assets/minicpm_sala",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7591347d925ee039917078d51c26d2f3fecf6840",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/7591347d925ee039917078d51c26d2f3fecf6840"
+    },
+    {
+      "path": "assets/minicpm_sala/benchmark.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77f05af1b7441be8474d4fbfbaaae97765a3af1e",
+      "size": 176465,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/77f05af1b7441be8474d4fbfbaaae97765a3af1e"
+    },
+    {
+      "path": "assets/minicpm_sala/inference_speed_5090.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb59e870a895d1459714d1b96e3d6daf0f5be783",
+      "size": 230314,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/fb59e870a895d1459714d1b96e3d6daf0f5be783"
+    },
+    {
+      "path": "assets/minicpm_sala/inference_speed_a600d.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e92a66d4d7e74cfae79fc4bede4e7255ba416c4",
+      "size": 246283,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/4e92a66d4d7e74cfae79fc4bede4e7255ba416c4"
+    },
+    {
+      "path": "assets/minicpm_sala/long_text_evaluation.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4abddfd06e7230d51aaa8525b43018e6a4a8bdf",
+      "size": 163754,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a4abddfd06e7230d51aaa8525b43018e6a4a8bdf"
+    },
+    {
+      "path": "assets/minicpm_sala/ultra_long_text_evaluation.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0480c895058e1c695c7b274dd9a3ba1158ba885",
+      "size": 98933,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c0480c895058e1c695c7b274dd9a3ba1158ba885"
+    },
+    {
+      "path": "assets/modelbest.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5d0b861254ec5c5895077c95cb755f60b06e1df",
+      "size": 433482,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c5d0b861254ec5c5895077c95cb755f60b06e1df"
+    },
+    {
+      "path": "assets/thunlp.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85f512884e2b1441ec7617be2f0c35126e0dab0b",
+      "size": 24349,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/85f512884e2b1441ec7617be2f0c35126e0dab0b"
+    },
+    {
+      "path": "assets/wechat.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "746b3fe07566a5da85f943575cef7256fb88b100",
+      "size": 59446,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/746b3fe07566a5da85f943575cef7256fb88b100"
+    },
+    {
+      "path": "demo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a1cde179cbc9c36a5d0257bd907556a43646b346",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/a1cde179cbc9c36a5d0257bd907556a43646b346"
+    },
+    {
+      "path": "demo/minicpm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b0c1c7f66868ec3a927929b3897b797b57ca3391",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/b0c1c7f66868ec3a927929b3897b797b57ca3391"
+    },
+    {
+      "path": "demo/minicpm/hf_based_demo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4eaa18483b4cdff9a16d352ab01da8377ee60017",
+      "size": 9829,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/4eaa18483b4cdff9a16d352ab01da8377ee60017"
+    },
+    {
+      "path": "demo/minicpm/langchain_demo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19a216315d613352b80e2d555ddba1e20bb14aa8",
+      "size": 13896,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/19a216315d613352b80e2d555ddba1e20bb14aa8"
+    },
+    {
+      "path": "demo/minicpm/mlx_based_demo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4f946c6c61a056bce283b224e08695494cf5ccf",
+      "size": 1494,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b4f946c6c61a056bce283b224e08695494cf5ccf"
+    },
+    {
+      "path": "demo/minicpm/vllm_based_demo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf471c4c4f38f441efcf463726187f18a8d565b8",
+      "size": 7188,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/cf471c4c4f38f441efcf463726187f18a8d565b8"
+    },
+    {
+      "path": "demo/minicpm3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6a8fd4cdf5fee0e5460fa1e00351d9733ef23cfa",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/6a8fd4cdf5fee0e5460fa1e00351d9733ef23cfa"
+    },
+    {
+      "path": "demo/minicpm3/code_interpreter",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "659e5ce2cc313baa3365d6da8d782698e78d411a",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/659e5ce2cc313baa3365d6da8d782698e78d411a"
+    },
+    {
+      "path": "demo/minicpm3/code_interpreter/code_interpreter.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cea893c645409db685acc51f7fc71798ea22aac",
+      "size": 6217,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0cea893c645409db685acc51f7fc71798ea22aac"
+    },
+    {
+      "path": "demo/minicpm3/code_interpreter/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69b21656c0ecea94332352c454ba30bf1e0586bb",
+      "size": 4,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/69b21656c0ecea94332352c454ba30bf1e0586bb"
+    },
+    {
+      "path": "demo/minicpm3/function_call",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b4d1218b86e22c4c9f5981a21555af84a2b0d00",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4b4d1218b86e22c4c9f5981a21555af84a2b0d00"
+    },
+    {
+      "path": "demo/minicpm3/function_call/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1229d38d66e33fc16ed709e526969513859ee006",
+      "size": 1509,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/1229d38d66e33fc16ed709e526969513859ee006"
+    },
+    {
+      "path": "demo/minicpm3/function_call/function_calling.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d2f25f8b873b64a68450555105d9f0ab53be2a4",
+      "size": 3885,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5d2f25f8b873b64a68450555105d9f0ab53be2a4"
+    },
+    {
+      "path": "demo/minicpm3/function_call/minicpm_chat_template_with_tool.jinja",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61813fe20fca6b457dc709e78abfb93088c2f1a9",
+      "size": 7598,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/61813fe20fca6b457dc709e78abfb93088c2f1a9"
+    },
+    {
+      "path": "demo/minicpm3/function_call/minicpm_tool_parser.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c952f50beb175c9c146af8b594532edb85766cdc",
+      "size": 11413,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c952f50beb175c9c146af8b594532edb85766cdc"
+    },
+    {
+      "path": "demo/minicpm3/function_call/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf563fd5c47c63be47cc68c064089ff82f6bebff",
+      "size": 30,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/bf563fd5c47c63be47cc68c064089ff82f6bebff"
+    },
+    {
+      "path": "demo/minicpm4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43f632a0e2bd752d611aed818828496cef4ab264",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/43f632a0e2bd752d611aed818828496cef4ab264"
+    },
+    {
+      "path": "demo/minicpm4/MCP",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9cab0f07c279a7f8d5b151bd11171d65d1de1ee1",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/9cab0f07c279a7f8d5b151bd11171d65d1de1ee1"
+    },
+    {
+      "path": "demo/minicpm4/MCP/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c252cc8f0ec7c8f9ed496983d107a341ccbe885c",
+      "size": 11354,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c252cc8f0ec7c8f9ed496983d107a341ccbe885c"
+    },
+    {
+      "path": "demo/minicpm4/MCP/README_en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bd8dcf99a4aac52713b8667eabd8d9ad80df709",
+      "size": 12222,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/2bd8dcf99a4aac52713b8667eabd8d9ad80df709"
+    },
+    {
+      "path": "demo/minicpm4/MCP/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "65f220203709c8b2441fbc85e345f79ed543a0a7",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/65f220203709c8b2441fbc85e345f79ed543a0a7"
+    },
+    {
+      "path": "demo/minicpm4/MCP/assets/logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ca2c95a8551251eb7340e96c9fa12113a578aa6",
+      "size": 73062,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7ca2c95a8551251eb7340e96c9fa12113a578aa6"
+    },
+    {
+      "path": "demo/minicpm4/MCP/available_tool_example.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86019cd25de5d5398e5da24b0d369401417d30ab",
+      "size": 2334,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/86019cd25de5d5398e5da24b0d369401417d30ab"
+    },
+    {
+      "path": "demo/minicpm4/MCP/eval_scripts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67917a6bad9a9996076d6d2cdfd03116f0281cb7",
+      "size": 4090,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/67917a6bad9a9996076d6d2cdfd03116f0281cb7"
+    },
+    {
+      "path": "demo/minicpm4/MCP/generate_example.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9343cb7be4edefb7e6d516a9178a37a7cdc4fcf9",
+      "size": 17661,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/9343cb7be4edefb7e6d516a9178a37a7cdc4fcf9"
+    },
+    {
+      "path": "demo/minicpm4/MCP/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce16380d8dbfc2a6544141f1b6703991e0ae5976",
+      "size": 325,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/ce16380d8dbfc2a6544141f1b6703991e0ae5976"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "42cabdb7f145a4f8124cb056b7c6efabe98faaf7",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/42cabdb7f145a4f8124cb056b7c6efabe98faaf7"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/README-en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19102d351179ca19b5b6022ab03bad328267c5ef",
+      "size": 5097,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/19102d351179ca19b5b6022ab03bad328267c5ef"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0922cab46cc7dd4375eb7953ee00cf34bc887067",
+      "size": 4431,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0922cab46cc7dd4375eb7953ee00cf34bc887067"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c8d607fadd6927051a8327220cb404b39fea0595",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/c8d607fadd6927051a8327220cb404b39fea0595"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/assets/main.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "709dc53ed65829a1325d3b056bbbcacdc0eac0ce",
+      "size": 1604334,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/709dc53ed65829a1325d3b056bbbcacdc0eac0ce"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8ce6469c3d0d14c458938370f42ac67baa66e666",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/8ce6469c3d0d14c458938370f42ac67baa66e666"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "15e16bb236cacfc8f1185b754e388bc0d0a3a687",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/15e16bb236cacfc8f1185b754e388bc0d0a3a687"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a547bf36d8d11a4f89c59c144f24795749086dd1",
+      "size": 253,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a547bf36d8d11a4f89c59c144f24795749086dd1"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/eslint.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec2b712d301e7ddeca8327fc4b967069cc82047b",
+      "size": 844,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/ec2b712d301e7ddeca8327fc4b967069cc82047b"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d51a5a38fd749b883c6f1e69d78b7ac2c7a1999",
+      "size": 363,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7d51a5a38fd749b883c6f1e69d78b7ac2c7a1999"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7da1e1a03c94b9ed1a6af0263af05ab5588aa488",
+      "size": 96667,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7da1e1a03c94b9ed1a6af0263af05ab5588aa488"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aec4f1e55381831b3eeb936241229554f3826cc1",
+      "size": 664,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/aec4f1e55381831b3eeb936241229554f3826cc1"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e684afa149ca133bf8f2f68312388a49cfafe2c2",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/e684afa149ca133bf8f2f68312388a49cfafe2c2"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/public/openbmb.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16ae5b0a7a8b5c9d84a07ffadd5564f829fdd8d3",
+      "size": 629,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/16ae5b0a7a8b5c9d84a07ffadd5564f829fdd8d3"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a71c24d40a2fc47388ad5e7a2a95bcbe48f8be25",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/a71c24d40a2fc47388ad5e7a2a95bcbe48f8be25"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/src/App.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36bd48fa0ba47ee458bc456bf86c16a3c34b4642",
+      "size": 5755,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/36bd48fa0ba47ee458bc456bf86c16a3c34b4642"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/src/App.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99d50f489eef68e2fbfe0cc9890afd95cdddaa23",
+      "size": 7632,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/99d50f489eef68e2fbfe0cc9890afd95cdddaa23"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/src/index.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08a3ac9e1e5c44ce374f782d7c4fa3aa70e4c1ff",
+      "size": 1154,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/08a3ac9e1e5c44ce374f782d7c4fa3aa70e4c1ff"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/src/main.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9a1a6deac8775b5598874b2bc3c7971d82cf211",
+      "size": 229,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b9a1a6deac8775b5598874b2bc3c7971d82cf211"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/frontend/minicpm4-survey/vite.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b0f57b91aeb45c54467e29f983a0893dc83c4d9",
+      "size": 161,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8b0f57b91aeb45c54467e29f983a0893dc83c4d9"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7821714ca70ccc6f435bc9615101a072787cbdc0",
+      "size": 65,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7821714ca70ccc6f435bc9615101a072787cbdc0"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b6d1b25c40d07bc6bb08cf4568687972c1ce2f1b",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/b6d1b25c40d07bc6bb08cf4568687972c1ce2f1b"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/scripts/run.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da67b964b6658ce55b17b24e83968d71675b670b",
+      "size": 327,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/da67b964b6658ce55b17b24e83968d71675b670b"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/scripts/run_with_frontend.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77cd257132fff797c822042ca99458decf062185",
+      "size": 310,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/77cd257132fff797c822042ca99458decf062185"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8401083b83dfc4ea9cad445bbb9341497315a939",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/8401083b83dfc4ea9cad445bbb9341497315a939"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/generation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c93259ed32ced5ef00a50b4db558b000c0648dd",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/6c93259ed32ced5ef00a50b4db558b000c0648dd"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/generation/buffer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6d54aa7d2a4cc14facff381ae3a1a74b87f3ea3",
+      "size": 36167,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a6d54aa7d2a4cc14facff381ae3a1a74b87f3ea3"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/generation/prompts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ac662eee1b014d2283bfdcd143b063feddd63c1",
+      "size": 4089,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5ac662eee1b014d2283bfdcd143b063feddd63c1"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/generation/run.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68f539fa07cdc65f398dbb92afa7b5c40b74ef70",
+      "size": 13043,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/68f539fa07cdc65f398dbb92afa7b5c40b74ef70"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/preprocess",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cd1305438332fd79fbd30a00a789592643009e2d",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/cd1305438332fd79fbd30a00a789592643009e2d"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/preprocess/build_index.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "767ee3137c21b6d27567af1cd59cd7039abce0f9",
+      "size": 1594,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/767ee3137c21b6d27567af1cd59cd7039abce0f9"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/preprocess/data_process.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cdd06ee4cc2e9ed57fd7a5f8617b201b609f3c5",
+      "size": 628,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5cdd06ee4cc2e9ed57fd7a5f8617b201b609f3c5"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/retriever",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b94677e951d3033cbdcedeb7490f7e3888724c3",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/7b94677e951d3033cbdcedeb7490f7e3888724c3"
+    },
+    {
+      "path": "demo/minicpm4/SurveyGeneration/src/retriever/retriever.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba391cf63e9dd64d4da583b7b82ae010c7e9f05f",
+      "size": 5669,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/ba391cf63e9dd64d4da583b7b82ae010c7e9f05f"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6cd75e30863c136b484ccfbb5a471fb212c36690",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/6cd75e30863c136b484ccfbb5a471fb212c36690"
+    },
+    {
+      "path": "docs/BitCPM_CANN.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60d773b8bdcb424c99bbe25927e46be397e51075",
+      "size": 1548454,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/60d773b8bdcb424c99bbe25927e46be397e51075"
+    },
+    {
+      "path": "docs/InfLLM-V2-paper.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c89ef177f6ccd21a956bd85b4b6b3e2ae118a59",
+      "size": 1014887,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/6c89ef177f6ccd21a956bd85b4b6b3e2ae118a59"
+    },
+    {
+      "path": "docs/MiniCPM_4_Technical_Report.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1ba947837c71e04b78a63568f4e8ee5504fffd9",
+      "size": 1606331,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c1ba947837c71e04b78a63568f4e8ee5504fffd9"
+    },
+    {
+      "path": "docs/MiniCPM_SALA.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9f6a1d4106209a27978a9a4a860c863d7b232bb",
+      "size": 775637,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b9f6a1d4106209a27978a9a4a860c863d7b232bb"
+    },
+    {
+      "path": "docs/README-legacy-cn.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e3bbca8b22aea116555759c5e302482898417b2",
+      "size": 9466,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/1e3bbca8b22aea116555759c5e302482898417b2"
+    },
+    {
+      "path": "docs/README-legacy.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbbb2ee69b5d257751bf80946d583b538f284b56",
+      "size": 10408,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/dbbb2ee69b5d257751bf80946d583b538f284b56"
+    },
+    {
+      "path": "docs/README-minicpm1-cn.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2679aea829d74cf6a6b5adba8e8866d309e668f9",
+      "size": 10068,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/2679aea829d74cf6a6b5adba8e8866d309e668f9"
+    },
+    {
+      "path": "docs/README-minicpm1-en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "096eca389d029f0e826ad2f05f66666343383eb3",
+      "size": 10537,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/096eca389d029f0e826ad2f05f66666343383eb3"
+    },
+    {
+      "path": "docs/README-minicpm2-cn.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5f137dd131e8d3208eb7245783108c006297661",
+      "size": 9316,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b5f137dd131e8d3208eb7245783108c006297661"
+    },
+    {
+      "path": "docs/README-minicpm2-en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3dffdfe1187823eeeead2d7536649273bdb498b1",
+      "size": 9819,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3dffdfe1187823eeeead2d7536649273bdb498b1"
+    },
+    {
+      "path": "docs/README-minicpm3-cn.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d078906dbe49eb71656de55b90cca465551c12c4",
+      "size": 14778,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d078906dbe49eb71656de55b90cca465551c12c4"
+    },
+    {
+      "path": "docs/README-minicpm3-en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b815b2dba504c1f941beff9d8a8fe6ef4f6ddf3a",
+      "size": 14838,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b815b2dba504c1f941beff9d8a8fe6ef4f6ddf3a"
+    },
+    {
+      "path": "docs/deployment",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "948d7dae168102f9e14389bf7a769047ac4874bd",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/948d7dae168102f9e14389bf7a769047ac4874bd"
+    },
+    {
+      "path": "docs/deployment/arclight.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1c4d3c366045b20f275178cd2eeea00f3a60d13",
+      "size": 7184,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e1c4d3c366045b20f275178cd2eeea00f3a60d13"
+    },
+    {
+      "path": "docs/deployment/litert.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f719530f4fbd02081e908c03f742e0e9c8b9a68",
+      "size": 14046,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0f719530f4fbd02081e908c03f742e0e9c8b9a68"
+    },
+    {
+      "path": "docs/deployment/llama_cpp.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9f9c624275bf61d5694a551e2d6a0ec6c7069aa",
+      "size": 3476,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c9f9c624275bf61d5694a551e2d6a0ec6c7069aa"
+    },
+    {
+      "path": "docs/deployment/lmstudio.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60d0ec5f21d3f374f81e398db9d3b88565a75e8c",
+      "size": 11640,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/60d0ec5f21d3f374f81e398db9d3b88565a75e8c"
+    },
+    {
+      "path": "docs/deployment/mlx.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b52877747a40dc2af2518aaffa93d8bc95b6d0f",
+      "size": 3987,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3b52877747a40dc2af2518aaffa93d8bc95b6d0f"
+    },
+    {
+      "path": "docs/deployment/ollama.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f42618eeef5f5577d926575ead11c140a808ac74",
+      "size": 3722,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/f42618eeef5f5577d926575ead11c140a808ac74"
+    },
+    {
+      "path": "docs/deployment/sglang.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aacbe07c83c087426d1569a48db6aeaa9363e8ef",
+      "size": 4744,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/aacbe07c83c087426d1569a48db6aeaa9363e8ef"
+    },
+    {
+      "path": "docs/deployment/transformers.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbc88e5fd460210d5bdb42046a1a8e02ad2d00c0",
+      "size": 3214,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/bbc88e5fd460210d5bdb42046a1a8e02ad2d00c0"
+    },
+    {
+      "path": "docs/deployment/vllm.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3576d284827482ae7474794828ccc319e9daaf4f",
+      "size": 4398,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3576d284827482ae7474794828ccc319e9daaf4f"
+    },
+    {
+      "path": "docs/deployment/vllm_ascend.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7896d9f8ede9570aef005e961ff349722ae75f7d",
+      "size": 10665,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7896d9f8ede9570aef005e961ff349722ae75f7d"
+    },
+    {
+      "path": "docs/finetune",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ce9e7896f8d0fec3968daa621ce85b030f4989a9",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/ce9e7896f8d0fec3968daa621ce85b030f4989a9"
+    },
+    {
+      "path": "docs/finetune/llamafactory.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fb16d2ff1ba7bba7058aeea693763c0b8028c83",
+      "size": 6065,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8fb16d2ff1ba7bba7058aeea693763c0b8028c83"
+    },
+    {
+      "path": "docs/finetune/ms_swift.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ad6c258fc1c3af372b2dd8ee465e39627e44e43",
+      "size": 5813,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/1ad6c258fc1c3af372b2dd8ee465e39627e44e43"
+    },
+    {
+      "path": "docs/finetune/trl.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97614d23f54e02e25efb4166eb3218a8a36cb704",
+      "size": 6925,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/97614d23f54e02e25efb4166eb3218a8a36cb704"
+    },
+    {
+      "path": "docs/finetune/unsloth.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d66c32b961b12b6db24245815a0c47807959d79",
+      "size": 6259,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7d66c32b961b12b6db24245815a0c47807959d79"
+    },
+    {
+      "path": "docs/finetune/xtuner.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ac5920b4690231116a326b68a40222feafd6fa9",
+      "size": 8717,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5ac5920b4690231116a326b68a40222feafd6fa9"
+    },
+    {
+      "path": "finetune",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2c27e62f1308e7234e50a9bce1edec1b0649321c",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/2c27e62f1308e7234e50a9bce1edec1b0649321c"
+    },
+    {
+      "path": "finetune/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc6eae7dc4a6b0fd59b75f0c12e74cd6f5c1ae73",
+      "size": 2930,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/bc6eae7dc4a6b0fd59b75f0c12e74cd6f5c1ae73"
+    },
+    {
+      "path": "finetune/README_en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "215c5ed8f398ab83c6af7b7dccfe369aa502cd16",
+      "size": 3401,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/215c5ed8f398ab83c6af7b7dccfe369aa502cd16"
+    },
+    {
+      "path": "finetune/configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aa6d177afb5317145c6616e557691adf7889e633",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/aa6d177afb5317145c6616e557691adf7889e633"
+    },
+    {
+      "path": "finetune/configs/ds_config_zero2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "902ffc93cd4c8f23149c09a2b2db8552829c02d1",
+      "size": 814,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/902ffc93cd4c8f23149c09a2b2db8552829c02d1"
+    },
+    {
+      "path": "finetune/configs/ds_config_zero2_offload.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09964b0989650461c41601ff892b704c6481c424",
+      "size": 916,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/09964b0989650461c41601ff892b704c6481c424"
+    },
+    {
+      "path": "finetune/configs/ds_config_zero3.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e2e39a3bbd6e27ae26e96058d7eb25ea3bac3e9",
+      "size": 1050,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7e2e39a3bbd6e27ae26e96058d7eb25ea3bac3e9"
+    },
+    {
+      "path": "finetune/configs/ds_config_zero3_offload.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ee9eb18f2486549618f83e756352e11519062b4",
+      "size": 1250,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5ee9eb18f2486549618f83e756352e11519062b4"
+    },
+    {
+      "path": "finetune/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0308ac60992057eb41a54b1ddf6202ca51deaf48",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/0308ac60992057eb41a54b1ddf6202ca51deaf48"
+    },
+    {
+      "path": "finetune/data/AdvertiseGenChatML",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f47772f31437ebd54f74c272effd7fd30779ff1",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4f47772f31437ebd54f74c272effd7fd30779ff1"
+    },
+    {
+      "path": "finetune/data/AdvertiseGenChatML/dev.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03b069bf7bf5412d4616ea918d5d36ea6a6fd869",
+      "size": 2530,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/03b069bf7bf5412d4616ea918d5d36ea6a6fd869"
+    },
+    {
+      "path": "finetune/data/AdvertiseGenChatML/train.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f982cf50a3051f32b77bbbbeac91c3af26941499",
+      "size": 8561,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/f982cf50a3051f32b77bbbbeac91c3af26941499"
+    },
+    {
+      "path": "finetune/data/ocnli_public_chatml",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51c21f63d7df32aadc6a74b406d42cc7c59e11b9",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/51c21f63d7df32aadc6a74b406d42cc7c59e11b9"
+    },
+    {
+      "path": "finetune/data/ocnli_public_chatml/dev.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "574b4e07d0ed0561a693ef8c30404f74230ef453",
+      "size": 5960,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/574b4e07d0ed0561a693ef8c30404f74230ef453"
+    },
+    {
+      "path": "finetune/data/ocnli_public_chatml/train.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad6497fde0baea2befc99cbd627e9c404baea6e3",
+      "size": 6243,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/ad6497fde0baea2befc99cbd627e9c404baea6e3"
+    },
+    {
+      "path": "finetune/data_processing.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e2b7df02d7ee0aafd757c27d47396d1a1983240",
+      "size": 1830,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7e2b7df02d7ee0aafd757c27d47396d1a1983240"
+    },
+    {
+      "path": "finetune/finetune.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a7ccf64b3eae6e9b9968edc745fd3334972a4cf",
+      "size": 8714,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5a7ccf64b3eae6e9b9968edc745fd3334972a4cf"
+    },
+    {
+      "path": "finetune/llama_factory_example",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eecdfa553297479e7a4bbc21a5a392284846e12f",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/eecdfa553297479e7a4bbc21a5a392284846e12f"
+    },
+    {
+      "path": "finetune/llama_factory_example/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c0d942894c0498f48ca9e3ff2c80a95ff36f231",
+      "size": 3496,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/2c0d942894c0498f48ca9e3ff2c80a95ff36f231"
+    },
+    {
+      "path": "finetune/llama_factory_example/llama_factory_data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6122c08252c19c37d980d1f9b2e251f96222806b",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/6122c08252c19c37d980d1f9b2e251f96222806b"
+    },
+    {
+      "path": "finetune/llama_factory_example/llama_factory_data/dpo_en_demo.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e096bb75e19e59b4f1626ac5b8e0823e0b303e29",
+      "size": 1575285,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e096bb75e19e59b4f1626ac5b8e0823e0b303e29"
+    },
+    {
+      "path": "finetune/llama_factory_example/llama_factory_data/kto_en_demo.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4540e9908dc39a8e8cfb3e56bf5d317d946a6487",
+      "size": 913701,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/4540e9908dc39a8e8cfb3e56bf5d317d946a6487"
+    },
+    {
+      "path": "finetune/llama_factory_example/llama_factory_data/sft_zh_demo.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f1d9c388f3a53ef321f95231e9f9e520424cad2",
+      "size": 636035,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0f1d9c388f3a53ef321f95231e9f9e520424cad2"
+    },
+    {
+      "path": "finetune/llama_factory_example/minicpm_dpo.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c65ac2bb269cd49dfefe3f24fdd69a39cff258d",
+      "size": 759,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5c65ac2bb269cd49dfefe3f24fdd69a39cff258d"
+    },
+    {
+      "path": "finetune/llama_factory_example/minicpm_kto.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39dadd28f1ad8d9b2b9c0b08ece9aafc40d0a514",
+      "size": 752,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/39dadd28f1ad8d9b2b9c0b08ece9aafc40d0a514"
+    },
+    {
+      "path": "finetune/llama_factory_example/minicpm_sft.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0cf5e01a444a195aaac8c99cda65c9a51bca869",
+      "size": 775,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e0cf5e01a444a195aaac8c99cda65c9a51bca869"
+    },
+    {
+      "path": "finetune/llama_factory_example/single_node.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "147a24673235ccd99624f5e4cab33c644221b41a",
+      "size": 423,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/147a24673235ccd99624f5e4cab33c644221b41a"
+    },
+    {
+      "path": "finetune/lora_finetune.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62f468246f88d5d984440e8237d5afbef54238aa",
+      "size": 3981,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/62f468246f88d5d984440e8237d5afbef54238aa"
+    },
+    {
+      "path": "finetune/lora_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d204e50a11a3f8dee1babc9c53996c5e22b69d3",
+      "size": 796,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/2d204e50a11a3f8dee1babc9c53996c5e22b69d3"
+    },
+    {
+      "path": "finetune/lora_finetune_ocnli.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69ebb3e1cd4a0ed097ef85720ec1834d9e3e634a",
+      "size": 115571,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/69ebb3e1cd4a0ed097ef85720ec1834d9e3e634a"
+    },
+    {
+      "path": "finetune/lora_finetune_ocnli.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5edab0937280ff8ef7fe82a8ea2df3ac36f08b2",
+      "size": 811,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b5edab0937280ff8ef7fe82a8ea2df3ac36f08b2"
+    },
+    {
+      "path": "finetune/mlx_finetune.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5c442f090a4e59d04219093e04c53ed3c2d7bfa",
+      "size": 23509,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c5c442f090a4e59d04219093e04c53ed3c2d7bfa"
+    },
+    {
+      "path": "finetune/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e51c331ceeb72c9cc871ce697759fdd66367a93",
+      "size": 150,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/6e51c331ceeb72c9cc871ce697759fdd66367a93"
+    },
+    {
+      "path": "finetune/requirements_mlx.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f8baa582df83136af5ef452555f9b0602dfce9c",
+      "size": 208,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8f8baa582df83136af5ef452555f9b0602dfce9c"
+    },
+    {
+      "path": "finetune/sft_dpo_trainer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "29f00641d049158a38675e45bfae9cc097ef89de",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/29f00641d049158a38675e45bfae9cc097ef89de"
+    },
+    {
+      "path": "finetune/sft_dpo_trainer/finetune_dpo_trainer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87822dc495a3962091bae35bf34ff564f3eeaaa2",
+      "size": 25997,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/87822dc495a3962091bae35bf34ff564f3eeaaa2"
+    },
+    {
+      "path": "finetune/sft_dpo_trainer/sft_dpo.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25bc59e2a0d11acd4296a5f3a39aee5412afcc7c",
+      "size": 858,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/25bc59e2a0d11acd4296a5f3a39aee5412afcc7c"
+    },
+    {
+      "path": "finetune/sft_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d47d080f293f2d974a4b443d0f8c9cb5c34ffd1b",
+      "size": 1604,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d47d080f293f2d974a4b443d0f8c9cb5c34ffd1b"
+    },
+    {
+      "path": "minicpm_sala",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "39f0b4082a392d1f3ef1b61f25c10584f23869a4",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/39f0b4082a392d1f3ef1b61f25c10584f23869a4"
+    },
+    {
+      "path": "minicpm_sala/README-cn.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba8a1329c76936111104a38ccbc0528013ca3c4a",
+      "size": 3494,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/ba8a1329c76936111104a38ccbc0528013ca3c4a"
+    },
+    {
+      "path": "minicpm_sala/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "076c27169b654e9dd353ff042baa358b5367dba8",
+      "size": 3796,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/076c27169b654e9dd353ff042baa358b5367dba8"
+    },
+    {
+      "path": "minicpm_sala/finetune",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b94d9ac5e3c3f0168c10246903213f51735d5fa0",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/b94d9ac5e3c3f0168c10246903213f51735d5fa0"
+    },
+    {
+      "path": "minicpm_sala/finetune/README-cn.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fa459e8b529e01af57d577efb7c2412b936863e",
+      "size": 7316,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0fa459e8b529e01af57d577efb7c2412b936863e"
+    },
+    {
+      "path": "minicpm_sala/finetune/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e704cc168d233f693815ddb6eae5df255950aade",
+      "size": 7656,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e704cc168d233f693815ddb6eae5df255950aade"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "40006a5dc06b4c937b9d605a2abccabe50c77897",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/40006a5dc06b4c937b9d605a2abccabe50c77897"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b45b8ab3aed27b9f9be6765b08c3b935ee96118",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/0b45b8ab3aed27b9f9be6765b08c3b935ee96118"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/configs/minicpm_dpo.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94f8ac9c8559003af35365505f93d6958498c2c2",
+      "size": 756,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/94f8ac9c8559003af35365505f93d6958498c2c2"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/configs/minicpm_kto.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad1c8e2caeced6f2a2121a34b9adae054d665953",
+      "size": 735,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/ad1c8e2caeced6f2a2121a34b9adae054d665953"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/configs/minicpm_sft.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0aca72ed1d3fed785273d335de2b1f739412b09",
+      "size": 772,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b0aca72ed1d3fed785273d335de2b1f739412b09"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/configs/minicpm_sft_lora.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3644f174b8478e8cf89b75240ec7188dfd42d2f5",
+      "size": 772,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3644f174b8478e8cf89b75240ec7188dfd42d2f5"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/llama_factory_data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6122c08252c19c37d980d1f9b2e251f96222806b",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/6122c08252c19c37d980d1f9b2e251f96222806b"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/llama_factory_data/dpo_en_demo.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e096bb75e19e59b4f1626ac5b8e0823e0b303e29",
+      "size": 1575285,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e096bb75e19e59b4f1626ac5b8e0823e0b303e29"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/llama_factory_data/kto_en_demo.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4540e9908dc39a8e8cfb3e56bf5d317d946a6487",
+      "size": 913701,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/4540e9908dc39a8e8cfb3e56bf5d317d946a6487"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/llama_factory_data/sft_zh_demo.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f1d9c388f3a53ef321f95231e9f9e520424cad2",
+      "size": 636035,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0f1d9c388f3a53ef321f95231e9f9e520424cad2"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e0dacc745932996bf4db5fe53cc79a9286d9d7cd",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/e0dacc745932996bf4db5fe53cc79a9286d9d7cd"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/scripts/lora_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69aa746b9507d8fb72665c50e25b0de4651450d2",
+      "size": 52,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/69aa746b9507d8fb72665c50e25b0de4651450d2"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/scripts/sft_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a410fbd1ddbaa151871e0333c857bd8c1cb726e",
+      "size": 47,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5a410fbd1ddbaa151871e0333c857bd8c1cb726e"
+    },
+    {
+      "path": "minicpm_sala/finetune/llama_factory/scripts/sft_finetune_multi_nodes.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8507e2e8d31bbcade5b3657ea1209464ba783d85",
+      "size": 133,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8507e2e8d31bbcade5b3657ea1209464ba783d85"
+    },
+    {
+      "path": "minicpm_sala/finetune/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e360ab06810ffc474675965cc9e6f29e7e9bea1",
+      "size": 63,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/0e360ab06810ffc474675965cc9e6f29e7e9bea1"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6631f333cc5ca39f7017d88d002e492fb3f78ff",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/c6631f333cc5ca39f7017d88d002e492fb3f78ff"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fe745c13bbc272da73173aac33374fe3fd9ee55a",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/fe745c13bbc272da73173aac33374fe3fd9ee55a"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/accelerate",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "44e8bf46e890958c9a1b07407416db94e0112fc8",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/44e8bf46e890958c9a1b07407416db94e0112fc8"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/accelerate/fsdp_config.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3874c05c51765859b2c56d79a04b4edd5e8740d",
+      "size": 707,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/f3874c05c51765859b2c56d79a04b4edd5e8740d"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/accelerate/fsdp_config_multiple_nodes.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "055124e9561bb4f85d6e22ab606f5f6503f218b0",
+      "size": 1323,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/055124e9561bb4f85d6e22ab606f5f6503f218b0"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/accelerate/multigpu_config.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e17796e6990f7242c051f96920761ec2746e1039",
+      "size": 260,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e17796e6990f7242c051f96920761ec2746e1039"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/deepspeed",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aa6d177afb5317145c6616e557691adf7889e633",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/aa6d177afb5317145c6616e557691adf7889e633"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/deepspeed/ds_config_zero2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "902ffc93cd4c8f23149c09a2b2db8552829c02d1",
+      "size": 814,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/902ffc93cd4c8f23149c09a2b2db8552829c02d1"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/deepspeed/ds_config_zero2_offload.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09964b0989650461c41601ff892b704c6481c424",
+      "size": 916,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/09964b0989650461c41601ff892b704c6481c424"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/deepspeed/ds_config_zero3.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e2e39a3bbd6e27ae26e96058d7eb25ea3bac3e9",
+      "size": 1050,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7e2e39a3bbd6e27ae26e96058d7eb25ea3bac3e9"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/configs/deepspeed/ds_config_zero3_offload.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ee9eb18f2486549618f83e756352e11519062b4",
+      "size": 1250,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5ee9eb18f2486549618f83e756352e11519062b4"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0308ac60992057eb41a54b1ddf6202ca51deaf48",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/0308ac60992057eb41a54b1ddf6202ca51deaf48"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/data/AdvertiseGenChatML",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f47772f31437ebd54f74c272effd7fd30779ff1",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4f47772f31437ebd54f74c272effd7fd30779ff1"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/data/AdvertiseGenChatML/dev.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03b069bf7bf5412d4616ea918d5d36ea6a6fd869",
+      "size": 2530,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/03b069bf7bf5412d4616ea918d5d36ea6a6fd869"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/data/AdvertiseGenChatML/train.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f982cf50a3051f32b77bbbbeac91c3af26941499",
+      "size": 8561,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/f982cf50a3051f32b77bbbbeac91c3af26941499"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/data/ocnli_public_chatml",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51c21f63d7df32aadc6a74b406d42cc7c59e11b9",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/51c21f63d7df32aadc6a74b406d42cc7c59e11b9"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/data/ocnli_public_chatml/dev.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "574b4e07d0ed0561a693ef8c30404f74230ef453",
+      "size": 5960,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/574b4e07d0ed0561a693ef8c30404f74230ef453"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/data/ocnli_public_chatml/train.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad6497fde0baea2befc99cbd627e9c404baea6e3",
+      "size": 6243,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/ad6497fde0baea2befc99cbd627e9c404baea6e3"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/finetune.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a7ccf64b3eae6e9b9968edc745fd3334972a4cf",
+      "size": 8714,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5a7ccf64b3eae6e9b9968edc745fd3334972a4cf"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b7fb874bfd3beb59353f96650ccd4dcbcda11bd4",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/b7fb874bfd3beb59353f96650ccd4dcbcda11bd4"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/scripts/accelerate",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "96bf7e20a22bf441ac7160bc7791193c7de14393",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/96bf7e20a22bf441ac7160bc7791193c7de14393"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/scripts/accelerate/lora_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a50d5d7224d8487cf6f67d972a8fa48502fb230",
+      "size": 806,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7a50d5d7224d8487cf6f67d972a8fa48502fb230"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/scripts/accelerate/sft_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3967ac8e3d1b5d31835f42ec54cdd2f0b0cc217f",
+      "size": 790,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3967ac8e3d1b5d31835f42ec54cdd2f0b0cc217f"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/scripts/deepspeed",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4ee741fc06ab9cf5abe88968783acdcc060c75e2",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4ee741fc06ab9cf5abe88968783acdcc060c75e2"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/scripts/deepspeed/lora_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c0bcbcbcb009e9c8b50c9a50de14438a769f48c",
+      "size": 878,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8c0bcbcbcb009e9c8b50c9a50de14438a769f48c"
+    },
+    {
+      "path": "minicpm_sala/finetune/trainer/scripts/deepspeed/sft_finetune.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c581c907c80b653fa00569abb98bda40bb384d7",
+      "size": 861,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/9c581c907c80b653fa00569abb98bda40bb384d7"
+    },
+    {
+      "path": "quantize",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fe5e63f15fa8a24a5019aacd9b1b98412c073691",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/fe5e63f15fa8a24a5019aacd9b1b98412c073691"
+    },
+    {
+      "path": "quantize/awq_quantize.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d979a13e616e9fce8b558c55b37688c8f53a0b6d",
+      "size": 3711,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d979a13e616e9fce8b558c55b37688c8f53a0b6d"
+    },
+    {
+      "path": "quantize/bnb_quantize.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c32cea63dc8bd485c492968068bf0a6ef6490b91",
+      "size": 2388,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/c32cea63dc8bd485c492968068bf0a6ef6490b91"
+    },
+    {
+      "path": "quantize/gptq_quantize.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a0ad3f798c5b070da47fd93a730a54f1df1bbc0",
+      "size": 8499,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/6a0ad3f798c5b070da47fd93a730a54f1df1bbc0"
+    },
+    {
+      "path": "quantize/quantize_data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6530f3399139ef6eaf4d1f32eb4f9d634218f751",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/6530f3399139ef6eaf4d1f32eb4f9d634218f751"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b020dcaff694a14c67112cff973794541c60f4a",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/0b020dcaff694a14c67112cff973794541c60f4a"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/downloads",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b694d70882a967628dd8a4d6e8d16afea28fb27",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/2b694d70882a967628dd8a4d6e8d16afea28fb27"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/downloads/69e71f4ebbd3d7f8f822d46b759228b3fb785d2c74d87f14126cf8da4f403610",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7495118d0836c37330ab432cc4726f659ce6bdcd",
+      "size": 24246638,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7495118d0836c37330ab432cc4726f659ce6bdcd"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/downloads/69e71f4ebbd3d7f8f822d46b759228b3fb785d2c74d87f14126cf8da4f403610.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7ec28aa40a74d746c6bd2a5b87b281793446404",
+      "size": 147,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d7ec28aa40a74d746c6bd2a5b87b281793446404"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/downloads/69e71f4ebbd3d7f8f822d46b759228b3fb785d2c74d87f14126cf8da4f403610.json.backup",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7ec28aa40a74d746c6bd2a5b87b281793446404",
+      "size": 147,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d7ec28aa40a74d746c6bd2a5b87b281793446404"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/downloads/69e71f4ebbd3d7f8f822d46b759228b3fb785d2c74d87f14126cf8da4f403610.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/raw_datasets_tatsu-lab___alpaca_default_0.0.0_dce01c9b08f87459cf36a430d809084718273017.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "238d879818d2ce69178f9f747f2079281f1ad471",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/238d879818d2ce69178f9f747f2079281f1ad471"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca/default",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "55f808def3c514fe8aed1915653cc23b79801b4e",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/55f808def3c514fe8aed1915653cc23b79801b4e"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca/default/0.0.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1c9a6f75bfc8d2afcfa22b2fe1fd8e79d9f1a8ec",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/1c9a6f75bfc8d2afcfa22b2fe1fd8e79d9f1a8ec"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca/default/0.0.0/dce01c9b08f87459cf36a430d809084718273017.incomplete_info.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca/default/0.0.0/dce01c9b08f87459cf36a430d809084718273017",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "228e04e6d82e99af4fd642d84d358b93b762f8a1",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/228e04e6d82e99af4fd642d84d358b93b762f8a1"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca/default/0.0.0/dce01c9b08f87459cf36a430d809084718273017/alpaca-train.arrow",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ebda7c7417414f8b3c420c689aaf4612e133a18",
+      "size": 46230248,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5ebda7c7417414f8b3c420c689aaf4612e133a18"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca/default/0.0.0/dce01c9b08f87459cf36a430d809084718273017/dataset_info.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70e8aa408a4d71815a4a1221423a2a5c047e2cab",
+      "size": 815,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/70e8aa408a4d71815a4a1221423a2a5c047e2cab"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca/tatsu-lab___alpaca/default/0.0.0/dce01c9b08f87459cf36a430d809084718273017_builder.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca_data_cleaned.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51967d73e40bfb93a1efe77ef267148fd07435f5",
+      "size": 208261,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/51967d73e40bfb93a1efe77ef267148fd07435f5"
+    },
+    {
+      "path": "quantize/quantize_data/alpaca_data_cleaned.json.backup",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "912c418b9f57512a191c605de4a162b4fe6977c5",
+      "size": 23252175,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/912c418b9f57512a191c605de4a162b4fe6977c5"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b11b42ffbbb248e0805c27c3bd3eb03c26aca9f",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4b11b42ffbbb248e0805c27c3bd3eb03c26aca9f"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9efcf9a76623f3fed6bda1775bddae9ecda69512",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/9efcf9a76623f3fed6bda1775bddae9ecda69512"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/300e51c2d3e98b6cf3739090e25ea220d1a568457b1b2d97857e1cf71da48434",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e45fd24115d8fb4f0b199318dd8701551b7cc46b",
+      "size": 657209,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e45fd24115d8fb4f0b199318dd8701551b7cc46b"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/300e51c2d3e98b6cf3739090e25ea220d1a568457b1b2d97857e1cf71da48434.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a0e0464b2e890b5b45b660c1bd465a465307c29",
+      "size": 140,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/4a0e0464b2e890b5b45b660c1bd465a465307c29"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/300e51c2d3e98b6cf3739090e25ea220d1a568457b1b2d97857e1cf71da48434.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/5e548f01091b2f01906ea7be35b8a1a6aa74842629dc550b7a02ca0821f1002d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b06d4467b3aeb1ea5f645e4929d2bdb3acb645f7",
+      "size": 732610,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/b06d4467b3aeb1ea5f645e4929d2bdb3acb645f7"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/5e548f01091b2f01906ea7be35b8a1a6aa74842629dc550b7a02ca0821f1002d.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a30d36cafa13649c676cb9717af3d3f24b30df3",
+      "size": 134,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/5a30d36cafa13649c676cb9717af3d3f24b30df3"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/5e548f01091b2f01906ea7be35b8a1a6aa74842629dc550b7a02ca0821f1002d.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/e7f32d67ecf57307f5bc9834102f2f01ad03802eea0fdfc86172a9ec98676280",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ff4f2218b3f0e9d5fdffdf416fea38b60788666",
+      "size": 6357543,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/2ff4f2218b3f0e9d5fdffdf416fea38b60788666"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/e7f32d67ecf57307f5bc9834102f2f01ad03802eea0fdfc86172a9ec98676280.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4dc8161a605dc80a3a62992c1c507c4f289bfad",
+      "size": 135,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a4dc8161a605dc80a3a62992c1c507c4f289bfad"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/downloads/e7f32d67ecf57307f5bc9834102f2f01ad03802eea0fdfc86172a9ec98676280.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c5185a284d6ed8dc5f97ff86a66bc82bb6c7a352",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/c5185a284d6ed8dc5f97ff86a66bc82bb6c7a352"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "10c3e39f24f6f0d27689984e9dbfebc3b6c291de",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/10c3e39f24f6f0d27689984e9dbfebc3b6c291de"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67d742fa3db09d4fa3a827b5f0914d4b12ff9f45",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/67d742fa3db09d4fa3a827b5f0914d4b12ff9f45"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3.incomplete_info.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1813b8e7105a353511e8606a0ede50f35f63cf7c",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/1813b8e7105a353511e8606a0ede50f35f63cf7c"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_info.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "819b95376443f5452b7ca1fd48d370c6a1229812",
+      "size": 1186,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/819b95376443f5452b7ca1fd48d370c6a1229812"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-test.arrow",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eba32cf3e36d027fc215f91090aaa579f3e58404",
+      "size": 168632,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/eba32cf3e36d027fc215f91090aaa579f3e58404"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-test.arrow.backup",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2ee650b2b72b6ec00f38990db8dae81d9affdd9",
+      "size": 1306200,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a2ee650b2b72b6ec00f38990db8dae81d9affdd9"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-train.arrow",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "534df56ab457e126e6f162ff073a391d4cfdea4d",
+      "size": 121528,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/534df56ab457e126e6f162ff073a391d4cfdea4d"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-train.arrow.backup",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "990a7784ace6605f8023ec362ab48e9cd457edbf",
+      "size": 11068328,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/990a7784ace6605f8023ec362ab48e9cd457edbf"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-validation.arrow",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd672498ef3bfb682ebc0941067354af73b1353e",
+      "size": 131832,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/fd672498ef3bfb682ebc0941067354af73b1353e"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-validation.arrow.backup",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3f66176deaeb88350776ae65be6b9d2fe481164",
+      "size": 1160224,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d3f66176deaeb88350776ae65be6b9d2fe481164"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3_builder.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_data/wikitext/wikitext_wikitext_wikitext-2-raw-v1_0.0.0_b08601e04326c79dfdd32d625aee71d232d685c3.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "quantize/quantize_eval.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "220d80753f219b53bbde5e34df1cd7e11328e43f",
+      "size": 4970,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/220d80753f219b53bbde5e34df1cd7e11328e43f"
+    },
+    {
+      "path": "quantize/quantize_eval.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e080659c381672f3b2b9e4ee30be2afe382075d1",
+      "size": 402,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/e080659c381672f3b2b9e4ee30be2afe382075d1"
+    },
+    {
+      "path": "quantize/readme.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04b58bced97752110b3e670aaca7fc6658c5044c",
+      "size": 2120,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/04b58bced97752110b3e670aaca7fc6658c5044c"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e32db2571413b353fe2e68099f7be8bbd9f158b",
+      "size": 691,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3e32db2571413b353fe2e68099f7be8bbd9f158b"
+    },
+    {
+      "path": "skills",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aa9dd34fe04e6e480d2cccbcf6a9647ede1e7f2e",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/aa9dd34fe04e6e480d2cccbcf6a9647ede1e7f2e"
+    },
+    {
+      "path": "skills/minicpm5-deploy-arclight",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e959a58e0a0d09c23a8f133f95635ea5fe6f49d6",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/e959a58e0a0d09c23a8f133f95635ea5fe6f49d6"
+    },
+    {
+      "path": "skills/minicpm5-deploy-arclight/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fba5850c015863f86b0da6afa1e5c907b6c56ac",
+      "size": 4854,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/3fba5850c015863f86b0da6afa1e5c907b6c56ac"
+    },
+    {
+      "path": "skills/minicpm5-deploy-litert",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8b8d7d349c3bfb5026eb49799d76e722f3f94133",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/8b8d7d349c3bfb5026eb49799d76e722f3f94133"
+    },
+    {
+      "path": "skills/minicpm5-deploy-litert/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "470a1ff8cc42732a5d197bdefa4b17f947541e1a",
+      "size": 5219,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/470a1ff8cc42732a5d197bdefa4b17f947541e1a"
+    },
+    {
+      "path": "skills/minicpm5-deploy-llama-cpp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c87dfe4f282e912111be6cd8804d80bc080e649a",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/c87dfe4f282e912111be6cd8804d80bc080e649a"
+    },
+    {
+      "path": "skills/minicpm5-deploy-llama-cpp/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fc6493884623912a4b18a2612f85ed12426d7c0",
+      "size": 3912,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/4fc6493884623912a4b18a2612f85ed12426d7c0"
+    },
+    {
+      "path": "skills/minicpm5-deploy-lmstudio",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4c357f3b2ae3432b2e74c5d977214f5c10fa409b",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4c357f3b2ae3432b2e74c5d977214f5c10fa409b"
+    },
+    {
+      "path": "skills/minicpm5-deploy-lmstudio/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8301d57ebb66ede4e233144157f2dcd23c9271c8",
+      "size": 4265,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/8301d57ebb66ede4e233144157f2dcd23c9271c8"
+    },
+    {
+      "path": "skills/minicpm5-deploy-mlx",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb7aabf02d489bbac22a7cbf3aa679f8bd5d78eb",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/bb7aabf02d489bbac22a7cbf3aa679f8bd5d78eb"
+    },
+    {
+      "path": "skills/minicpm5-deploy-mlx/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c0aa486863c07e07e655025cbba4a898e13f9df",
+      "size": 2712,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/9c0aa486863c07e07e655025cbba4a898e13f9df"
+    },
+    {
+      "path": "skills/minicpm5-deploy-ollama",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7988f51d262dd0fb2ad2cee68598a731a30de861",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/7988f51d262dd0fb2ad2cee68598a731a30de861"
+    },
+    {
+      "path": "skills/minicpm5-deploy-ollama/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51dee3d57e774aea7c293ef1a40a7fa28469bb79",
+      "size": 3375,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/51dee3d57e774aea7c293ef1a40a7fa28469bb79"
+    },
+    {
+      "path": "skills/minicpm5-deploy-sglang",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5065a441970b56f1f4c6cf2611440a99b45378d4",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/5065a441970b56f1f4c6cf2611440a99b45378d4"
+    },
+    {
+      "path": "skills/minicpm5-deploy-sglang/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c09a01e074542e6d81d14f8ae50c14d1be3a6f4",
+      "size": 5168,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/7c09a01e074542e6d81d14f8ae50c14d1be3a6f4"
+    },
+    {
+      "path": "skills/minicpm5-deploy-transformers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "248ff48047cca6d9c84147e21458de6fdc6bfc48",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/248ff48047cca6d9c84147e21458de6fdc6bfc48"
+    },
+    {
+      "path": "skills/minicpm5-deploy-transformers/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fff6356ea1426785bf7db8351a5a0ad8f5edb338",
+      "size": 3082,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/fff6356ea1426785bf7db8351a5a0ad8f5edb338"
+    },
+    {
+      "path": "skills/minicpm5-deploy-vllm-ascend",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e0963acd7e29a6a797127161c758cbc89ea8c24a",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/e0963acd7e29a6a797127161c758cbc89ea8c24a"
+    },
+    {
+      "path": "skills/minicpm5-deploy-vllm-ascend/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3f45a486149f9eef41f9a9c2062176f1c83bced",
+      "size": 6631,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/d3f45a486149f9eef41f9a9c2062176f1c83bced"
+    },
+    {
+      "path": "skills/minicpm5-deploy-vllm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "146ac807e269d851411fe96e892f426876d94dfe",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/146ac807e269d851411fe96e892f426876d94dfe"
+    },
+    {
+      "path": "skills/minicpm5-deploy-vllm/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "faa1562ca87a7b45072c351950368d8c9ba7b349",
+      "size": 3259,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/faa1562ca87a7b45072c351950368d8c9ba7b349"
+    },
+    {
+      "path": "skills/minicpm5-deploy",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b7e026cf18bc6994c60661c3d55fcc29ce809286",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/b7e026cf18bc6994c60661c3d55fcc29ce809286"
+    },
+    {
+      "path": "skills/minicpm5-deploy/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4a8412291dad10937dbae78ee4061d864924fac",
+      "size": 6589,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/a4a8412291dad10937dbae78ee4061d864924fac"
+    },
+    {
+      "path": "skills/minicpm5-finetune-gguf-lora",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4e0f113ef488c224461ef914d25525254b774551",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4e0f113ef488c224461ef914d25525254b774551"
+    },
+    {
+      "path": "skills/minicpm5-finetune-gguf-lora/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "194fcc372ac613fe30068ec163ff7f2ff707cad6",
+      "size": 8045,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/194fcc372ac613fe30068ec163ff7f2ff707cad6"
+    },
+    {
+      "path": "skills/minicpm5-finetune-llamafactory",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "da2223aed11a37c2a3975e41008caa4611d7bec5",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/da2223aed11a37c2a3975e41008caa4611d7bec5"
+    },
+    {
+      "path": "skills/minicpm5-finetune-llamafactory/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "582566357812301f73dea76821a0aa4a37462023",
+      "size": 5280,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/582566357812301f73dea76821a0aa4a37462023"
+    },
+    {
+      "path": "skills/minicpm5-finetune-ms-swift",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "522265fd1ee58c871aab71e38ae30168c8ff2643",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/522265fd1ee58c871aab71e38ae30168c8ff2643"
+    },
+    {
+      "path": "skills/minicpm5-finetune-ms-swift/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c67f1394b392cbebe89cd9c6d72c48d803c51b8",
+      "size": 4770,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/9c67f1394b392cbebe89cd9c6d72c48d803c51b8"
+    },
+    {
+      "path": "skills/minicpm5-finetune-trl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c47cd3bb23549217bb9d93727b0528da4328db37",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/c47cd3bb23549217bb9d93727b0528da4328db37"
+    },
+    {
+      "path": "skills/minicpm5-finetune-trl/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "013302bd908dacb9a0f41ab6c75f9fea58dab745",
+      "size": 6230,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/013302bd908dacb9a0f41ab6c75f9fea58dab745"
+    },
+    {
+      "path": "skills/minicpm5-finetune-unsloth",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1c23c1850ea66918bc95de8427d7db169dfc6495",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/1c23c1850ea66918bc95de8427d7db169dfc6495"
+    },
+    {
+      "path": "skills/minicpm5-finetune-unsloth/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41c7670902d2c8062f3d5fd719dcee7fcc578aac",
+      "size": 5304,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/41c7670902d2c8062f3d5fd719dcee7fcc578aac"
+    },
+    {
+      "path": "skills/minicpm5-finetune-xtuner",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7a2ba407de01c005db063e7ac492b84a77478123",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/7a2ba407de01c005db063e7ac492b84a77478123"
+    },
+    {
+      "path": "skills/minicpm5-finetune-xtuner/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26bfd234afb87cce51f6bc3920b1917254d9e2a2",
+      "size": 7004,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/26bfd234afb87cce51f6bc3920b1917254d9e2a2"
+    },
+    {
+      "path": "skills/minicpm5-finetune",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "569301c5b591aa1f185a273a96a971e8cf7765d4",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/569301c5b591aa1f185a273a96a971e8cf7765d4"
+    },
+    {
+      "path": "skills/minicpm5-finetune/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb1f9378ee8ea6d259fe893bffbc4fe4b73c0a54",
+      "size": 5332,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/cb1f9378ee8ea6d259fe893bffbc4fe4b73c0a54"
+    },
+    {
+      "path": "tool_parsers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f34c4d61210052cb3ca419042f5394bc991f240",
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/trees/4f34c4d61210052cb3ca419042f5394bc991f240"
+    },
+    {
+      "path": "tool_parsers/minicpm5xml_tool_parser.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc9a0a9e743c881a5462a16925066547b9bcf708",
+      "size": 23254,
+      "url": "https://api.github.com/repos/OpenBMB/MiniCPM/git/blobs/cc9a0a9e743c881a5462a16925066547b9bcf708"
+    }
+  ],
+  "truncated": false
+}

@@ -1,0 +1,22 @@
+{
+  "status": "prepared_not_trained",
+  "smoke_only": true,
+  "max_length": 4096,
+  "model_id": "openbmb/MiniCPM5-1B",
+  "revision": "87179e5c1f455ef22e6223592d2d61351b525bfc",
+  "data_manifest_sha256": "21f9fe6ff7c3e379237a7abb7d885b42f55fda180402c9404d240ecbda93b295",
+  "snapshot_manifest_sha256": "4a19bcc5de9e95980646abe56791babbcaaccf6294a0d82633badd7a1f5182bf",
+  "counts": {
+    "train": 396,
+    "dev": 104
+  },
+  "max_observed_length": 1936,
+  "files": {
+    "train.jsonl": "bfb7cb606dc0aba76a2debeef456e217f031d7ecc476f8c667765084d209e49a",
+    "dev.jsonl": "ee3856c2b3552a82e94a2310f821bca40d55864ca03165fa17cd341312b03fae",
+    "template-audit.jsonl": "d0b066bd09b6cea2c589fe5c32b4ce757db6bdb31d4a411d41e64646683a289e"
+  },
+  "reviews_sha256": null,
+  "loss": "assistant target + EOS only; each assistant turn is one example; all prompt/tool result tokens masked",
+  "fixed_50_prompt_fit": "pass"
+}

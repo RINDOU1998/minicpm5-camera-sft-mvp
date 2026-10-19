@@ -1,0 +1,96 @@
+{
+  "schema": "camera-agent-release.v3",
+  "release": "camera_agent",
+  "checkpoint_sha256": "ccdd9b95fb16c6d880c165a0bcaf3899210db38dda396762b5b452fef648af8e",
+  "qualification_scope": "short_prompt_camera11_on_context_configuration",
+  "qualified": false,
+  "long_history_status": "NOT_TESTED",
+  "golden": {
+    "path": "cpu_short_prompt_golden.json",
+    "bytes": 114449,
+    "sha256": "d135a7f822197a55c3e0cd6044293f51dbf5ae9f5e6f5f05f5acd3c92e15720c"
+  },
+  "gate": {
+    "id": "forced_top1_agreement.v3",
+    "criterion": "forced_top1_agreement_count",
+    "operator": ">=",
+    "threshold": 362,
+    "of": 365,
+    "reference": "original_hf_cpu_fp32_golden_greedy_token",
+    "numeric_mode": "forced",
+    "include_eos_decision": true,
+    "same_full_input_prefix_required": true,
+    "evidence_captures_per_context": 1,
+    "single_capture_sampling_caveat": {
+      "evidence_captures_per_context": 1,
+      "device_repeatability": "characterized non-deterministic",
+      "what_varies": "the same fixed-input decode does not return byte-identical results on the target board: in the layer-6 attention Vector stage upstream of the softmax (L6_scale or L6_mask_add) every drifting element has index congruent to 15 mod 16 and flips by exactly +-1 code, on all 16 rows and on byte-identical input; the Cube MatMul output feeding that stage is byte-stable, while the softmax output and the layer hidden state are not, so individual per-step top-1 decisions can differ between runs of the same capture",
+      "count_is_one_sample": true,
+      "reproducibility": "forced_top1_agreement_count is ONE SAMPLE of a non-deterministic device, not a reproducible number: re-running the same capture on the same board with the same inputs may return a different count. Never quote it as reproducible.",
+      "characterization_artifacts": [
+        {
+          "path": "reports/orangepi-l6-repeatability-phase1-verdict-r1-20260908.json",
+          "bytes": 11185,
+          "sha256": "23f172f921f00cdc4912fa1baa10ae1e28f1e6e577a18370427d09def7c40c51"
+        },
+        {
+          "path": "reports/orangepi-l6-phase1b-d1-r1-20260908.json",
+          "bytes": 28759,
+          "sha256": "44b68bb24620e6a65e11a713f0ce56a2e7da740bda9a7e16eed27ba756d51035"
+        },
+        {
+          "path": "ORANGEPI_LANE15_VECTOR_NONDETERMINISM_REPORT_20260908.md",
+          "bytes": 67309,
+          "sha256": "d55dcbe7fa6e7afe98078cf995cf82b80c3468cd0e7d32b241678336d1ea70a8"
+        }
+      ],
+      "characterization_artifacts_location": "gate working directory; pinned here by digest, not bundled in this payload"
+    },
+    "report_only": [
+      "forced_cosines",
+      "free_aligned_cosines",
+      "free_text_exact",
+      "free_token_ids_exact",
+      "free_eos_exact",
+      "free_finish_reason_exact"
+    ]
+  },
+  "contexts": [
+    {
+      "context_tokens": 8192,
+      "camera_om_status": "MISSING_CAMERA_OM",
+      "camera_om": null,
+      "test_status": "NOT_TESTED",
+      "test_evidence": null,
+      "qualified": false,
+      "forced_top1_agreement_count": null,
+      "forced_top1_threshold": 362,
+      "capture_board": null,
+      "capture_boot_id": null
+    },
+    {
+      "context_tokens": 10240,
+      "camera_om_status": "MISSING_CAMERA_OM",
+      "camera_om": null,
+      "test_status": "NOT_TESTED",
+      "test_evidence": null,
+      "qualified": false,
+      "forced_top1_agreement_count": null,
+      "forced_top1_threshold": 362,
+      "capture_board": null,
+      "capture_boot_id": null
+    },
+    {
+      "context_tokens": 16384,
+      "camera_om_status": "MISSING_CAMERA_OM",
+      "camera_om": null,
+      "test_status": "NOT_TESTED",
+      "test_evidence": null,
+      "qualified": false,
+      "forced_top1_agreement_count": null,
+      "forced_top1_threshold": 362,
+      "capture_board": null,
+      "capture_boot_id": null
+    }
+  ]
+}

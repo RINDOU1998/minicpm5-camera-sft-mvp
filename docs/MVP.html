@@ -1,0 +1,149 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Camera Agent 数据生产 MVP：300 条链路方案</title><style>*{box-sizing:border-box}body{margin:0;background:#f0f4f9;color:#172d45;font:16px/1.85 "Segoe UI","Microsoft YaHei",sans-serif}main{max-width:1050px;margin:35px auto;padding:32px 40px;background:white;border-radius:16px}h1{font-size:30px;line-height:1.5;color:#103d6b}h2{margin-top:34px;padding-top:14px;border-top:1px solid #dbe3ed;font-size:22px}a{color:#1760bd}strong{color:#113a64}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px 12px;border-bottom:1px solid #dbe3ed;text-align:left;vertical-align:top}th{background:#eef3fa}.table{overflow:auto}code{font-family:Consolas,monospace;font-size:0.9em;overflow-wrap:anywhere}li{margin:6px 0}pre{padding:15px;background:#edf2f8;overflow:auto}footer{font-size:13px;color:#526780;margin-top:35px}@media(max-width:700px){main{margin:12px;padding:20px}h1{font-size:25px}h2{font-size:21px}td,th{min-width:90px;padding:8px}}</style></head><body><main><h1>Camera Agent 数据生产 MVP：先用 300 条跑通链路</h1>
+<p>本轮只做原路线的 1–3：冻结契约与基线、建立数据生产和评测材料、交付云端小样本试训代码。源码与后续文档迁入 <code>D:/workspace/minicpm5-sft</code>；旧 Pegasus 仓库保留原样。</p>
+<h2>先固定四项决定</h2>
+<ol>
+<li>工具：现有 50 条 Camera 数据集中的 10 个工具，完整保留 system、工具说明和 schema。</li>
+<li>基线：官方 MiniCPM5-1B，固定 revision、BF16、No Think、greedy、128 token 输出上限。</li>
+<li>样本：300 条新轨迹，240 train / 60 dev；原 50 条是独立保留的回归材料，不参与训练。开发集不是隐藏盲测。</li>
+<li>目标：验证生产和训练链路；当前不以“300 条必达 95%”承诺效果。</li>
+</ol>
+<h2>数据从哪里来</h2>
+<p><strong>agent 写场景和候选，程序维护契约、标签、模拟事实和版本。</strong> 本仓先交付 75 个 agent 编写的可审查种子，以四种受控表达扩成 300 条。只有表达前缀变化的样本不能算独立任务；它们全部与同源样本放在同一 split。相同工具参数组合进一步归为同组，实际共 73 组。</p>
+<p>这是一批可复现的链路数据，不是最终高多样性语料。下一批可让 agent 按固定计划重写真实语句和场景，仍需通过验证和独立审核；不要通过换随机 seed 制造“全新测试集”。</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:right">train</th>
+<th style="text-align:right">dev</th>
+<th style="text-align:right">合计</th>
+<th>学什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成功调用与结果回填</td>
+<td style="text-align:right">120</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">160</td>
+<td>10 个工具、参数、结果后的答复</td>
+</tr>
+<tr>
+<td>工具失败与正确解释</td>
+<td style="text-align:right">36</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">40</td>
+<td>不编造成功；MVP 使用 device_unavailable</td>
+</tr>
+<tr>
+<td>无需工具的正常问答</td>
+<td style="text-align:right">28</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">32</td>
+<td>不被摄像头词汇诱发误调用</td>
+</tr>
+<tr>
+<td>不支持的能力或枚举</td>
+<td style="text-align:right">28</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">32</td>
+<td>不近似、不乱补工具</td>
+</tr>
+<tr>
+<td>参数缺失/任务不明确</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">24</td>
+<td>先澄清、不默认补值</td>
+</tr>
+<tr>
+<td>多个独立动作</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">12</td>
+<td>遵循当前单动作策略，请求拆分</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td style="text-align:right"><strong>240</strong></td>
+<td style="text-align:right"><strong>60</strong></td>
+<td style="text-align:right"><strong>300</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>本轮未覆盖：澄清后的完整追问流程、多类超时/重试、长历史、复杂状态模拟、系统性通用能力基准。这些属于扩量阶段，不能用当前通过结果替代。</p>
+<h2>最小生产链路</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>输入</th>
+<th>输出</th>
+<th>门槛</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 冻结</td>
+<td>原 50 条及工具契约</td>
+<td>contract、原文件 SHA256、BF16 revision</td>
+<td>工具/system 与原样本一致</td>
+</tr>
+<tr>
+<td>2 制定计划</td>
+<td>人工/agent 审查的场景种子</td>
+<td>sample_id、group_id、split、标签与参数依据</td>
+<td>同源及相同参数组合不跨 split</td>
+</tr>
+<tr>
+<td>3 生成候选</td>
+<td>计划 + 工具契约</td>
+<td>messages JSONL</td>
+<td>agent 不读回归题、不改变规定事实</td>
+</tr>
+<tr>
+<td>4 规则校验</td>
+<td>300 条候选</td>
+<td>错误清单、相似性提醒、覆盖统计</td>
+<td>无未知工具、缺参、多参、枚举错、轨迹错、精确重复/泄漏</td>
+</tr>
+<tr>
+<td>5 语义复核</td>
+<td>原始请求、工具、预期、验证结果</td>
+<td>带 sample hash 的审核记录</td>
+<td>独立审核应判断意图和事实；规则校验不能替代</td>
+</tr>
+<tr>
+<td>6 冻结发布</td>
+<td>候选、审核、split</td>
+<td>train/dev、manifest、hash</td>
+<td>任何后续修改都能被识别；候选不能自称已审核</td>
+</tr>
+<tr>
+<td>7 试训</td>
+<td>官方 tokenizer、冻结数据</td>
+<td>渲染证据、mask、adapter、完整评测日志</td>
+<td>先验证 token，再在云端手动训练</td>
+</tr>
+</tbody>
+</table></div>
+<h2>验证器到底保证什么</h2>
+<p>**能机械检查：**10 工具原始契约、必填参数、字符串枚举、额外字段、精确标签、每个参数在请求中的规范词证据、停止任务的给定状态、tool_call_id、结果与模拟事实一致、最终参考答案不被改写、同组 split、文件 hash、回归题精确重复和词面相似性。</p>
+<p>**不能自动证明：**一句改写是否偷偷改变意图、否定范围是否正确、答案是否足够自然、是否真实泛化。词面相似度低也不能证明没有语义泄漏。独立审核单独留状态，不用验证器绿色结果冒充人工认可。</p>
+<p>现有 schema 的 <code>additionalProperties=true</code> 保留原文；验证器按历史严格 EM 口径另行拒绝额外参数，避免悄悄改变输入来提升分数。</p>
+<p>MVP 工具返回为项目自定义 <code>mvp-simulated-v1</code>：只在精确匹配的调用后回填固定结果或错误。不声称是生产工具返回格式，也不触碰设备。停止任务复用原评测中的 <code>previous_tool_result/current_query</code> 表达。</p>
+<h2>两个清晰状态</h2>
+<ul>
+<li>**链路试训：**规则通过但独立审核未完成；必须显式使用 <code>--smoke</code>，实验结果不得用于正式发布声明。</li>
+<li>**审核后数据：**每个样本都有匹配 hash 的独立 accept；<code>prepare</code> 去掉 <code>--smoke</code> 并提交审核文件。不因此自动获得模型效果或真实硬件验收。</li>
+</ul>
+<p>本轮首批 300 条状态是前者。让另一个 agent 审核时要记录真实执行的身份与结论，不能把“准备让 agent 审核”填成 accept。</p>
+<h2>云端训练为什么这么小</h2>
+<p>八卡 A6000 先使用一张卡：BF16 LoRA rank 16、有效 batch 16、2 epoch。暂不增加全量 SFT、DPO 和分布式训练变量。</p>
+<p>采用 Transformers + PEFT 小型训练器直接使用官方 chat template。一个 assistant 步是一个训练 example；工具返回作为下一步输入但不监督其 token。因此 240 条训练轨迹产生 396 个 assistant example，60 条开发轨迹产生 104 个。没有改词表，没有用简化聊天模板。</p>
+<p>云端顺序：数据验证 → 固定模型下载 → tokenizer/mask 检查 → BF16 原版 dev/50 基线 → LoRA → adapter dev/50 → 合并 → merged dev/50 → 配对比较。完整可复制命令都在 <a href="../README.md">README</a>，这里不重复维护另一套。</p>
+<h2>这轮怎样算完成</h2>
+<p>本地交付完成：代码已版本控制、300 条候选可验证、故障测试能拒绝错误输入、真实 tokenizer 检查通过、README 足以手动执行。</p>
+<p>云端链路完成：原版/adapter/merged 的 60 条和 50 条完整记录均落盘、训练无 NaN/越界/截断数据、合并差异有解释。任务分数仍可能低，必须如实保留。正式 95% 目标还需要更多独立数据、能力保留评测和真实工具闭环。</p>
+<footer>源码：docs/MVP.md。云端命令统一维护在 README.md；本页不是已完成 GPU 实验的报告。</footer></main></body></html>

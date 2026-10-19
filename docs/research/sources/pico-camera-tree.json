@@ -1,0 +1,2376 @@
+{
+  "sha": "df3c4b1de8672f28170deedc653a4e882c2a79e2",
+  "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/df3c4b1de8672f28170deedc653a4e882c2a79e2",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e888e4797c302f312f3436c06e2b7cafb6aca151",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/e888e4797c302f312f3436c06e2b7cafb6aca151"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "220032e2db956da4ea5d70bcf5308a598e6a4fe2",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/220032e2db956da4ea5d70bcf5308a598e6a4fe2"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d211cacb109dd64f7f9c5addc6e8ba546fa77cf",
+      "size": 644,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0d211cacb109dd64f7f9c5addc6e8ba546fa77cf"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daab844f852a260f12e8a1aafb10b06612ac6ed7",
+      "size": 1742,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/daab844f852a260f12e8a1aafb10b06612ac6ed7"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1e921338fd20004dba48b2a48ee60ae1d19b38e",
+      "size": 394,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c1e921338fd20004dba48b2a48ee60ae1d19b38e"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58808b06f6c5681e22980b205dbb2a0bc578d88d",
+      "size": 25224,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/58808b06f6c5681e22980b205dbb2a0bc578d88d"
+    },
+    {
+      "path": "CHANGELOG.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0ad77aa928f31003e998baac7a8ddc475f6d8c1",
+      "size": 23405,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a0ad77aa928f31003e998baac7a8ddc475f6d8c1"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a6132d5f5d62450ec303c5b41a45a3f8b2bf2d8",
+      "size": 331,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7a6132d5f5d62450ec303c5b41a45a3f8b2bf2d8"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7db1902893eee5e86e34d1c0b13e5a24e7b64a6",
+      "size": 582,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f7db1902893eee5e86e34d1c0b13e5a24e7b64a6"
+    },
+    {
+      "path": "CONTRIBUTING.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9161f51acdddb051869f07407c55289069e0bf53",
+      "size": 532,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/9161f51acdddb051869f07407c55289069e0bf53"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "size": 11357,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "MANIFEST.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c24d1d36803ca7e4e0fdd7aa568c9170a857c449",
+      "size": 876,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c24d1d36803ca7e4e0fdd7aa568c9170a857c449"
+    },
+    {
+      "path": "MODEL_PROVENANCE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d617caae8a439a26e789f807af8bdacd0adb97d0",
+      "size": 1079,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d617caae8a439a26e789f807af8bdacd0adb97d0"
+    },
+    {
+      "path": "MODEL_PROVENANCE.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c77e373fcd9f55425a11f2d9e5713800a30b2c3b",
+      "size": 867,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c77e373fcd9f55425a11f2d9e5713800a30b2c3b"
+    },
+    {
+      "path": "Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a587d6ef6c3a01fe31b09c3a14db81406b986752",
+      "size": 562,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a587d6ef6c3a01fe31b09c3a14db81406b986752"
+    },
+    {
+      "path": "NOTICE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8faa563506269349d67fe4f835d8cf895562b4e",
+      "size": 1131,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d8faa563506269349d67fe4f835d8cf895562b4e"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "468dc810c2acc20a8d16526f17391c8fbd8f09d9",
+      "size": 33978,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/468dc810c2acc20a8d16526f17391c8fbd8f09d9"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "588fafb89da499194dab6dd02b450c38af77f5d8",
+      "size": 25659,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/588fafb89da499194dab6dd02b450c38af77f5d8"
+    },
+    {
+      "path": "SECURITY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "925cae11bdec340bcc57f34764f8d0153ef944ae",
+      "size": 486,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/925cae11bdec340bcc57f34764f8d0153ef944ae"
+    },
+    {
+      "path": "SECURITY.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d505af85d65320a7b082eba762d63f3db782165f",
+      "size": 413,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d505af85d65320a7b082eba762d63f3db782165f"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23e905c2c3634ea2ec87cc8480bece49c50df7d4",
+      "size": 1483,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/23e905c2c3634ea2ec87cc8480bece49c50df7d4"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8155c56f23c40ff1cbab0c2f3a057406a732b465",
+      "size": 1242,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8155c56f23c40ff1cbab0c2f3a057406a732b465"
+    },
+    {
+      "path": "app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "454f4d62e4474796e565de65df5a5b14ccfd2f98",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/454f4d62e4474796e565de65df5a5b14ccfd2f98"
+    },
+    {
+      "path": "app/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "198e35cd67e7a9695a22cfd19bb6e4bb0f220f6e",
+      "size": 26870,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/198e35cd67e7a9695a22cfd19bb6e4bb0f220f6e"
+    },
+    {
+      "path": "app/README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a69ecc3adf91f3d8a2f374413af714c624704ad7",
+      "size": 26258,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a69ecc3adf91f3d8a2f374413af714c624704ad7"
+    },
+    {
+      "path": "app/agent.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "45f05cbb9352df6d8ba68a351019e39ed200eaf8",
+      "size": 1501,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/45f05cbb9352df6d8ba68a351019e39ed200eaf8"
+    },
+    {
+      "path": "app/bin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5a7f1814a7d22360762626357b67ce38d33d9e86",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/5a7f1814a7d22360762626357b67ce38d33d9e86"
+    },
+    {
+      "path": "app/bin/SHA256SUMS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03f15af55d8787871f1d4df8749f7867a7dc0968",
+      "size": 212,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/03f15af55d8787871f1d4df8749f7867a7dc0968"
+    },
+    {
+      "path": "app/bin/pico_persistent_acl_executor.aarch64",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "3f48e9e2be68729b693300318960ac3e50c25c47",
+      "size": 37840,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3f48e9e2be68729b693300318960ac3e50c25c47"
+    },
+    {
+      "path": "app/bin/pico_persistent_acl_executor.community",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6bde2204f55ef2b92af65a89ae74137009af662d",
+      "size": 1857,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6bde2204f55ef2b92af65a89ae74137009af662d"
+    },
+    {
+      "path": "app/bin/pico_persistent_acl_executor.community.bin",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "a12d5ac38eaeda7f8940a778c0812b7958102f2c",
+      "size": 1300840,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a12d5ac38eaeda7f8940a778c0812b7958102f2c"
+    },
+    {
+      "path": "app/board_env.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "c5068fbf30ba9406c07a167090f419c6928e7fb0",
+      "size": 2157,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c5068fbf30ba9406c07a167090f419c6928e7fb0"
+    },
+    {
+      "path": "app/boards",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51c6e6684055d1845ae25fd2c2b4536eb27293b3",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/51c6e6684055d1845ae25fd2c2b4536eb27293b3"
+    },
+    {
+      "path": "app/boards/ctx1024-pico-ok.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c288acebf19610cd4bb14e291f0ebb1cdbcaa5e",
+      "size": 1249,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5c288acebf19610cd4bb14e291f0ebb1cdbcaa5e"
+    },
+    {
+      "path": "app/bringup_euler_pi.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "926aff0f6a4f9fbb3a2fe0df628ce42bd4287f6a",
+      "size": 5286,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/926aff0f6a4f9fbb3a2fe0df628ce42bd4287f6a"
+    },
+    {
+      "path": "app/camera",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b6521e1382367f17d6eaf01e168c00808254b869",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/b6521e1382367f17d6eaf01e168c00808254b869"
+    },
+    {
+      "path": "app/camera/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3d31e0135f1dd595f728ef2e7ffd5bfe48210b4",
+      "size": 7978,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d3d31e0135f1dd595f728ef2e7ffd5bfe48210b4"
+    },
+    {
+      "path": "app/camera/camera_agent.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dc206699505831a3d8ad5a62bfa2ce33821968a",
+      "size": 18404,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/1dc206699505831a3d8ad5a62bfa2ce33821968a"
+    },
+    {
+      "path": "app/camera/camera_contract.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c96f67eda939103ce4cc113234a4130048c7cd75",
+      "size": 14408,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c96f67eda939103ce4cc113234a4130048c7cd75"
+    },
+    {
+      "path": "app/camera/camera_contract_provenance.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85cc5b5bdb7708ca963ebc30115dc5cefcc0a43f",
+      "size": 1412,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/85cc5b5bdb7708ca963ebc30115dc5cefcc0a43f"
+    },
+    {
+      "path": "app/camera/seal_manifest.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7a9e27b2b397e921ca41a82e34e937258b7d3d5",
+      "size": 2202,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f7a9e27b2b397e921ca41a82e34e937258b7d3d5"
+    },
+    {
+      "path": "app/chat.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2b9da75e5fee1b3ea6cda432642999e173e758a9",
+      "size": 5729,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/2b9da75e5fee1b3ea6cda432642999e173e758a9"
+    },
+    {
+      "path": "app/configure_orangepi_usb_ipv4.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5c75dbc67731661d7f67cda170c8ffff646cbbbd",
+      "size": 3714,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5c75dbc67731661d7f67cda170c8ffff646cbbbd"
+    },
+    {
+      "path": "app/dhcp_offer_usb.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f7dc4784516d255212705f7139c9120c04756cf7",
+      "size": 4217,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f7dc4784516d255212705f7139c9120c04756cf7"
+    },
+    {
+      "path": "app/glibc239",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3098ea64d80bddfecd9198c394d68a714380038",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/a3098ea64d80bddfecd9198c394d68a714380038"
+    },
+    {
+      "path": "app/glibc239/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b29e316ddc82b9cdea840742e3488cf79567e3d",
+      "size": 611,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/2b29e316ddc82b9cdea840742e3488cf79567e3d"
+    },
+    {
+      "path": "app/glibc239/README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69c3e37748839a9dee607503b6d197c34b70e080",
+      "size": 615,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/69c3e37748839a9dee607503b6d197c34b70e080"
+    },
+    {
+      "path": "app/glibc239/SHA256SUMS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9126a8314f03a041f6be3ba0c7ee043c8387b69",
+      "size": 636,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f9126a8314f03a041f6be3ba0c7ee043c8387b69"
+    },
+    {
+      "path": "app/glibc239/ld-linux-aarch64.so.1",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6e95af272c7b55c9c3185acc4fbb3758be939686",
+      "size": 203968,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6e95af272c7b55c9c3185acc4fbb3758be939686"
+    },
+    {
+      "path": "app/glibc239/libc.so.6",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "74c57c34a5534386675d79190815adbf6cdb1196",
+      "size": 1722920,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/74c57c34a5534386675d79190815adbf6cdb1196"
+    },
+    {
+      "path": "app/glibc239/libdl.so.2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d51c702a6ba97ecae1de37ff835e286d5477eb2f",
+      "size": 67440,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d51c702a6ba97ecae1de37ff835e286d5477eb2f"
+    },
+    {
+      "path": "app/glibc239/libm.so.6",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20edc0ee10cc6c57c1781fb75161b63dda88d574",
+      "size": 591800,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/20edc0ee10cc6c57c1781fb75161b63dda88d574"
+    },
+    {
+      "path": "app/glibc239/libpthread.so.0",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d17505bcd4d7b0c57b3ca4ccd9120c14beb57f01",
+      "size": 67440,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d17505bcd4d7b0c57b3ca4ccd9120c14beb57f01"
+    },
+    {
+      "path": "app/glibc239/libresolv.so.2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c133eed9e67db8efab06a589cf811c5ce1892f6",
+      "size": 67720,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6c133eed9e67db8efab06a589cf811c5ce1892f6"
+    },
+    {
+      "path": "app/glibc239/librt.so.1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9cd1ca42b34fda8d0b339f80099d184a85f0d8b",
+      "size": 67512,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/e9cd1ca42b34fda8d0b339f80099d184a85f0d8b"
+    },
+    {
+      "path": "app/glibc239/libutil.so.1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5238e7f8fa5f81a054aefb4d8c9398a64c5d5f4",
+      "size": 67440,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a5238e7f8fa5f81a054aefb4d8c9398a64c5d5f4"
+    },
+    {
+      "path": "app/install_board.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e2582a7d35a97ed357230e1cea212cd1107980dd",
+      "size": 2520,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/e2582a7d35a97ed357230e1cea212cd1107980dd"
+    },
+    {
+      "path": "app/install_orangepi_usb_ipv4.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "3055997cd422a2b79011ac18a785d8c3970ca827",
+      "size": 3278,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3055997cd422a2b79011ac18a785d8c3970ca827"
+    },
+    {
+      "path": "app/install_python.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1ac5688550d8151cf8ee412fd35d01e666ffd247",
+      "size": 6719,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/1ac5688550d8151cf8ee412fd35d01e666ffd247"
+    },
+    {
+      "path": "app/install_runtime_lib.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "3f9f419e095921f6bb3b06396a0c3f04a60a487e",
+      "size": 3540,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3f9f419e095921f6bb3b06396a0c3f04a60a487e"
+    },
+    {
+      "path": "app/lib-community",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "57b7c2efdfa6177469a376b2769b8c0f8c2856b3",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/57b7c2efdfa6177469a376b2769b8c0f8c2856b3"
+    },
+    {
+      "path": "app/lib-community/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34e749f9ffb4582f9bb14ef0e0ba529bd1ec7a2e",
+      "size": 2074,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/34e749f9ffb4582f9bb14ef0e0ba529bd1ec7a2e"
+    },
+    {
+      "path": "app/lib-community/README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f2ce143813de4286e063a70589cfb8ad78f59a0",
+      "size": 2029,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/9f2ce143813de4286e063a70589cfb8ad78f59a0"
+    },
+    {
+      "path": "app/lib-community/SHA256SUMS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af64343fc2ee726517251d79d8f8bbce293cf856",
+      "size": 416,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/af64343fc2ee726517251d79d8f8bbce293cf856"
+    },
+    {
+      "path": "app/lib-community/libpico_mmz_anyaddr.so",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "070428e2386c83381ef61be2726b7c83804e085f",
+      "size": 8576,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/070428e2386c83381ef61be2726b7c83804e085f"
+    },
+    {
+      "path": "app/lib-community/libprotobuf-c.so.1",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f9f03ac36b859c75e6da43f5faf11e32968cb8d0",
+      "size": 67456,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f9f03ac36b859c75e6da43f5faf11e32968cb8d0"
+    },
+    {
+      "path": "app/lib-community/libsecurec.so",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5165b713ce227ef0b06611e2db1b0ea0c7bd2c08",
+      "size": 67520,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5165b713ce227ef0b06611e2db1b0ea0c7bd2c08"
+    },
+    {
+      "path": "app/lib-community/libsvp_acl.so",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "240ee6c80755134137ddc0e879688ad76aed432e",
+      "size": 462400,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/240ee6c80755134137ddc0e879688ad76aed432e"
+    },
+    {
+      "path": "app/lib-community/libsvp_aicpu.so",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "cd12cf2cda2e889772f34d3899049b896215b787",
+      "size": 264112,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/cd12cf2cda2e889772f34d3899049b896215b787"
+    },
+    {
+      "path": "app/lib-community/pico_mmz_anyaddr.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a29ae0b44c9d3b23eb1c0401cbd4bbf29136405",
+      "size": 3172,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5a29ae0b44c9d3b23eb1c0401cbd4bbf29136405"
+    },
+    {
+      "path": "app/lib-community/pico_mpi_stubs.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d69d30c6e85700618034d6b62c6089c4c8e0dc4",
+      "size": 1085,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8d69d30c6e85700618034d6b62c6089c4c8e0dc4"
+    },
+    {
+      "path": "app/lib-community/retarget_aicpu_glibc.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "41e30603a76a5dfdaec67b8991e54a80216d15ec",
+      "size": 5529,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/41e30603a76a5dfdaec67b8991e54a80216d15ec"
+    },
+    {
+      "path": "app/lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4903c7f0e8fb3842475610d6b18cf1afafd9fba",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/d4903c7f0e8fb3842475610d6b18cf1afafd9fba"
+    },
+    {
+      "path": "app/lib/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a90c334e95c573983bb18809fe914ccb9fbac95e",
+      "size": 851,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a90c334e95c573983bb18809fe914ccb9fbac95e"
+    },
+    {
+      "path": "app/lib/README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9517ae0b1b6be5a213f659f5438831e15b5c7734",
+      "size": 829,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/9517ae0b1b6be5a213f659f5438831e15b5c7734"
+    },
+    {
+      "path": "app/lib/SHA256SUMS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a32dbb66b9a323e023241db92a6d8eef75aed8c",
+      "size": 327,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6a32dbb66b9a323e023241db92a6d8eef75aed8c"
+    },
+    {
+      "path": "app/lib/libprotobuf-c.so.1",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "22d60fe77695981ab6f42e6fcfe3f1fd0b6cc356",
+      "size": 46944,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/22d60fe77695981ab6f42e6fcfe3f1fd0b6cc356"
+    },
+    {
+      "path": "app/lib/libsecurec.so",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "d8e556482c6df794a1616bd3343d5f1045fd7a76",
+      "size": 71592,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d8e556482c6df794a1616bd3343d5f1045fd7a76"
+    },
+    {
+      "path": "app/lib/libsvp_acl.so",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "cd8c14b849a5ce63fc5a362d862781b636634d73",
+      "size": 339280,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/cd8c14b849a5ce63fc5a362d862781b636634d73"
+    },
+    {
+      "path": "app/lib/libsvp_aicpu.so",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "fcbf57fae14add62acee08893bc249c5a4f55df1",
+      "size": 198480,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/fcbf57fae14add62acee08893bc249c5a4f55df1"
+    },
+    {
+      "path": "app/native",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fe64ffc629b77c520459a20aec06ddc4fd731a5d",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/fe64ffc629b77c520459a20aec06ddc4fd731a5d"
+    },
+    {
+      "path": "app/native/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58b19cdfee9f25ac746b139970c0e4be080f1af9",
+      "size": 1727,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/58b19cdfee9f25ac746b139970c0e4be080f1af9"
+    },
+    {
+      "path": "app/native/pico_persistent_acl_executor.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5afab87a7cc4a7e48e9dd8927f5ce150072b93cd",
+      "size": 94383,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5afab87a7cc4a7e48e9dd8927f5ce150072b93cd"
+    },
+    {
+      "path": "app/openclaw",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1e3eafcef8ccf9474df6e6331499b2d3b011f186",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/1e3eafcef8ccf9474df6e6331499b2d3b011f186"
+    },
+    {
+      "path": "app/openclaw/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ecf1273a90c0f1972c572c834ee30ef2539126a",
+      "size": 88,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/9ecf1273a90c0f1972c572c834ee30ef2539126a"
+    },
+    {
+      "path": "app/openclaw/README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9207344423aa7872089c04ebd61a5537afb0270",
+      "size": 17298,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d9207344423aa7872089c04ebd61a5537afb0270"
+    },
+    {
+      "path": "app/openclaw/SOURCE_SNAPSHOTS.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bd14abf6554abb19113a0f4a4f8285438094eec",
+      "size": 1313,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5bd14abf6554abb19113a0f4a4f8285438094eec"
+    },
+    {
+      "path": "app/openclaw/bin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b33586d16e3723d8bcd43c54220316439a61287f",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/b33586d16e3723d8bcd43c54220316439a61287f"
+    },
+    {
+      "path": "app/openclaw/bin/configure-openclaw.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "aa52b039ae416b7aea6a3ee5b4a85829db29854d",
+      "size": 345,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/aa52b039ae416b7aea6a3ee5b4a85829db29854d"
+    },
+    {
+      "path": "app/openclaw/bin/doctor.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "a111fc8bc29e06c1150aaa6d5318134aad6219bd",
+      "size": 342,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a111fc8bc29e06c1150aaa6d5318134aad6219bd"
+    },
+    {
+      "path": "app/openclaw/bin/start.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "3dfb5680e49ed6a6bcba2b997d8990fe1ce71943",
+      "size": 341,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3dfb5680e49ed6a6bcba2b997d8990fe1ce71943"
+    },
+    {
+      "path": "app/openclaw/bin/stop.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "bb368b3d01e3f9b70823ede9eb733039f0fae3cb",
+      "size": 340,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/bb368b3d01e3f9b70823ede9eb733039f0fae3cb"
+    },
+    {
+      "path": "app/openclaw/config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "417b6addf941f226b99fdd4107230604cf834662",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/417b6addf941f226b99fdd4107230604cf834662"
+    },
+    {
+      "path": "app/openclaw/config/runtime.command.example.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76267fe877cece0fd14a2ef085d64110376b9f8b",
+      "size": 1354,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/76267fe877cece0fd14a2ef085d64110376b9f8b"
+    },
+    {
+      "path": "app/openclaw/config/runtime.example.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b493a82eadfa7179b9692fce383e27503c77062",
+      "size": 361,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5b493a82eadfa7179b9692fce383e27503c77062"
+    },
+    {
+      "path": "app/openclaw/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0280e70b46b57f0ea5970e431fde42bd849f7925",
+      "size": 35,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0280e70b46b57f0ea5970e431fde42bd849f7925"
+    },
+    {
+      "path": "app/openclaw/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43a17361ea5c1ec152bceff24d793b1dad9f019c",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/43a17361ea5c1ec152bceff24d793b1dad9f019c"
+    },
+    {
+      "path": "app/openclaw/src/config_generator.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e2a531595f478c4757eaf4fcd12cd2c2820e91f5",
+      "size": 17739,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/e2a531595f478c4757eaf4fcd12cd2c2820e91f5"
+    },
+    {
+      "path": "app/openclaw/src/lifecycle.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "d08a658ccaa06d2f815a7ad8523d3da4a4537b94",
+      "size": 28186,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d08a658ccaa06d2f815a7ad8523d3da4a4537b94"
+    },
+    {
+      "path": "app/openclaw/src/merged_board_server.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "936991c8ebf9688fab405ad68272bcc60b32bcc5",
+      "size": 40273,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/936991c8ebf9688fab405ad68272bcc60b32bcc5"
+    },
+    {
+      "path": "app/openclaw/src/merged_jsonl_runner.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "bf8659c90e8ebc2c9361c408b29596512ce4321f",
+      "size": 20299,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/bf8659c90e8ebc2c9361c408b29596512ce4321f"
+    },
+    {
+      "path": "app/openclaw/src/openai_service.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "fb11847a0cc07b3df89be11f16241190960de0f3",
+      "size": 62756,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/fb11847a0cc07b3df89be11f16241190960de0f3"
+    },
+    {
+      "path": "app/openclaw/src/pico_minicpm5_split_board_runner.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "05b379c3f683249d9a66052d0eaeaa1d0221b362",
+      "size": 65184,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/05b379c3f683249d9a66052d0eaeaa1d0221b362"
+    },
+    {
+      "path": "app/openclaw/src/probe_om_execute_latency.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7d317b28d36b1fdcbd4ca1de4f674256b70c4e10",
+      "size": 12313,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7d317b28d36b1fdcbd4ca1de4f674256b70c4e10"
+    },
+    {
+      "path": "app/openclaw/src/qualify_minicpm_greedy_chain.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1381cd021f4ebc0e17f5c4b95a22c5f52ac65eca",
+      "size": 31658,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/1381cd021f4ebc0e17f5c4b95a22c5f52ac65eca"
+    },
+    {
+      "path": "app/openclaw/tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1a8c12a416b079b90fae6eaa6a53ef55d1f17452",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/1a8c12a416b079b90fae6eaa6a53ef55d1f17452"
+    },
+    {
+      "path": "app/openclaw/tests/test_package.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83efbca01009386cbeea5ca46794f4599d307af4",
+      "size": 12254,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/83efbca01009386cbeea5ca46794f4599d307af4"
+    },
+    {
+      "path": "app/prepare_community.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "0f6d0e14489c60e7ca2f869d149069699fc168cc",
+      "size": 3101,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0f6d0e14489c60e7ca2f869d149069699fc168cc"
+    },
+    {
+      "path": "app/prepare_npu.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5407d78588e3dc336ce7c8f3bc5822d15269137d",
+      "size": 1570,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5407d78588e3dc336ce7c8f3bc5822d15269137d"
+    },
+    {
+      "path": "app/profiles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9decd008a4ee16ad4fe82f9e7510d26291539a1f",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/9decd008a4ee16ad4fe82f9e7510d26291539a1f"
+    },
+    {
+      "path": "app/profiles/ctx1024.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63716b2ec80ea2a226a8492e8c50a6ceb8b926f2",
+      "size": 743,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/63716b2ec80ea2a226a8492e8c50a6ceb8b926f2"
+    },
+    {
+      "path": "app/profiles/ctx10240.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e619271cf3cf0388f10fcac337105d56765fc51",
+      "size": 756,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0e619271cf3cf0388f10fcac337105d56765fc51"
+    },
+    {
+      "path": "app/profiles/ctx128.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa1fa4cfa1604ba0cd148f66aef492f5c0a2c790",
+      "size": 747,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/aa1fa4cfa1604ba0cd148f66aef492f5c0a2c790"
+    },
+    {
+      "path": "app/profiles/ctx16384.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de01c12dbaa217ab9b1c7422f67410fc438efba0",
+      "size": 760,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/de01c12dbaa217ab9b1c7422f67410fc438efba0"
+    },
+    {
+      "path": "app/profiles/ctx4096.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "390832b7feeac1133a44c4f7b10adadd42d1cf6f",
+      "size": 752,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/390832b7feeac1133a44c4f7b10adadd42d1cf6f"
+    },
+    {
+      "path": "app/profiles/ctx8192.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "449c71d0f11ac1ba7d8dafca613b50541c52d5b1",
+      "size": 754,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/449c71d0f11ac1ba7d8dafca613b50541c52d5b1"
+    },
+    {
+      "path": "app/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "385d767bd0ac2675d1d970fc905d56517c213761",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/385d767bd0ac2675d1d970fc905d56517c213761"
+    },
+    {
+      "path": "app/src/context_ledger.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cca7a2c9291dbc54347bb77e03bc47f978988b9f",
+      "size": 11595,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/cca7a2c9291dbc54347bb77e03bc47f978988b9f"
+    },
+    {
+      "path": "app/src/eager_agent.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aeaf16d5fc6b6642cdd9b6a79c972b65172e4967",
+      "size": 3083,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/aeaf16d5fc6b6642cdd9b6a79c972b65172e4967"
+    },
+    {
+      "path": "app/src/eager_prefill.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9afba38d56ea16a2790f49c20f96b9a0acf2e261",
+      "size": 21721,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/9afba38d56ea16a2790f49c20f96b9a0acf2e261"
+    },
+    {
+      "path": "app/src/eager_server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bb6be364d62f5af14d4014467440d842e643a44",
+      "size": 3925,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7bb6be364d62f5af14d4014467440d842e643a44"
+    },
+    {
+      "path": "app/src/merged_board_server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5ecb23ba1f4e5c4474cefe8bc1913f6fd318973",
+      "size": 146571,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f5ecb23ba1f4e5c4474cefe8bc1913f6fd318973"
+    },
+    {
+      "path": "app/src/minicpm4v_vision.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c254776a96f0c8939eb50a6c8ec991a1aa054cbc",
+      "size": 12924,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c254776a96f0c8939eb50a6c8ec991a1aa054cbc"
+    },
+    {
+      "path": "app/src/minicpm_agent.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d8b21b549b8b94ad6a034c5d15e03af756c29e1",
+      "size": 81339,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7d8b21b549b8b94ad6a034c5d15e03af756c29e1"
+    },
+    {
+      "path": "app/src/minicpm_prefill_activation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27ea5ccfab93de389b13386f9609af191d57f7c1",
+      "size": 72587,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/27ea5ccfab93de389b13386f9609af191d57f7c1"
+    },
+    {
+      "path": "app/src/minicpm_prefill_runtime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d6232671308116b7d33de5af6ab5884ea672acb",
+      "size": 48027,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0d6232671308116b7d33de5af6ab5884ea672acb"
+    },
+    {
+      "path": "app/src/minicpm_prefill_schedule.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7248aee0a04b68a4c180a9c99f6fa059c46cd0d",
+      "size": 7861,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/e7248aee0a04b68a4c180a9c99f6fa059c46cd0d"
+    },
+    {
+      "path": "app/src/minicpm_profile.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8c7b7ded5c4c85730c2d8ca7a2e1aa53ed55201",
+      "size": 9202,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d8c7b7ded5c4c85730c2d8ca7a2e1aa53ed55201"
+    },
+    {
+      "path": "app/src/pico_minicpm5_split_board_runner.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9e775d0e0a3c1d57469e4d88f3b795a90f6611f",
+      "size": 70722,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a9e775d0e0a3c1d57469e4d88f3b795a90f6611f"
+    },
+    {
+      "path": "app/src/probe_om_execute_latency.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "054e8d0490e579c66bdec988c60695b33845cdf0",
+      "size": 9943,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/054e8d0490e579c66bdec988c60695b33845cdf0"
+    },
+    {
+      "path": "app/src/qualify_minicpm_greedy_chain.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1381cd021f4ebc0e17f5c4b95a22c5f52ac65eca",
+      "size": 31658,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/1381cd021f4ebc0e17f5c4b95a22c5f52ac65eca"
+    },
+    {
+      "path": "app/src/vision_jobs.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "703c241274a5c1c7ad16689e030c32af95d15142",
+      "size": 8202,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/703c241274a5c1c7ad16689e030c32af95d15142"
+    },
+    {
+      "path": "app/src/vision_worker.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d70fee5b1716a115133830342a41c5d899688498",
+      "size": 12448,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d70fee5b1716a115133830342a41c5d899688498"
+    },
+    {
+      "path": "configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "56ff3c12a4d5c5dc98147214e4218aea20628ec4",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/56ff3c12a4d5c5dc98147214e4218aea20628ec4"
+    },
+    {
+      "path": "configs/calibration",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f678f7c5e0c893556fd8bfd7fe631d29e6e98a3c",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/f678f7c5e0c893556fd8bfd7fe631d29e6e98a3c"
+    },
+    {
+      "path": "configs/calibration/decode-clips.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a89f8c8dbfbfe79acd041624a642768b0efbb2f",
+      "size": 11005,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8a89f8c8dbfbfe79acd041624a642768b0efbb2f"
+    },
+    {
+      "path": "configs/calibration/prefill-clips.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "365b3c43c3598387c4598d135070127a58082030",
+      "size": 12059,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/365b3c43c3598387c4598d135070127a58082030"
+    },
+    {
+      "path": "configs/minicpm5-1b.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "704268fbc03d10db96493099279b4d49e7e7e867",
+      "size": 1316,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/704268fbc03d10db96493099279b4d49e7e7e867"
+    },
+    {
+      "path": "configs/ss928-ctx1024.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "850310074ebc2dabff707364b9f68f62e51946cf",
+      "size": 1002,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/850310074ebc2dabff707364b9f68f62e51946cf"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d0bb54e7ff56e259799790ee82db08f87aa22de7",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/d0bb54e7ff56e259799790ee82db08f87aa22de7"
+    },
+    {
+      "path": "docs/AGENT_ROUTING_AND_CONTEXT_PROFILES.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04cf8231e1fd765dd5072e28484d23d32f9bd025",
+      "size": 17235,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/04cf8231e1fd765dd5072e28484d23d32f9bd025"
+    },
+    {
+      "path": "docs/AGENT_ROUTING_AND_CONTEXT_PROFILES.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab7044c55f7a7983396777dc521753588bc79a44",
+      "size": 15324,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ab7044c55f7a7983396777dc521753588bc79a44"
+    },
+    {
+      "path": "docs/CAMERA_AGENT_INSTALL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3448ab80a3674963db312cf1de60113c808f5e03",
+      "size": 12833,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3448ab80a3674963db312cf1de60113c808f5e03"
+    },
+    {
+      "path": "docs/CAMERA_AGENT_INSTALL.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c085dc91e404fd5c55f8bd8df8a7279adfd5dfc",
+      "size": 11070,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8c085dc91e404fd5c55f8bd8df8a7279adfd5dfc"
+    },
+    {
+      "path": "docs/CONTEXT_LEDGER.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0176234a0d9ddf9da316e83320eac18f5498ad36",
+      "size": 5090,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0176234a0d9ddf9da316e83320eac18f5498ad36"
+    },
+    {
+      "path": "docs/CONTEXT_LEDGER.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6a7e1d7a00e0e5c65158b052cef7a44cda23960",
+      "size": 4868,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f6a7e1d7a00e0e5c65158b052cef7a44cda23960"
+    },
+    {
+      "path": "docs/EXECUTOR_BUILD.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86aa4c2402c358a51dcc1cd6a562feef841d1512",
+      "size": 2983,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/86aa4c2402c358a51dcc1cd6a562feef841d1512"
+    },
+    {
+      "path": "docs/EXECUTOR_BUILD.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "568ad18b13a343e25c8f663cbe5bc98c1ebf7eeb",
+      "size": 2876,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/568ad18b13a343e25c8f663cbe5bc98c1ebf7eeb"
+    },
+    {
+      "path": "docs/Hi3403_ACCEPTANCE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ecb1079340b3a7751574ac6961a10cb35cdef5e",
+      "size": 1166,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8ecb1079340b3a7751574ac6961a10cb35cdef5e"
+    },
+    {
+      "path": "docs/Hi3403_ACCEPTANCE.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6bc422d9f7837ea5d96cf16ed4a3742bbde08e6e",
+      "size": 1031,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6bc422d9f7837ea5d96cf16ed4a3742bbde08e6e"
+    },
+    {
+      "path": "docs/MULTIMODAL_VISION.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b63c26796eca0fa8a213fe06b034981e029af176",
+      "size": 6580,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b63c26796eca0fa8a213fe06b034981e029af176"
+    },
+    {
+      "path": "docs/MULTIMODAL_VISION.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d47a1b3933d26a9276c944abc54a896e792d582d",
+      "size": 6496,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d47a1b3933d26a9276c944abc54a896e792d582d"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_CLOSURE_WORKFLOW.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b8c5321912b9cb111f6785b39970bb030cfe828",
+      "size": 16626,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6b8c5321912b9cb111f6785b39970bb030cfe828"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_CLOSURE_WORKFLOW.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eeed10a5f650f6f00385512b7964af24663be66f",
+      "size": 21479,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/eeed10a5f650f6f00385512b7964af24663be66f"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_RELEASE_QUALIFICATION.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae9157f79adca1a58286af7115ca17b9f1f93074",
+      "size": 7398,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ae9157f79adca1a58286af7115ca17b9f1f93074"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_RELEASE_QUALIFICATION.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "42945605d2e6511535516eeaa7da8fbc1dd0f328",
+      "size": 7228,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/42945605d2e6511535516eeaa7da8fbc1dd0f328"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_RESIDENCY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09ba2b3877c4ee3f349331b9103767776a5afb61",
+      "size": 9537,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/09ba2b3877c4ee3f349331b9103767776a5afb61"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_RESIDENCY.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16d1d71f348bd6e6554455a8e1f4e248f944eaae",
+      "size": 14960,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/16d1d71f348bd6e6554455a8e1f4e248f944eaae"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_SCHEDULER.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6e59612de5c743215300444eed958f98b78e000",
+      "size": 9335,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f6e59612de5c743215300444eed958f98b78e000"
+    },
+    {
+      "path": "docs/NATIVE_PREFILL_SCHEDULER.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a6e5b4723bd9151c03f6c519a312734f8d839c6",
+      "size": 8593,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6a6e5b4723bd9151c03f6c519a312734f8d839c6"
+    },
+    {
+      "path": "docs/OM_COMPOSITION.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2afd301b7a3d831bb109029466c85b51c693fdb6",
+      "size": 2395,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/2afd301b7a3d831bb109029466c85b51c693fdb6"
+    },
+    {
+      "path": "docs/OM_COMPOSITION.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a644d0f4e6c7b11255147576f8e69a0ff6592c3",
+      "size": 1706,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5a644d0f4e6c7b11255147576f8e69a0ff6592c3"
+    },
+    {
+      "path": "docs/OPENCLAW_USAGE.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1cab5e4a09806f2c99f9a880bd46c39d3a39193",
+      "size": 22577,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a1cab5e4a09806f2c99f9a880bd46c39d3a39193"
+    },
+    {
+      "path": "docs/PIPELINE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "309efbf65f2884b65ca90f564fd5e88d108e4603",
+      "size": 8698,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/309efbf65f2884b65ca90f564fd5e88d108e4603"
+    },
+    {
+      "path": "docs/PIPELINE.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94a4efdde864659bafc90b869ce776cc8d63de31",
+      "size": 5798,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/94a4efdde864659bafc90b869ce776cc8d63de31"
+    },
+    {
+      "path": "docs/QUANTIZATION_CONTRACT.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6857f10015f0530ec4ff9a5dd506b375461dbdd9",
+      "size": 11540,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6857f10015f0530ec4ff9a5dd506b375461dbdd9"
+    },
+    {
+      "path": "docs/QUANTIZATION_CONTRACT.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d87f1febadb7c0ab1a9060f46e558eacf709cc06",
+      "size": 11065,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d87f1febadb7c0ab1a9060f46e558eacf709cc06"
+    },
+    {
+      "path": "docs/RELEASE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14ab2fdb3a3ab63a7e561f1889c85dd83b9b41e1",
+      "size": 3306,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/14ab2fdb3a3ab63a7e561f1889c85dd83b9b41e1"
+    },
+    {
+      "path": "docs/RELEASE.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84267d506aceba8a11a6335bb7db5046b22e2c75",
+      "size": 2231,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/84267d506aceba8a11a6335bb7db5046b22e2c75"
+    },
+    {
+      "path": "docs/SDK_SETUP.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffff3c35dd011579fcbffb9020f9fd340dd33368",
+      "size": 1407,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ffff3c35dd011579fcbffb9020f9fd340dd33368"
+    },
+    {
+      "path": "docs/SDK_SETUP.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc98d453b0c77e9687d7c8d82fc34f8901491bdd",
+      "size": 1191,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/fc98d453b0c77e9687d7c8d82fc34f8901491bdd"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d96a25d0acf3338185fc68bacba4d2681e0578d",
+      "size": 2790,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3d96a25d0acf3338185fc68bacba4d2681e0578d"
+    },
+    {
+      "path": "docs/VALIDATION.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a91d213dd98a02eb43cc46d3eb352d54580ba4c2",
+      "size": 1416,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a91d213dd98a02eb43cc46d3eb352d54580ba4c2"
+    },
+    {
+      "path": "docs/media",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d331e2abf983959d5086854ed964d948366ae6ff",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/d331e2abf983959d5086854ed964d948366ae6ff"
+    },
+    {
+      "path": "docs/media/board-agent.cast",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2c4d85817b7343b901fc3ef8275e4d6c6452b9b",
+      "size": 80066,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f2c4d85817b7343b901fc3ef8275e4d6c6452b9b"
+    },
+    {
+      "path": "docs/media/board-agent.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9361bf092ee55aa5f0cefb2aa7ea018a1a846c8",
+      "size": 2808134,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d9361bf092ee55aa5f0cefb2aa7ea018a1a846c8"
+    },
+    {
+      "path": "docs/media/board-vision.cast",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6941c1ae9df8c0f39e9dffc2ea276bd22ee24b12",
+      "size": 31313,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6941c1ae9df8c0f39e9dffc2ea276bd22ee24b12"
+    },
+    {
+      "path": "docs/media/board-vision.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6b01b39693160ced1d141337ba3baab00030bc3",
+      "size": 1653484,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b6b01b39693160ced1d141337ba3baab00030bc3"
+    },
+    {
+      "path": "docs/media/vision-demo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e841112869d4f9a520fff2ecc997064abfee189",
+      "size": 16903,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/4e841112869d4f9a520fff2ecc997064abfee189"
+    },
+    {
+      "path": "experimental",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e9ef9bb2922bd7ada2e0cd8148e4bc046604f3d",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/7e9ef9bb2922bd7ada2e0cd8148e4bc046604f3d"
+    },
+    {
+      "path": "experimental/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8221990171847c484505c13464ead7907531f6e8",
+      "size": 864,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8221990171847c484505c13464ead7907531f6e8"
+    },
+    {
+      "path": "experimental/README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccd5271348dde4abd7ee91c8e253cccb8727ad5e",
+      "size": 540,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ccd5271348dde4abd7ee91c8e253cccb8727ad5e"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e721e86910a75cb836179daae28c7fce405ad4ff",
+      "size": 1590,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/e721e86910a75cb836179daae28c7fce405ad4ff"
+    },
+    {
+      "path": "release",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1217e7a5bc9b9f73b5b0cc52c0f885b91ad2e537",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/1217e7a5bc9b9f73b5b0cc52c0f885b91ad2e537"
+    },
+    {
+      "path": "release/camera_agent",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a7fa74c38ba4dcb253f17bd48b259dbe8a2428bb",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/a7fa74c38ba4dcb253f17bd48b259dbe8a2428bb"
+    },
+    {
+      "path": "release/camera_agent/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d01912716ac9d385379a005fc20ae8010b0ac5c",
+      "size": 19677,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6d01912716ac9d385379a005fc20ae8010b0ac5c"
+    },
+    {
+      "path": "release/camera_agent/cpu_short_prompt_golden.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69de0b73174d58abd6b7118387801e692af0c5bf",
+      "size": 114449,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/69de0b73174d58abd6b7118387801e692af0c5bf"
+    },
+    {
+      "path": "release/camera_agent/manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f83e10982b106a6e4d67d26dc8da53032532b45a",
+      "size": 3862,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f83e10982b106a6e4d67d26dc8da53032532b45a"
+    },
+    {
+      "path": "release/camera_agent/validate_manifest.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e20c706c7e8776d87b3e11c956401e680d08200f",
+      "size": 25131,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/e20c706c7e8776d87b3e11c956401e680d08200f"
+    },
+    {
+      "path": "release/contexts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a8a1f6776db4c691822f5ada53dff296f2f09b0b",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/a8a1f6776db4c691822f5ada53dff296f2f09b0b"
+    },
+    {
+      "path": "release/contexts/ctx16384.acceptance-20260819.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "472053e80130ddd421512db8c06c96a2166034ef",
+      "size": 2309,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/472053e80130ddd421512db8c06c96a2166034ef"
+    },
+    {
+      "path": "release/contexts/ctx16384.qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8778d28d6c35d7c6f4901fe6a792167129eb4ebd",
+      "size": 4915,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8778d28d6c35d7c6f4901fe6a792167129eb4ebd"
+    },
+    {
+      "path": "release/contexts/ctx4096.qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b45efec2db61ccbe0a262d5d6b04495d86b29852",
+      "size": 4272,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b45efec2db61ccbe0a262d5d6b04495d86b29852"
+    },
+    {
+      "path": "release/contexts/ctx8192.acceptance-20260818.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb932ab18e020b764b7d8993611b0c71bc4d1d40",
+      "size": 1910,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/cb932ab18e020b764b7d8993611b0c71bc4d1d40"
+    },
+    {
+      "path": "release/contexts/ctx8192.qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9f2173aa384eecc1bb1f6a07e495eb08352f694",
+      "size": 4680,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b9f2173aa384eecc1bb1f6a07e495eb08352f694"
+    },
+    {
+      "path": "release/contexts/strict-eos-oracle.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6ee7c75da02b1ba65b5b5e83123fbfdda3d5c65",
+      "size": 2424,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a6ee7c75da02b1ba65b5b5e83123fbfdda3d5c65"
+    },
+    {
+      "path": "release/contexts/strict-eos-oracle.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15b4189b3eb3dad756aceec5897e377b56da58d2",
+      "size": 2485,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/15b4189b3eb3dad756aceec5897e377b56da58d2"
+    },
+    {
+      "path": "release/perf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "be5cc368a69d77bb57b9a9f67fd0ea24654398b4",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/be5cc368a69d77bb57b9a9f67fd0ea24654398b4"
+    },
+    {
+      "path": "release/perf/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bd828091f2ecb760ea7d1367fde73a46792fca5",
+      "size": 9674,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8bd828091f2ecb760ea7d1367fde73a46792fca5"
+    },
+    {
+      "path": "release/perf/README.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f39eb1fbf0068437a51b0e395360024a1fefc80b",
+      "size": 8313,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f39eb1fbf0068437a51b0e395360024a1fefc80b"
+    },
+    {
+      "path": "release/perf/perf-board.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec37a4ce651f8e199af7d391d1c9d0941167f098",
+      "size": 31440,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ec37a4ce651f8e199af7d391d1c9d0941167f098"
+    },
+    {
+      "path": "release/v0.1.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc970f2b7e6e34d20d926bf6b7ce04cf6ac6b9c3",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/fc970f2b7e6e34d20d926bf6b7ce04cf6ac6b9c3"
+    },
+    {
+      "path": "release/v0.1.0/RELEASE_NOTES.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5212f7a2ff3bef6569a34a2a0b9e2992ad17d1c0",
+      "size": 7240,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5212f7a2ff3bef6569a34a2a0b9e2992ad17d1c0"
+    },
+    {
+      "path": "release/v0.1.0/RELEASE_NOTES.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "361e4b020d80649ad66ecd0749134889c50f13d0",
+      "size": 6331,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/361e4b020d80649ad66ecd0749134889c50f13d0"
+    },
+    {
+      "path": "release/v0.1.0/SHA256SUMS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "947e26c79fd22fd6537bc67424a1d14cb0a461d5",
+      "size": 797,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/947e26c79fd22fd6537bc67424a1d14cb0a461d5"
+    },
+    {
+      "path": "release/v0.1.0/qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74fbc94b500b9e0d5a60045ffad26e26e1f25336",
+      "size": 5236,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/74fbc94b500b9e0d5a60045ffad26e26e1f25336"
+    },
+    {
+      "path": "release/v0.1.0/release-manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64dc4604c270fce3844ff9ac64e25ee6853079f6",
+      "size": 3027,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/64dc4604c270fce3844ff9ac64e25ee6853079f6"
+    },
+    {
+      "path": "release/v0.2.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "28c8918dc1eb756d5bd2d33edb0fd84e034efa8e",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/28c8918dc1eb756d5bd2d33edb0fd84e034efa8e"
+    },
+    {
+      "path": "release/v0.2.0/RELEASE_NOTES.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5880ee632308a53a8318211ece92fcdc60d3228",
+      "size": 5158,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f5880ee632308a53a8318211ece92fcdc60d3228"
+    },
+    {
+      "path": "release/v0.2.0/RELEASE_NOTES.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecfafc05504c23247371ad82f969839ad22b3757",
+      "size": 4953,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ecfafc05504c23247371ad82f969839ad22b3757"
+    },
+    {
+      "path": "release/v0.2.0/SHA256SUMS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61631fe37fc6e100317485bb767b6b028720b7b7",
+      "size": 797,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/61631fe37fc6e100317485bb767b6b028720b7b7"
+    },
+    {
+      "path": "release/v0.2.0/qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74fbc94b500b9e0d5a60045ffad26e26e1f25336",
+      "size": 5236,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/74fbc94b500b9e0d5a60045ffad26e26e1f25336"
+    },
+    {
+      "path": "release/v0.2.0/release-manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba2053a9d6fe3838c0943e933eb510ff6364b51a",
+      "size": 4167,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ba2053a9d6fe3838c0943e933eb510ff6364b51a"
+    },
+    {
+      "path": "release/v0.2.1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d82f2ec12cac9d059c7210ed147fc388f9998b5",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/2d82f2ec12cac9d059c7210ed147fc388f9998b5"
+    },
+    {
+      "path": "release/v0.2.1/RELEASE_NOTES.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de3c8510736d0159187edb6ce374720df2b40500",
+      "size": 1870,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/de3c8510736d0159187edb6ce374720df2b40500"
+    },
+    {
+      "path": "release/v0.2.1/RELEASE_NOTES.zh-CN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6710ac1794302502d60cdc42cb0af6c8edd859d4",
+      "size": 1614,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6710ac1794302502d60cdc42cb0af6c8edd859d4"
+    },
+    {
+      "path": "schemas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6320eff104bb0c2c4598b76d4ab30289663ae850",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/6320eff104bb0c2c4598b76d4ab30289663ae850"
+    },
+    {
+      "path": "schemas/release-manifest.schema.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c94c7728f4598cf283ce3d7bfc6f4cfa1d0d9b8e",
+      "size": 1797,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c94c7728f4598cf283ce3d7bfc6f4cfa1d0d9b8e"
+    },
+    {
+      "path": "schemas/runtime-capture.schema.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "006f85975dc9309c85858f171899bafe174c9811",
+      "size": 1402,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/006f85975dc9309c85858f171899bafe174c9811"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "06e866e3b35aba2b4868d917c2d02ca579039450",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/06e866e3b35aba2b4868d917c2d02ca579039450"
+    },
+    {
+      "path": "src/pico_minicpm5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "87b7dc1837bd9bc27be00b94b0db81bfc0fbc247",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/87b7dc1837bd9bc27be00b94b0db81bfc0fbc247"
+    },
+    {
+      "path": "src/pico_minicpm5/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bec3f4b95783481485fc6d3999adc0916296e40",
+      "size": 189,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8bec3f4b95783481485fc6d3999adc0916296e40"
+    },
+    {
+      "path": "src/pico_minicpm5/assets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85081068574bed60674843d60730decc6eda2843",
+      "size": 3551,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/85081068574bed60674843d60730decc6eda2843"
+    },
+    {
+      "path": "src/pico_minicpm5/calibration.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f3c78b4506a84ab353bc38b451cf9259be61acc",
+      "size": 5690,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5f3c78b4506a84ab353bc38b451cf9259be61acc"
+    },
+    {
+      "path": "src/pico_minicpm5/cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68f3fa02d97ad34cd903250447dff62d6eda0ef6",
+      "size": 21985,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/68f3fa02d97ad34cd903250447dff62d6eda0ef6"
+    },
+    {
+      "path": "src/pico_minicpm5/compiler",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "817cb9da88acb1107f64834d0807bffcb463ea99",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/817cb9da88acb1107f64834d0807bffcb463ea99"
+    },
+    {
+      "path": "src/pico_minicpm5/compiler/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b122465a75003da2bb1bd54c1382cca3ddeadfe1",
+      "size": 195,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b122465a75003da2bb1bd54c1382cca3ddeadfe1"
+    },
+    {
+      "path": "src/pico_minicpm5/compiler/atc.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fedbe90f8158ed365ab9e514bca3928f29a4487",
+      "size": 4903,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5fedbe90f8158ed365ab9e514bca3928f29a4487"
+    },
+    {
+      "path": "src/pico_minicpm5/compiler/base.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5390ed93edf8f88f5f30eb699559ee12ea237d99",
+      "size": 682,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5390ed93edf8f88f5f30eb699559ee12ea237d99"
+    },
+    {
+      "path": "src/pico_minicpm5/compiler/fake.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23511f3145234cadeaab640f09f791dbdb2c922c",
+      "size": 1431,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/23511f3145234cadeaab640f09f791dbdb2c922c"
+    },
+    {
+      "path": "src/pico_minicpm5/context_profiles.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80fb488eeec4ed71ed96313958a277f73d93d1bc",
+      "size": 9043,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/80fb488eeec4ed71ed96313958a277f73d93d1bc"
+    },
+    {
+      "path": "src/pico_minicpm5/contract.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e3e6c60aa44707b382c0765921e23e31450d1a3",
+      "size": 12279,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/4e3e6c60aa44707b382c0765921e23e31450d1a3"
+    },
+    {
+      "path": "src/pico_minicpm5/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "baa8dfcd2081f57dab4dd47ca1c0ef53d63d27f4",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/baa8dfcd2081f57dab4dd47ca1c0ef53d63d27f4"
+    },
+    {
+      "path": "src/pico_minicpm5/data/decode-clips.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a89f8c8dbfbfe79acd041624a642768b0efbb2f",
+      "size": 11005,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8a89f8c8dbfbfe79acd041624a642768b0efbb2f"
+    },
+    {
+      "path": "src/pico_minicpm5/data/minicpm5-1b.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "704268fbc03d10db96493099279b4d49e7e7e867",
+      "size": 1316,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/704268fbc03d10db96493099279b4d49e7e7e867"
+    },
+    {
+      "path": "src/pico_minicpm5/data/prefill-clips.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "365b3c43c3598387c4598d135070127a58082030",
+      "size": 12059,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/365b3c43c3598387c4598d135070127a58082030"
+    },
+    {
+      "path": "src/pico_minicpm5/data/ss928-ctx1024.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "850310074ebc2dabff707364b9f68f62e51946cf",
+      "size": 1002,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/850310074ebc2dabff707364b9f68f62e51946cf"
+    },
+    {
+      "path": "src/pico_minicpm5/hub.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2a0c0f355fe999893f145a1a3c027196f861f24",
+      "size": 1919,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c2a0c0f355fe999893f145a1a3c027196f861f24"
+    },
+    {
+      "path": "src/pico_minicpm5/onnx",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "33cf005fdb1d7400f7908fa3618cdd665e6ad800",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/33cf005fdb1d7400f7908fa3618cdd665e6ad800"
+    },
+    {
+      "path": "src/pico_minicpm5/onnx/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d84701957e271d73646b892f7b85dea75c47a56b",
+      "size": 70,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d84701957e271d73646b892f7b85dea75c47a56b"
+    },
+    {
+      "path": "src/pico_minicpm5/onnx/common.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bad93234131e6bf2eb9ca279cc58be7e2bd8141d",
+      "size": 4858,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/bad93234131e6bf2eb9ca279cc58be7e2bd8141d"
+    },
+    {
+      "path": "src/pico_minicpm5/onnx/compose.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a4d3ab79bbd2682e3929d067eeda1c04842610a",
+      "size": 7731,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/9a4d3ab79bbd2682e3929d067eeda1c04842610a"
+    },
+    {
+      "path": "src/pico_minicpm5/onnx/head.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b48516d1c029f4fb8d6a51c5979a3bbb2e06362f",
+      "size": 3704,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b48516d1c029f4fb8d6a51c5979a3bbb2e06362f"
+    },
+    {
+      "path": "src/pico_minicpm5/onnx/layer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1a6b11ab1024d5fce85772c73dc89e48893cf71",
+      "size": 10671,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d1a6b11ab1024d5fce85772c73dc89e48893cf71"
+    },
+    {
+      "path": "src/pico_minicpm5/pipeline.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7377812ede28a76951713efbe9bd439745b07816",
+      "size": 3106,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7377812ede28a76951713efbe9bd439745b07816"
+    },
+    {
+      "path": "src/pico_minicpm5/prefill_blocks.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b58df245894ed156a726478d4964097818252e0",
+      "size": 85741,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/2b58df245894ed156a726478d4964097818252e0"
+    },
+    {
+      "path": "src/pico_minicpm5/qualification.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f7963e1fa9c92e2bf8ef4ffe6a992d9901e7818",
+      "size": 14947,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0f7963e1fa9c92e2bf8ef4ffe6a992d9901e7818"
+    },
+    {
+      "path": "src/pico_minicpm5/reference.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb40c5655016a37b6893e472a13fcde96024e755",
+      "size": 5863,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/bb40c5655016a37b6893e472a13fcde96024e755"
+    },
+    {
+      "path": "src/pico_minicpm5/release",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ad624a9eded7394b8a651c34a90c3895742f207b",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/ad624a9eded7394b8a651c34a90c3895742f207b"
+    },
+    {
+      "path": "src/pico_minicpm5/release/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ca49c713bb54743538859c6258db2b7eaf1191d",
+      "size": 63,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/4ca49c713bb54743538859c6258db2b7eaf1191d"
+    },
+    {
+      "path": "src/pico_minicpm5/release/bundle.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b71a7be3f329dce2d518bdd83bbbb87dba61c882",
+      "size": 25755,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b71a7be3f329dce2d518bdd83bbbb87dba61c882"
+    },
+    {
+      "path": "src/pico_minicpm5/release/manifest.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db0c1664292b581b54f6ece6be24551b19e38fda",
+      "size": 905,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/db0c1664292b581b54f6ece6be24551b19e38fda"
+    },
+    {
+      "path": "src/pico_minicpm5/release/runtime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74a03628b9d61e490c77c778f69a2fe3f7017f03",
+      "size": 3562,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/74a03628b9d61e490c77c778f69a2fe3f7017f03"
+    },
+    {
+      "path": "src/pico_minicpm5/release/sbom.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a74d4500aa89e3e4814ea92b6f8c35f1b1fa5ef",
+      "size": 3544,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7a74d4500aa89e3e4814ea92b6f8c35f1b1fa5ef"
+    },
+    {
+      "path": "src/pico_minicpm5/release/source.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0b355659a04d37ae6fcb0a3022ff7215b3fa452",
+      "size": 5995,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a0b355659a04d37ae6fcb0a3022ff7215b3fa452"
+    },
+    {
+      "path": "src/pico_minicpm5/score.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40bb5d9ae28032c980e4375988ccfa5885999315",
+      "size": 13682,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/40bb5d9ae28032c980e4375988ccfa5885999315"
+    },
+    {
+      "path": "tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3225a56a437985c64092427e5cca2cd4dc9d64d",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/a3225a56a437985c64092427e5cca2cd4dc9d64d"
+    },
+    {
+      "path": "tests/fixtures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b45597ed8117787a9692976111fa03afecbbbdd4",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/b45597ed8117787a9692976111fa03afecbbbdd4"
+    },
+    {
+      "path": "tests/fixtures/camera_pending_manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f83e10982b106a6e4d67d26dc8da53032532b45a",
+      "size": 3862,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f83e10982b106a6e4d67d26dc8da53032532b45a"
+    },
+    {
+      "path": "tests/test_assets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95c91e756c37b0e12d8a6db1494950607c297785",
+      "size": 746,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/95c91e756c37b0e12d8a6db1494950607c297785"
+    },
+    {
+      "path": "tests/test_atc_security.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccd25448bbadca3109468b611561f53b21d0ea95",
+      "size": 1289,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/ccd25448bbadca3109468b611561f53b21d0ea95"
+    },
+    {
+      "path": "tests/test_board_npu_scripts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dba930f422942f130bb66b546a5fb92dd708b069",
+      "size": 8545,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/dba930f422942f130bb66b546a5fb92dd708b069"
+    },
+    {
+      "path": "tests/test_board_repl.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d1780f41087dc284aeea79f186467d63ab9e04e",
+      "size": 62708,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6d1780f41087dc284aeea79f186467d63ab9e04e"
+    },
+    {
+      "path": "tests/test_calibration.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59c5c9f17c1fefcc33a96c4f691761fdba8dac90",
+      "size": 588,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/59c5c9f17c1fefcc33a96c4f691761fdba8dac90"
+    },
+    {
+      "path": "tests/test_camera_agent.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe3bf28f33f64b960c225e0b4ae6ed6f71cf80fc",
+      "size": 18540,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/fe3bf28f33f64b960c225e0b4ae6ed6f71cf80fc"
+    },
+    {
+      "path": "tests/test_camera_release_manifest.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c9892c2bc86ae1e1142028223a872f650bda90c",
+      "size": 41987,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0c9892c2bc86ae1e1142028223a872f650bda90c"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4710293bf9b702164af18dfd37a7e8df4ec93577",
+      "size": 1329,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/4710293bf9b702164af18dfd37a7e8df4ec93577"
+    },
+    {
+      "path": "tests/test_clip_configs.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "085de731d1175f5bf7b4074d000965fea32cc9bb",
+      "size": 1164,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/085de731d1175f5bf7b4074d000965fea32cc9bb"
+    },
+    {
+      "path": "tests/test_clip_contract.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6f93d941f99f2c8c7bb3f3c28f58b35edf0dd5e",
+      "size": 4763,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d6f93d941f99f2c8c7bb3f3c28f58b35edf0dd5e"
+    },
+    {
+      "path": "tests/test_compose.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cb5f2f95067343caf3512620db812ba064bc703",
+      "size": 2437,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/1cb5f2f95067343caf3512620db812ba064bc703"
+    },
+    {
+      "path": "tests/test_context_ledger.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b62b13c544b6ebe87e915867dc5ddd853243c890",
+      "size": 11012,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/b62b13c544b6ebe87e915867dc5ddd853243c890"
+    },
+    {
+      "path": "tests/test_context_profiles.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6b9b252cfb5f938e9bce155d4d1e6c0b6af5533",
+      "size": 7465,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c6b9b252cfb5f938e9bce155d4d1e6c0b6af5533"
+    },
+    {
+      "path": "tests/test_contract.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2c73a8eb85220faeecb04aff4d498dac3a0d483",
+      "size": 1187,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/d2c73a8eb85220faeecb04aff4d498dac3a0d483"
+    },
+    {
+      "path": "tests/test_eager_prefill.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d5b54f6f45834adc30799f3a11000e6e556e8fd",
+      "size": 35068,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/4d5b54f6f45834adc30799f3a11000e6e556e8fd"
+    },
+    {
+      "path": "tests/test_external_data.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c84abfc34603d01a8a9e28a3395367cb94a167f",
+      "size": 1478,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7c84abfc34603d01a8a9e28a3395367cb94a167f"
+    },
+    {
+      "path": "tests/test_fake_compiler.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bbad7d331d0b8c57beef0c3011dc442e08d1357",
+      "size": 2346,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/4bbad7d331d0b8c57beef0c3011dc442e08d1357"
+    },
+    {
+      "path": "tests/test_minicpm4v_vision.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5415729c9eb6506b9eb1864ad598ec43d4dceeaf",
+      "size": 13866,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5415729c9eb6506b9eb1864ad598ec43d4dceeaf"
+    },
+    {
+      "path": "tests/test_minicpm_agent.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5b6c6637517c044c578769e5398ea2ddaa86745",
+      "size": 41311,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a5b6c6637517c044c578769e5398ea2ddaa86745"
+    },
+    {
+      "path": "tests/test_openclaw_jsonl_runner.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82eb1b88ea8ea3fdcb814b443463b33bd913b021",
+      "size": 20003,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/82eb1b88ea8ea3fdcb814b443463b33bd913b021"
+    },
+    {
+      "path": "tests/test_openclaw_openai_service.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f193a1b1f6e52368e37d73a0be387a0d1a07c0f3",
+      "size": 40233,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/f193a1b1f6e52368e37d73a0be387a0d1a07c0f3"
+    },
+    {
+      "path": "tests/test_perf_board.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00571fb12385aff1037a7aa85db510744931876f",
+      "size": 10407,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/00571fb12385aff1037a7aa85db510744931876f"
+    },
+    {
+      "path": "tests/test_persistent_input_copy.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b2edcd0768cb91c1033b9c97acda48a545bad06",
+      "size": 4642,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3b2edcd0768cb91c1033b9c97acda48a545bad06"
+    },
+    {
+      "path": "tests/test_prefill_activation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dd84e76d823b530ca98ea300fd01abbd362aa1b",
+      "size": 38431,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/1dd84e76d823b530ca98ea300fd01abbd362aa1b"
+    },
+    {
+      "path": "tests/test_prefill_blocks.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04d683eb97e20d584332b87462481f43da2406c8",
+      "size": 46541,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/04d683eb97e20d584332b87462481f43da2406c8"
+    },
+    {
+      "path": "tests/test_prefill_runtime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21201532b867cb73b17b27a4712c3682f5fbcaed",
+      "size": 4556,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/21201532b867cb73b17b27a4712c3682f5fbcaed"
+    },
+    {
+      "path": "tests/test_prefill_schedule.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0622268599405e62f248c132dbb2030baefee24b",
+      "size": 4014,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0622268599405e62f248c132dbb2030baefee24b"
+    },
+    {
+      "path": "tests/test_prefill_wide_dispatch.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c1406141c7be07f9b686b91b4aab69a18b2a353",
+      "size": 28914,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7c1406141c7be07f9b686b91b4aab69a18b2a353"
+    },
+    {
+      "path": "tests/test_prefill_windowed_kv.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a051b1f763ef976545793d6180336b6122ec063",
+      "size": 17834,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/8a051b1f763ef976545793d6180336b6122ec063"
+    },
+    {
+      "path": "tests/test_qualification.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f29094a42351446ca1c137c1d66f6937859aad7",
+      "size": 14240,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/6f29094a42351446ca1c137c1d66f6937859aad7"
+    },
+    {
+      "path": "tests/test_release.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c655aed816922894f805cdd20eae3e0871bff95",
+      "size": 13652,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7c655aed816922894f805cdd20eae3e0871bff95"
+    },
+    {
+      "path": "tests/test_runtime_profiles.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52658e540b3e1c611369923222981bdb80411673",
+      "size": 6772,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/52658e540b3e1c611369923222981bdb80411673"
+    },
+    {
+      "path": "tests/test_runtime_release.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f7d54f673c942c8c7940b1d66386fffc4bbfbaa",
+      "size": 2897,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/0f7d54f673c942c8c7940b1d66386fffc4bbfbaa"
+    },
+    {
+      "path": "tests/test_sbom.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5028ee32f6d958fce6194784917d605973ad3ab4",
+      "size": 1485,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5028ee32f6d958fce6194784917d605973ad3ab4"
+    },
+    {
+      "path": "tests/test_score.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3bd57a0964d56a68edcf0ebf9b35a89549f77c93",
+      "size": 9909,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/3bd57a0964d56a68edcf0ebf9b35a89549f77c93"
+    },
+    {
+      "path": "tests/test_vision_agent.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7986617758273213186818c16623a9a5ab666a31",
+      "size": 21843,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/7986617758273213186818c16623a9a5ab666a31"
+    },
+    {
+      "path": "tests/test_vision_jobs.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5744a9b91cd862a5765f40564d234c775c3b3c53",
+      "size": 5972,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/5744a9b91cd862a5765f40564d234c775c3b3c53"
+    },
+    {
+      "path": "tests/test_vision_worker.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74a27b89d9e0fca1566632fa07319e47ac74db4f",
+      "size": 17173,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/74a27b89d9e0fca1566632fa07319e47ac74db4f"
+    },
+    {
+      "path": "tools",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "707dfeaf58f1fc511e24f992439ff2520be9df5c",
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/trees/707dfeaf58f1fc511e24f992439ff2520be9df5c"
+    },
+    {
+      "path": "tools/cast_to_gif.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8b4e68447da2725b0d13899f8ab65b43c63ef2e",
+      "size": 11401,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/a8b4e68447da2725b0d13899f8ab65b43c63ef2e"
+    },
+    {
+      "path": "tools/cast_to_svg.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5f4874773385024556c461f6b8e43ab24140926",
+      "size": 11142,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/c5f4874773385024556c461f6b8e43ab24140926"
+    },
+    {
+      "path": "tools/record_agent.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1699f153107f5fa42c874f36e2e2f0e7971ab925",
+      "size": 4758,
+      "url": "https://api.github.com/repos/GitBubble/pico-minicpm5/git/blobs/1699f153107f5fa42c874f36e2e2f0e7971ab925"
+    }
+  ],
+  "truncated": false
+}

@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "count": 300,
+  "splits": {
+    "train": 240,
+    "dev": 60
+  },
+  "groups": 73,
+  "categories": {
+    "dev/clarification_required": 4,
+    "dev/multi_action": 4,
+    "dev/no_tool": 4,
+    "dev/supported": 40,
+    "dev/tool_failure": 4,
+    "dev/unsupported": 4,
+    "train/clarification_required": 20,
+    "train/multi_action": 8,
+    "train/no_tool": 28,
+    "train/supported": 120,
+    "train/tool_failure": 36,
+    "train/unsupported": 28
+  },
+  "errors": [],
+  "warnings": [],
+  "semantic_status": "NOT independently reviewed; lexical checks do not prove intent or answer correctness",
+  "scope": "rules and simulated fixtures only; no actual camera execution"
+}

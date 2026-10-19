@@ -1,0 +1,42 @@
+[
+  {
+    "file": "hf-model-info.json",
+    "url": "https://huggingface.co/api/models/openbmb/MiniCPM5-1B",
+    "sha256": "d499c1ec6f51b734a06fdafbee5d2926b17a141f26ae488f60984bfdfeda809e",
+    "bytes": 15146
+  },
+  {
+    "file": "bfcl-readme.md",
+    "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/main/berkeley-function-call-leaderboard/README.md",
+    "sha256": "c6c95683cce9653788c8b3f3f5002d2f5c27b95a1288544fe82c2a2faf5e12d0",
+    "bytes": 17311
+  },
+  {
+    "file": "ceval-readme.md",
+    "url": "https://raw.githubusercontent.com/hkust-nlp/ceval/main/README.md",
+    "sha256": "f281be45f60cec274a6a6a8f765bdba0b99db99b909358ddff852d7d5daacdc1",
+    "bytes": 13090
+  },
+  {
+    "file": "toolace-card.md",
+    "url": "https://huggingface.co/datasets/Team-ACE/ToolACE/raw/main/README.md",
+    "sha256": "4e82e47712cfdc0bc86b3b0c6b03f5f2f00a1ca54ccfa696276833743c85e460",
+    "bytes": 1873
+  },
+  {
+    "file": "lf-commit.json",
+    "url": "https://api.github.com/repos/hiyouga/LLaMA-Factory/commits/main",
+    "sha256": "c614ecef7d44be92e300e84f8e5a143d77e253b6fc0dd99ee93f3076d6567625",
+    "bytes": 9144
+  },
+  {
+    "file": "ifeval-readme.md",
+    "url": "https://raw.githubusercontent.com/google-research/google-research/master/instruction_following_eval/README.md",
+    "sha256": "fef3c44408e4b39837af345095ccce7da798853fd60ea94a1de63afa9d3d67b3",
+    "bytes": 1457
+  },
+  {
+    "file": "peft-lora.md",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

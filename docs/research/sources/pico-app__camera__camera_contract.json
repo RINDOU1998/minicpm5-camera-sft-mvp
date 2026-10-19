@@ -1,0 +1,639 @@
+{
+  "schema": "pico.minicpm5.camera-contract.v1",
+  "source_golden_sha256": "8097c8f4379b3c3cc9f1f6ae621b058049044c1bb9bf05da72e4a785da1c6253",
+  "input_contract": {
+    "system_prompt": "You control a camera only through the supplied functions. Call exactly one function only when the user explicitly requests one supported action and supplies every required argument. Never guess a missing direction, speed, duration, step, or preset. If the user asks for no device action, is ambiguous, or only asks for advice, do not call a function; answer briefly in the user's language. Use the schema values exactly.",
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "ptz_move",
+          "description": "Move pan or tilt once. Use only for an explicit direction, speed, and duration.",
+          "strict": true,
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "direction": {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right",
+                  "up",
+                  "down"
+                ]
+              },
+              "speed": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 100,
+                "maximum": 5000
+              }
+            },
+            "required": [
+              "direction",
+              "speed",
+              "duration_ms"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "camera_zoom",
+          "description": "Start or stop optical zoom. Use an explicit direction and speed.",
+          "strict": true,
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "direction": {
+                "type": "string",
+                "enum": [
+                  "in",
+                  "out",
+                  "stop"
+                ]
+              },
+              "speed": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              }
+            },
+            "required": [
+              "direction",
+              "speed"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "camera_focus",
+          "description": "Enable autofocus, stop focus motion, or move manual focus near/far by an explicit step.",
+          "strict": true,
+          "parameters": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "auto",
+                      "stop"
+                    ]
+                  }
+                },
+                "required": [
+                  "mode"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "near",
+                      "far"
+                    ]
+                  },
+                  "step": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10
+                  }
+                },
+                "required": [
+                  "mode",
+                  "step"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "camera_preset",
+          "description": "Go to, save, or delete one explicitly numbered preset.",
+          "strict": true,
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "enum": [
+                  "goto",
+                  "save",
+                  "delete"
+                ]
+              },
+              "preset_id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 255
+              }
+            },
+            "required": [
+              "action",
+              "preset_id"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "camera_stop_all",
+          "description": "Immediately stop all pan, tilt, zoom, and focus motion.",
+          "strict": true,
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      }
+    ]
+  },
+  "cases": [
+    {
+      "sequence": 1,
+      "user": "摄像头左转",
+      "prompt_sha256": "df04b0a29d29cd7ba8e231993e4fad012b6401a8aaeb71cf77d66d879354ec74",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        523,
+        111,
+        5269,
+        888,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        1822,
+        32072,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        1822,
+        1092,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        2023,
+        1822,
+        3288,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"ptz_move\">\n<param name=\"action\">move</param>\n<param name=\"direction\">left</param>\n<param name=\"angle\">转</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 2,
+      "user": "云台抬头",
+      "prompt_sha256": "9ece2a37d4271da08475ff35a1f2c95a5ec6f236c94c86a873457f8a8cf5fb96",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        523,
+        111,
+        5269,
+        888,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        1822,
+        32072,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        1822,
+        573,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        2023,
+        1822,
+        881,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"ptz_move\">\n<param name=\"action\">move</param>\n<param name=\"direction\">up</param>\n<param name=\"angle\">30</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 3,
+      "user": "焦距拉近一点",
+      "prompt_sha256": "5b51778eb09c03fee9e174695f68219f52cc72e1a7413825b50f0075ec23f593",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        72278,
+        4494,
+        3159,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        4778,
+        32072,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        4778,
+        39105,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        23925,
+        4778,
+        9626,
+        220,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"camera_focus\">\n<param name=\"action\">\nmove\n</param>\n<param name=\"direction\">\nnear\n</param>\n<param name=\"step\">\n一点\n</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 4,
+      "user": "光圈开大一点",
+      "prompt_sha256": "334d5783fe02ce7ed33bf344c0e6abff218f214e3e6245e33a89a6c3f2a26eab",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        72278,
+        95335,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        4778,
+        92,
+        8320,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        4778,
+        587,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        26976,
+        4778,
+        37236,
+        220,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"camera_zoom\">\n<param name=\"action\">\ngoto\n</param>\n<param name=\"direction\">\nout\n</param>\n<param name=\"speed\">\nlarge\n</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 5,
+      "user": "设置自动光圈",
+      "prompt_sha256": "c1a87c4c6112bcac3054592efae2a9d67e71cc32a5db3d732b59ddc8b4bbe694",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        72278,
+        95335,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        4778,
+        16962,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        4778,
+        281,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        26976,
+        4778,
+        38,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        19214,
+        4778,
+        1387,
+        37,
+        220,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"camera_zoom\">\n<param name=\"action\">\nauto\n</param>\n<param name=\"direction\">\nin\n</param>\n<param name=\"speed\">\n1\n</param>\n<param name=\"duration\">\n1000\n</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 6,
+      "user": "摄像头有哪些控制方式",
+      "prompt_sha256": "293a16d7b0e40e1a976bfa15802eb293c1ba537ae433f0d33309115bc31ff10f",
+      "generated_ids": [
+        102692,
+        84006,
+        7545,
+        60740,
+        609,
+        4134,
+        4668,
+        1637,
+        11099,
+        3587,
+        11823,
+        396,
+        130073
+      ],
+      "generated_text": "摄像头可通过控制面板、云台等设备进行操作。",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 7,
+      "user": "变焦拉近",
+      "prompt_sha256": "717ed95a32ee832eed6bfe80b8a4fd489777eaf4ff174a5aaacd6a7b25eee3c2",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        72278,
+        95335,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        4778,
+        32072,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        4778,
+        39105,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        23925,
+        4778,
+        38,
+        220,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"camera_zoom\">\n<param name=\"action\">\nmove\n</param>\n<param name=\"direction\">\nnear\n</param>\n<param name=\"step\">\n1\n</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 8,
+      "user": "光圈开大一点",
+      "prompt_sha256": "334d5783fe02ce7ed33bf344c0e6abff218f214e3e6245e33a89a6c3f2a26eab",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        72278,
+        95335,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        4778,
+        92,
+        8320,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        4778,
+        587,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        26976,
+        4778,
+        37236,
+        220,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"camera_zoom\">\n<param name=\"action\">\ngoto\n</param>\n<param name=\"direction\">\nout\n</param>\n<param name=\"speed\">\nlarge\n</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 9,
+      "user": "切到自动光圈",
+      "prompt_sha256": "867eb51b5ede26ae913ee37545737e9fd5f6057c0b24017f49158536af78cdb3",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        72278,
+        6728,
+        472,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        1822,
+        16962,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        1822,
+        281,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        2023,
+        1822,
+        557,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"camera_gain\">\n<param name=\"action\">auto</param>\n<param name=\"direction\">in</param>\n<param name=\"angle\">10</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 10,
+      "user": "对焦到近处",
+      "prompt_sha256": "984894acac79da2ab98d6f3b29cb2f7e3eab834db3222d6a9330b871d9fb0a4f",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        72278,
+        4494,
+        3159,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        4778,
+        39105,
+        220,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        23925,
+        4778,
+        38,
+        220,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"camera_focus\">\n<param name=\"action\">\nnear\n</param>\n<param name=\"step\">\n1\n</param>\n</function>",
+      "finish_reason": "stop"
+    },
+    {
+      "sequence": 11,
+      "user": "画面过曝，把光圈缩小",
+      "prompt_sha256": "df90ba46d8f42c5699c3582b107eac39fa7f6404b8896c4a641fc75e253af84d",
+      "generated_ids": [
+        18,
+        2546,
+        943,
+        523,
+        111,
+        5269,
+        888,
+        4778,
+        20,
+        2546,
+        943,
+        2543,
+        1822,
+        69206,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        45678,
+        1822,
+        1092,
+        21,
+        220,
+        20,
+        2546,
+        943,
+        26976,
+        1822,
+        37,
+        35,
+        42,
+        21,
+        220,
+        19,
+        130073
+      ],
+      "generated_text": "<function name=\"ptz_move\">\n<param name=\"action\">reduce</param>\n<param name=\"direction\">left</param>\n<param name=\"speed\">0.5</param>\n</function>",
+      "finish_reason": "stop"
+    }
+  ]
+}
