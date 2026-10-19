@@ -54,7 +54,7 @@ conda create -n minicpm5-sft python=3.11 pip -y
 conda activate minicpm5-sft
 python -c "import sys; print(sys.executable)"
 python -m pip install --upgrade pip
-python -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
+python -m pip install torch==2.7.1 --index-url https://pypi.tuna.tsinghua.edu.cn/simple --timeout 120 --retries 10
 python -m pip install -r requirements-train.txt
 python -m pip install -e .
 python -m pip check
@@ -68,6 +68,8 @@ nvidia-smi > runs/environment/nvidia-smi.txt
 如果 `conda` 未进入 PATH，先执行 `source /实际安装路径/miniconda3/etc/profile.d/conda.sh`，其中路径替换为服务器实际位置。若已建好同名环境，跳过 create，直接 activate；每次新开终端同样先加载 conda.sh 并激活环境。`sys.executable` 应指向该环境。无需再嵌套创建 venv，也无需为本 MVP 另装 Conda 的 cudatoolkit：这里使用的 PyTorch CUDA wheel 会安装所需用户态运行库，NVIDIA 驱动由服务器提供。
 
 直接依赖已固定；`requirements-train.txt` 不是完整的传递依赖锁。`conda-explicit.txt` 只记录 Conda 包，需同时保留 `pip-freeze.txt`、驱动信息和每次实验 `run.json`。服务器上的 Conda 安装与 GPU 运行尚未实际验证。
+
+PyTorch 下载超时的阿里云备用源、SSH 代理和版本检查，见 [安装排障](docs/TORCH_INSTALL.md)。
 
 ## 3. 验证数据并下载固定基线
 
