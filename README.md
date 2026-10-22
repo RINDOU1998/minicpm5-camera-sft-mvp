@@ -4,7 +4,7 @@
 
 **已交付本地可验证部分：**现有 10 工具契约、冻结 50 条回归题、300 条候选、生成/验证/清单工具、真实 tokenizer 的逐轮 mask 检查。**尚未执行：**云端 BF16 推理、GPU 训练、独立语义审核、真实摄像头闭环。不能把本地校验称为这些阶段已通过。
 
-**当前待你人工审核的版本：`data/mvp-reviewed-v1`。** Assistant 已复核 75 个场景主体及全部 300 条受控扩展，修正 8 条“查询设置却只回答状态正常”的样本；240/60 切分和所有用户请求保持一致。记录在 `data/reviews/author-v1/results/`，不算独立审核。请先在 HTML 中人工审核并导出 JSONL；下面主流程要求你的 300 条全部通过。原版 `data/mvp` 留作追溯。
+**本轮采用离线链路试训：`data/mvp-reviewed-v1`。** 你尚未人工审核，因此不要求不存在的 `human-reviewed-v1.jsonl`。使用包内同作者 assistant 复核记录：`data/reviews/author-v1/results/reviews.jsonl`，prepare/train 显式加 `--smoke`。300 条仍未通过人工/独立审核，不能据本次试训作正式效果验收。
 
 - [MVP 方案与数据配比](docs/MVP.md) · [HTML 阅读版](docs/MVP.html)
 - [让 agent 生成和审核数据](docs/AGENT_GENERATION.md)
@@ -26,80 +26,95 @@
 
 八卡 A6000 足以支持后续多组对照。300 条 MVP 先用其中一张卡，减少分布式变量。原先规划的全量对照、数据扩量和实板部署不属于这一轮执行步骤。
 
-## 1. 把仓库放到云端
+## 1. 上传并校验完整离线包
 
-在服务器克隆公开仓库：
+本次交付 `minicpm5-sft-offline-20261022.tar.gz` 和同名 `.sha256`：包含源码、300 条数据及切分/种子/审核记录、冻结 50 题、完整官方 BF16 权重与 tokenizer。模型 revision 固定为 `87179e5c1f455ef22e6223592d2d61351b525bfc`；权重约 2.16 GB，不是 LoRA 或量化权重。包内没有 venv 或依赖 wheel，复用你已配置好的服务器环境。
+
+在服务器把两个文件放到同一上传目录。保持现有 venv 已激活，在该目录逐条执行；报错即停止。解压到新的空目录，保留此前下载失败的 `models/base` 和旧实验记录：
 
 ```bash
-git clone https://github.com/RINDOU1998/minicpm5-camera-sft-mvp.git minicpm5-sft
-cd minicpm5-sft
-git log -1 --oneline
+sha256sum -c minicpm5-sft-offline-20261022.tar.gz.sha256
+mkdir minicpm5-offline-run-20261022
+tar -xzf minicpm5-sft-offline-20261022.tar.gz -C minicpm5-offline-run-20261022
+cd minicpm5-offline-run-20261022/minicpm5-sft
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+export HF_HUB_DISABLE_TELEMETRY=1
+python scripts/offline_bundle.py verify --root .
+python -c "import sys, camera_sft; print(sys.executable); print(camera_sft.__file__)"
 ```
 
-若服务器无法访问 GitHub，也可上传交付的 `minicpm5-sft-reviewed-v1-conda.zip` 后解压，或用 Git bundle：`git clone /你上传的位置/minicpm5-sft-reviewed-v1-conda.bundle minicpm5-sft`。不要只传 train.jsonl，验证还依赖种子、契约、回归集与清单。不要把模型或 API 密钥提交进 Git。后续所有命令均在仓库根目录执行；任何命令报错，先处理错误，不继续后面的训练步骤。
+核对 Python 来自已有 venv，`camera_sft.__file__` 来自本次解压目录。若尚未激活环境，先执行 `source /你原项目的绝对路径/.venv/bin/activate`，替换实际路径。新开终端时重新激活并设置三个离线变量。**后续所有命令在新解压的仓库根目录执行，不执行 `cloud fetch`。**
 
-将审核页面导出的 `human-reviewed-v1.jsonl` 单独上传到 `data/reviews/human-reviewed-v1.jsonl`。这份个人审核文件默认被 Git 忽略，不随公开仓库发布；它必须来自你实际完成的审核，不修改 assistant 记录来冒充人工签核。
+`SOURCE_COMMIT` 标记源码版本，`OFFLINE_MANIFEST.json` 绑定逐文件大小与 SHA256，`MODEL_PROVENANCE.json` 记录上游权重哈希。校验用于检查传输完整性，不代表 GPU 已可运行。GitHub 仅保存代码和文档；模型和完整离线包不提交到 Git。
 
-zip 是完整源码快照，不含 Git 历史；解压后进入 `minicpm5-sft`，用 `cat SOURCE_COMMIT` 查看版本。实验代码支持该形式，并记录源码 hash。
+## 2. 复用已经配置好的 venv
 
-## 2. 用现有 Miniconda3 建立独立环境
+你已经完成环境配置，**不用重建 venv、不用再次下载依赖**。先做检查：
 
-下面按 Linux Bash、现有 Miniconda3、Python 3.11、NVIDIA 驱动兼容 CUDA 12.6 的服务器写。Conda 创建独立的 `minicpm5-sft` 环境，训练依赖统一由该环境的 `python -m pip` 安装。先用 `nvidia-smi` 确认实际 GPU、空闲显存和驱动。若驱动不兼容，先由服务器管理员确定可用 PyTorch CUDA 组合。
+```bash
+python -m pip check
+python -c "import torch; assert torch.__version__.split('+')[0] == '2.7.1'; assert torch.version.cuda == '12.6'; assert torch.cuda.is_available(), 'CUDA unavailable'; assert torch.cuda.is_bf16_supported(), 'BF16 unavailable'; print(torch.__version__, torch.version.cuda, torch.cuda.get_device_name(0))"
+mkdir -p runs/environment
+python -m pip freeze > runs/environment/pip-freeze.txt
+nvidia-smi > runs/environment/nvidia-smi.txt
+```
+
+<details><summary>仅在另建机器、尚未配置环境时查看原 venv 安装步骤（需要访问依赖源）</summary>
+
+下面按 Linux、Python 3.11、NVIDIA 驱动兼容 CUDA 12.6 的服务器写。先用 `nvidia-smi` 确认实际 GPU、空闲显存和驱动。若驱动不兼容，先由服务器管理员确定可用 PyTorch CUDA 组合，不改宿主驱动来迁就此命令。
 
 ```bash
 nvidia-smi
-conda --version
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda create -n minicpm5-sft python=3.11 pip -y
-conda activate minicpm5-sft
-python -c "import sys; print(sys.executable)"
+python3.11 -m venv .venv
+source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install torch==2.7.1 --index-url https://pypi.tuna.tsinghua.edu.cn/simple --timeout 120 --retries 10
 python -m pip install -r requirements-train.txt
 python -m pip install -e .
 python -m pip check
-python -c "import torch; assert torch.cuda.is_available(), 'CUDA unavailable'; assert torch.cuda.is_bf16_supported(), 'BF16 unavailable'; print(torch.__version__, torch.version.cuda, torch.cuda.get_device_name(0))"
+python -c "import torch; print(torch.__version__, torch.cuda.get_device_name(0)); assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()"
 mkdir -p runs/environment
-conda list --explicit > runs/environment/conda-explicit.txt
 python -m pip freeze > runs/environment/pip-freeze.txt
-nvidia-smi > runs/environment/nvidia-smi.txt
 ```
 
-如果 `conda` 未进入 PATH，先执行 `source /实际安装路径/miniconda3/etc/profile.d/conda.sh`，其中路径替换为服务器实际位置。若已建好同名环境，跳过 create，直接 activate；每次新开终端同样先加载 conda.sh 并激活环境。`sys.executable` 应指向该环境。无需再嵌套创建 venv，也无需为本 MVP 另装 Conda 的 cudatoolkit：这里使用的 PyTorch CUDA wheel 会安装所需用户态运行库，NVIDIA 驱动由服务器提供。
-
-直接依赖已固定；`requirements-train.txt` 不是完整的传递依赖锁。`conda-explicit.txt` 只记录 Conda 包，需同时保留 `pip-freeze.txt`、驱动信息和每次实验 `run.json`。服务器上的 Conda 安装与 GPU 运行尚未实际验证。
+直接依赖已固定；`requirements-train.txt` 不是完整的传递依赖锁。保存 `pip-freeze.txt`、驱动信息和每次实验 `run.json`，才能复现实际云端环境。这里的 GPU 环境尚未在你的服务器验证。
 
 PyTorch 下载超时的阿里云备用源、SSH 代理和版本检查，见 [安装排障](docs/TORCH_INSTALL.md)。
 
-## 3. 验证数据并下载固定基线
+
+</details>
+
+## 3. 校验数据与包内 assistant 复核记录
 
 ```bash
 python -m unittest discover -s tests -v
 python -m camera_sft.data verify --data data/mvp-reviewed-v1
 python -m camera_sft.data review --data data/mvp-reviewed-v1 \
-  --reviews data/reviews/human-reviewed-v1.jsonl \
-  --out runs/human-review-check.json
-python -m camera_sft.cloud fetch --model-dir models/base
+  --reviews data/reviews/author-v1/results/reviews.jsonl \
+  --allow-author-review --out runs/author-review-check.json
 ```
 
-预期数据检查输出 `ok: true`、`train: 240`、`dev: 60`。下载固定 revision 的原始 HF 权重与 tokenizer，生成 `models/base/snapshot_manifest.json`；没有 LoRA、没有量化基座。下载失败时保留现场，换一个新的模型目录重试；不得把不完整目录当作成功快照。
+预期数据 `ok: true`、`train: 240`、`dev: 60`；作者复核完整性 `ok: true`，但 `independent_acceptance: false`，这是本次正常状态。不要创建空白人工文件、把作者签核改成独立签核或删除审核门槛。
+
+之前的 `No such file: human-reviewed-v1.jsonl` 是因为还没有人工导出该文件。CAS Client / file reconstruction 错误发生在 Hugging Face 下载链路，仅凭摘要不能确定具体失败节点；本包已在本机取得完整文件，服务器无需访问 Hugging Face 或 CAS/CDN。
 
 ## 4. 先验证训练输入，暂不训练
 
 ```bash
 python -m camera_sft.cloud prepare \
   --model-dir models/base --data data/mvp-reviewed-v1 \
-  --reviews data/reviews/human-reviewed-v1.jsonl \
-  --out runs/prepared-mvp
+  --reviews data/reviews/author-v1/results/reviews.jsonl \
+  --out runs/prepared-mvp --smoke
 ```
 
 预期得到 **396 个训练 assistant 步、104 个开发 assistant 步**；它们仍来自 240/60 个任务，不能把 500 个生成步骤说成 500 个独立样本。当前实际 tokenizer 检查的最长序列为 **1936 tokens**，全部低于 4096，未做截断。
 
 检查 `runs/prepared-mvp/template-audit.jsonl`：每一步的推理前缀一致，XML、工具回填和 EOS 保留；prompt 和工具返回不参与 loss。直接使用官方模板，而非改写成简化 ChatML。本 MVP 使用 Transformers + PEFT 的小型训练器，目的是把这条协议检查直接接入训练；后续再迁移到 LLaMA-Factory 也必须保持同样的 token/mask 检查。
 
-主流程不带 `--smoke`，要求你的人工记录全部通过且 hash 对应；审核文件 hash 写入准备清单。有 pending/reject、缺项或过期记录时停止。
+本轮 `--smoke` 允许作者复核数据用于链路试训，同时仍检查审核记录 ID、hash、accept 与理由。准备清单、训练 run.json 都保留 smoke 状态。不能把候选变成人工审核通过。
 
-如果仅先测未经过人工审核的链路：prepare 改用 `--reviews data/reviews/author-v1/results/reviews.jsonl` 并加 `--smoke`，train 也必须加 `--smoke`；作者审核的完整性可用 `data review --allow-author-review` 检查。该模式不算人工/独立验收，不修改 `independent` 冒充通过。
+以后完成人工审核时，将 HTML 导出的文件放到 `data/reviews/human-reviewed-v1.jsonl`，先用不带 `--allow-author-review` 的 `data review` 校验；prepare 改用人工记录并去掉 `--smoke`，train 同样去掉它。使用新输出目录，保留这次 smoke 证据。
 
 ## 5. 保存 BF16 原版基线
 
@@ -119,7 +134,7 @@ CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
 ```bash
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud train \
   --model-dir models/base --prepared runs/prepared-mvp \
-  --out runs/lora-mvp
+  --out runs/lora-mvp --smoke
 CUDA_VISIBLE_DEVICES=0 python -m camera_sft.cloud evaluate \
   --model-dir models/base --adapter runs/lora-mvp/adapter \
   --data data/mvp-reviewed-v1 --suite dev --out runs/lora-dev

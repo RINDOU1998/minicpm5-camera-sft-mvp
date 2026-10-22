@@ -1,13 +1,13 @@
 # PyTorch 2.7.1 下载超时：镜像与代理
 
-先在服务器激活 `minicpm5-sft` Conda 环境。以下镜像方案针对 Linux x86_64、Python 3.11、glibc ≥ 2.28；保留 PyTorch 2.7.1 与 CUDA 12.6 的实验版本。
+先在服务器仓库根目录激活 `.venv` 环境。以下镜像方案针对 Linux x86_64、Python 3.11、glibc ≥ 2.28；保留 PyTorch 2.7.1 与 CUDA 12.6 的实验版本。
 
 ## 首选：从国内 PyPI 镜像安装
 
 PyPI 的 `torch==2.7.1` 在 Linux x86_64 上依赖 CUDA 12.6 运行库，因此本轮可以直接用 PyPI 镜像。不要在下面的 PyPI 镜像命令中改写成 `2.7.1+cu126`；那个版本标记属于另一条发布索引路径。
 
 ```bash
-conda activate minicpm5-sft
+source .venv/bin/activate
 python -m pip install torch==2.7.1 \
   --index-url https://pypi.tuna.tsinghua.edu.cn/simple \
   --timeout 120 --retries 10

@@ -28,3 +28,12 @@
 修订版已再次从 Git 全新克隆到 Ubuntu-22.04：20 项测试通过；原版、修订版及作者复核记录均可逐字节重建。非 smoke 的 prepare 已确认会在创建输出前拒绝同作者复核记录。
 
 原始本地运行输出保存在忽略的runs目录；可提交的tokenizer准备摘要在`docs/tokenizer-preflight.json`，微型模型探针结果在`docs/cpu-api-probe.json`。传递依赖/驱动/真实GPU内存尚需云端记录。输出目录不覆盖，失败不重标成功。
+
+## 2026-10-22 完整模型离线交付检查
+
+- 已取得固定 revision `87179e5c1f455ef22e6223592d2d61351b525bfc` 的全部模型资产。权重为 2,161,290,912 字节；SHA256 `7ab8fd86563125929be78aeec8cb3969c7ed2ead3be1ab9d3ec0a9fa69c8660d` 与上游 LFS 元数据一致。
+- 完整模型在本机 CPU 上离线加载：219 个权重条目，无 missing/unexpected/mismatched key，1,080,632,832 个参数均为 BF16；两 token 前向 logits 全部有限。Python socket 连接被禁止，HF 离线标志与 local_files_only 同时启用。结果在 `offline-model-load-check.json`。这不是云端 GPU 训练或生成质量验收。
+- 用完整模型目录的 tokenizer 在离线模式重新 prepare：396 train / 104 dev assistant 步，最长 1936 tokens，smoke_only=true。摘要在 `tokenizer-preflight-offline-20261022.json`。
+- 24 项本地 unittest 通过；新增大文件流式哈希、缺失/篡改文件、路径越界、归档缺项/重复项拒绝。README Bash 命令通过语法检查。
+- `scripts/offline_bundle.py build` 要求已提交的干净源码、完整基线与上游元数据；逐项核对模型资产及索引分片后打包，完整读回归档并验 hash 后才发布正式文件名。包、模型、下载缓存均不进入 Git。
+- 用户未做人工审核，本轮改用已存在的作者复核文件并显式 --smoke。真实服务器 GPU、人工审核及摄像头闭环仍待执行。

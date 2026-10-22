@@ -1,0 +1,31 @@
+{
+  "status": "prepared_not_trained",
+  "smoke_only": true,
+  "max_length": 4096,
+  "model_id": "openbmb/MiniCPM5-1B",
+  "revision": "87179e5c1f455ef22e6223592d2d61351b525bfc",
+  "data_manifest_sha256": "c824acb265ca7fc4870fcf49f3f9f4dc1d76832201fb46b030c7fed8e4327fb4",
+  "snapshot_manifest_sha256": "a984c584382fe5cf403298e7cee6c39c84c184f31dd558669def76b6e2a15cda",
+  "counts": {
+    "train": 396,
+    "dev": 104
+  },
+  "max_observed_length": 1936,
+  "files": {
+    "train.jsonl": "5534296da5ed49a059e895a8ed120ae13c736819ef457a7fbca16837549fe598",
+    "dev.jsonl": "a5b7e80cccfd48dd22fd08f2181cf55cb4753d7c1fc5f8675d70ab27aecd6c58",
+    "template-audit.jsonl": "ef31ad2977645208ac26312e343317fa24e5dc6ba979331c0b7733b5eb7982fa"
+  },
+  "reviews_sha256": "7f4d96028bb588489ce92b01e3cc07306fb772cd51b10122231867ef71c741e1",
+  "review_summary": {
+    "ok": true,
+    "pending_or_rejected": [],
+    "count": 300,
+    "require_independent": false,
+    "non_independent_count": 300,
+    "independent_acceptance": false,
+    "note": "Reviewer identity and independence are recorded attestations, not automatically proven."
+  },
+  "loss": "assistant target + EOS only; each assistant turn is one example; all prompt/tool result tokens masked",
+  "fixed_50_prompt_fit": "pass"
+}
